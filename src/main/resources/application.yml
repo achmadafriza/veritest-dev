@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: veritest
+
+server:
+  error:
+    include-message: always
+    include-stacktrace: always
+    include-exception: true
+  port: ${PORT:8080}
+  tomcat:
+    connection-timeout: -1
+
+
+isabelle:
+  server:
+    name: isabelle
+    port: 8081
+    password: ""
+  session:
+    session: Canonicalizations
+    options:
+      - document=false
+      - show_question_marks=false
+      - quick_and_dirty
+    dirs:
+      - /mnt/c/Programming/Thesis/veriopt-dev/isabelle
+    include_sessions:
+      - OptimizationDSL
+    verbose: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    com.veriopt: debug

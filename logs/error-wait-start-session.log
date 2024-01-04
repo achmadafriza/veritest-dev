@@ -1,0 +1,257 @@
+2024-01-03T21:56:37.704+10:00 DEBUG 9872 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Nitpick for ID = 1234
+2024-01-03T21:56:37.704+10:00 DEBUG 9872 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-03T21:56:37.704+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Auto Proof for ID = 1234
+2024-01-03T21:56:37.708+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-03T21:56:37.709+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: OK {"task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:37.710+10:00 DEBUG 9872 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-03T21:56:37.712+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: OK {"task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:37.712+10:00 DEBUG 9872 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-03T21:56:37.713+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: OK {"task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:38.202+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:38.202+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:38.202+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:38.202+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:38.222+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:38.222+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:38.223+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:38.223+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:38.238+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:38.238+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:38.238+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:38.238+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:38.252+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:38.252+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:38.252+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:38.252+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:38.349+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:38.350+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:38.379+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:38.379+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:38.398+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:38.398+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:38.414+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:38.414+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:38.824+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:38.824+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:38.824+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:38.824+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:39.157+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:39.157+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:39.539+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:39.539+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:39.539+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:39.539+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:39.602+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:39.602+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:39.602+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:39.602+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:39.682+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:39.682+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:39.682+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:39.682+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:39.798+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:39.798+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:39.798+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:39.798+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.395+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:40.395+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:40.515+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:40.515+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:40.633+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:40.633+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:40.740+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:40.740+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:40.740+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:40.740+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.793+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:40.793+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:40.793+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:40.793+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.839+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:40.839+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:40.852+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:40.852+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:40.852+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:40.852+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.858+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:40.858+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.858+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:40.858+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:40.878+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:40.878+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.878+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:40.879+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:40.899+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:40.899+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:40.899+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:40.899+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:41.343+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:41.343+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:41.343+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:41.343+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:41.893+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:41.893+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:41.893+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:41.893+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:41.967+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:41.967+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:41.967+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:41.967+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:42.003+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:42.003+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:42.003+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:42.003+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:42.464+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:42.464+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:42.543+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:42.543+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:42.628+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:42.629+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:42.636+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:42.636+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:42.673+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:42.673+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:42.728+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:42.728+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:43.422+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-03T21:56:43.422+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:43.577+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:43.578+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:43.578+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:43.578+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:44.684+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-03T21:56:44.685+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:44.770+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:44.771+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:44.771+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:44.771+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:44.808+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-03T21:56:44.808+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:44.843+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:44.843+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:44.843+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:44.843+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:44.892+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:44.892+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:45.026+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:45.026+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:45.026+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:45.026+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:45.170+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:45.170+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:45.170+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:45.170+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.524+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:46.524+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.524+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:46.524+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:46.616+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:46.617+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.617+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:46.617+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:46.693+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:46.694+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:46.694+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:46.694+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.703+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:46.703+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:46.703+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:46.703+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.730+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:46.731+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.731+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:46.731+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:46.773+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:46.774+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:46.774+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:46.774+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:47.011+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-03T21:56:47.012+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:47.012+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-03T21:56:47.012+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:47.562+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-03T21:56:47.562+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:48.302+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 181
+2024-01-03T21:56:48.302+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"dae1997b-940c-4634-be0f-f4dd73ef96b6","tmp_dir":"/tmp/isabelle-achmadafriza/server_session671566895423360614","task":"ff0d3dd2-e60c-40fa-9835-7ead1e32f328"}
+2024-01-03T21:56:48.350+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 182
+2024-01-03T21:56:48.350+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"70bc331f-f4d7-4818-800b-ab2bcd378a46","tmp_dir":"/tmp/isabelle-achmadafriza/server_session4351828463005616391","task":"42501f6e-b316-438c-9581-50f13b5f8097"}
+2024-01-03T21:56:48.377+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-03T21:56:48.377+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "x + -e \<longmapsto> x - e"
+.
+
+end
+
+end
+
+2024-01-03T21:56:48.380+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"70bc331f-f4d7-4818-800b-ab2bcd378a46"}
+
+2024-01-03T21:56:48.381+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: OK {"task":"6335b54f-f9f1-4978-9814-c7295bb6de81"}
+2024-01-03T21:56:48.533+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-03T21:56:48.533+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":8,"task":"6335b54f-f9f1-4978-9814-c7295bb6de81","message":"theory Draft.AutomatedTest 8%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-03T21:56:48.683+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-03T21:56:48.683+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":41,"task":"6335b54f-f9f1-4978-9814-c7295bb6de81","message":"theory Draft.AutomatedTest 41%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-03T21:56:48.792+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-03T21:56:48.793+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"6335b54f-f9f1-4978-9814-c7295bb6de81","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-03T21:56:49.827+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-03T21:56:49.827+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:49.910+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-03T21:56:49.910+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:50.204+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-03T21:56:50.204+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:50.425+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-03T21:56:50.425+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:52.621+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-03T21:56:52.621+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:52.814+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-03T21:56:52.814+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:52.935+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-03T21:56:52.935+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:52.944+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-03T21:56:52.944+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:52.976+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-03T21:56:52.976+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:53.037+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-03T21:56:53.037+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:53.339+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-03T21:56:53.339+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:56:54.494+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 183
+2024-01-03T21:56:54.495+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"748ab711-cec8-4c5c-b760-890b9d1a4721","tmp_dir":"/tmp/isabelle-achmadafriza/server_session10947977377377030714","task":"76b964c0-0493-435c-90df-5d62e96c71a2"}
+2024-01-03T21:57:03.634+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-03T21:57:03.634+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"6335b54f-f9f1-4978-9814-c7295bb6de81","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-03T21:57:03.636+10:00 ERROR 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Invalid response: 2046
+2024-01-03T21:57:03.636+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":false,"errors":[{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size (BinaryExpr BinSub x e)\n    < Suc (Suc (Suc (Suc (Canonicalization.size x +\n                          Canonicalization.size e))))\n 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \\<sqsupseteq> BinaryExpr BinSub x e\nvariables:\n    e, x :: IRExpr","pos":{"line":12,"offset":186,"end_offset":187,"file":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}},{"kind":"error","message":"Bad context for command \"end\"\\<^here> -- using reset state","pos":{"line":14,"offset":189,"end_offset":192,"file":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}}],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}},{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size (BinaryExpr BinSub x e)\n    < Suc (Suc (Suc (Suc (Canonicalization.size x +\n                          Canonicalization.size e))))\n 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \\<sqsupseteq> BinaryExpr BinSub x e\nvariables:\n    e, x :: IRExpr","pos":{"line":12,"offset":186,"end_offset":187,"file":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}},{"kind":"error","message":"Bad context for command \"end\"\\<^here> -- using reset state","pos":{"line":14,"offset":189,"end_offset":192,"file":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":10,"failed":2,"total":12,"consolidated":true,"canceled":false,"ok":false,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy"}],"task":"6335b54f-f9f1-4978-9814-c7295bb6de81"}
+2024-01-03T21:57:03.645+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"70bc331f-f4d7-4818-800b-ab2bcd378a46"}
+
+2024-01-03T21:57:03.644+10:00 DEBUG 9872 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Get Response for Auto: TheoryResponse(ok=false, errors=[TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinSub x e)
+    < Suc (Suc (Suc (Suc (Canonicalization.size x +
+                          Canonicalization.size e))))
+ 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \<sqsupseteq> BinaryExpr BinSub x e
+variables:
+    e, x :: IRExpr, position=TaskMessage.Position(id=null, line=12, offset=186, endOffset=187, file=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=14, offset=189, endOffset=192, file=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy), theory=null, session=null, percentage=null)], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=false, total=12, unprocessed=0, running=0, warned=0, failed=2, finished=10, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinSub x e)
+    < Suc (Suc (Suc (Suc (Canonicalization.size x +
+                          Canonicalization.size e))))
+ 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \<sqsupseteq> BinaryExpr BinSub x e
+variables:
+    e, x :: IRExpr, position=TaskMessage.Position(id=null, line=12, offset=186, endOffset=187, file=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=14, offset=189, endOffset=192, file=/tmp/isabelle-achmadafriza/server_session4351828463005616391/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-03T21:57:03.646+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: OK {"task":"63074332-7747-4fd8-9a0a-e6bb83ed0c2f"}
+2024-01-03T21:57:03.990+10:00 DEBUG 9872 --- [veritest] [               ] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"63074332-7747-4fd8-9a0a-e6bb83ed0c2f"}
