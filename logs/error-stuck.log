@@ -1,0 +1,977 @@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v3.2.1-SNAPSHOT)
+
+2024-01-06T00:41:51.747+10:00  INFO 17552 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Starting VeritestApplication using Java 21.0.1 with PID 17552 (C:\Programming\Thesis\Veritest\build\classes\java\main started by Afriza in C:\Programming\Thesis\Veritest)
+2024-01-06T00:41:51.752+10:00 DEBUG 17552 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Running with Spring Boot v3.2.1-SNAPSHOT, Spring v6.1.2
+2024-01-06T00:41:51.753+10:00  INFO 17552 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T00:41:51.779+10:00  INFO 17552 --- [veritest] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-06T00:41:51.779+10:00  INFO 17552 --- [veritest] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-06T00:41:52.670+10:00  INFO 17552 --- [veritest] [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2024-01-06T00:41:52.678+10:00  INFO 17552 --- [veritest] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-06T00:41:52.679+10:00  INFO 17552 --- [veritest] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T00:41:52.707+10:00  INFO 17552 --- [veritest] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-06T00:41:52.707+10:00  INFO 17552 --- [veritest] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 928 ms
+2024-01-06T00:41:53.424+10:00  INFO 17552 --- [veritest] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-06T00:41:53.431+10:00  INFO 17552 --- [veritest] [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-06T00:41:53.474+10:00  INFO 17552 --- [veritest] [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path ''
+2024-01-06T00:41:53.481+10:00  INFO 17552 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Started VeritestApplication in 2.04 seconds (process running for 2.979)
+2024-01-06T00:41:53.569+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: ### No line editor: "rlwrap"
+2024-01-06T00:41:53.570+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : No enum constant com.veriopt.veritest.isabelle.response.ResultType.###
+
+java.lang.IllegalArgumentException: No enum constant com.veriopt.veritest.isabelle.response.ResultType.###
+	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[?:?]
+	at com.veriopt.veritest.isabelle.response.ResultType.valueOf(ResultType.java:3) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:182) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:169) ~[main/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-01-06T00:41:53.607+10:00  INFO 17552 --- [veritest] [-172.16.117.149] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-06T00:41:53.607+10:00  INFO 17552 --- [veritest] [-172.16.117.149] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-06T00:41:53.607+10:00  INFO 17552 --- [veritest] [-172.16.117.149] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2024-01-06T00:41:55.713+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: server "isabelle" = 127.0.0.1:8081 (password "8381448c-0e1d-4a19-85a8-3adea8ea24d3")
+2024-01-06T00:41:55.713+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : No enum constant com.veriopt.veritest.isabelle.response.ResultType.server
+
+java.lang.IllegalArgumentException: No enum constant com.veriopt.veritest.isabelle.response.ResultType.server
+	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[?:?]
+	at com.veriopt.veritest.isabelle.response.ResultType.valueOf(ResultType.java:3) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:182) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:169) ~[main/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-01-06T00:41:55.718+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}
+2024-01-06T00:41:55.724+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid Task
+ at [Source: (String)"{"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}"; line: 1, column: 61]
+
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Invalid Task
+ at [Source: (String)"{"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}"; line: 1, column: 61]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.veriopt.veritest.isabelle.TaskDeserializer.deserialize(TaskDeserializer.java:59) ~[main/:?]
+	at com.veriopt.veritest.isabelle.TaskDeserializer.deserialize(TaskDeserializer.java:20) ~[main/:?]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4825) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3772) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3740) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:198) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:169) ~[main/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-01-06T00:42:05.323+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Auto Proof for ID = 1234
+2024-01-06T00:42:05.323+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Nitpick for ID = 1234
+2024-01-06T00:42:05.323+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:05.328+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:05.331+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:05.332+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:05.332+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 5a7e1043-f7bb-4746-9037-08484729fb3e waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:05.332+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 5a7e1043-f7bb-4746-9037-08484729fb3e waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:05.334+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:05.334+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 104b723e-863c-4d4e-801d-5acf61e6a529 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:05.334+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:05.334+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 104b723e-863c-4d4e-801d-5acf61e6a529 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:05.335+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:05.336+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 6945c9d0-0854-480d-9e9b-f6aeab844077 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:05.336+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 6945c9d0-0854-480d-9e9b-f6aeab844077 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:05.678+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:05.678+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:05.678+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:05.678+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:05.700+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:05.700+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:05.709+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:05.709+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:05.717+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:05.717+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:05.735+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:05.735+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:05.737+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:05.737+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:05.754+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:05.754+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:05.843+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:05.844+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:05.874+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:05.874+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:05.898+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:05.898+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:05.914+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:05.914+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:06.456+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:06.457+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:06.499+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:06.499+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:06.754+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:06.754+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:07.297+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:07.297+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:07.317+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:07.318+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:07.375+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:07.376+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:07.394+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:07.394+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:07.447+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:07.447+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:07.469+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:07.469+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:07.568+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:07.568+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:07.603+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:07.603+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:07.681+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:07.681+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:07.811+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:07.812+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:07.903+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:07.903+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:08.051+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:08.051+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:08.517+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:08.517+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.535+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:08.535+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:08.565+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:08.565+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.588+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:08.588+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:08.633+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:08.634+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.641+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:08.641+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.651+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:08.652+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:08.660+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:08.661+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:08.670+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:08.671+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.691+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:08.692+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:08.700+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:08.701+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:08.718+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:08.718+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:09.245+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:09.245+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:09.265+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:09.266+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:09.484+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:09.485+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.581+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:09.581+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.700+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:09.700+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.716+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:09.716+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.782+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:09.782+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.836+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:09.837+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:09.994+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:09.995+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:10.018+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:10.018+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:10.080+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:10.081+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:10.095+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:10.096+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:10.128+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:10.128+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:10.142+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:10.143+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:10.523+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:10.523+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:11.579+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:11.580+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:11.663+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:11.663+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:11.716+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:11.716+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:12.004+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:12.004+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:12.018+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:12.018+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:13.067+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:13.067+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:13.067+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:13.067+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:13.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:13.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:13.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:13.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:13.268+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:13.268+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:13.268+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:13.268+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:13.417+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:13.418+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:13.418+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:13.418+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:13.790+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:13.791+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:14.748+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:14.748+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:14.865+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:14.865+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:14.873+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:14.873+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.003+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:15.003+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.023+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:15.023+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.036+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:15.036+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.085+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:15.085+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.125+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:15.125+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.136+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:15.136+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.160+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:15.160+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.186+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:15.186+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.253+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:15.253+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.473+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:15.474+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:15.536+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:15.536+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:15.615+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:15.615+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:15.694+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:15.694+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:15.905+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:15.906+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:16.251+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:16.251+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:17.303+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 183
+2024-01-06T00:42:17.303+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"c97838a0-6ccd-4a92-83ba-230893178d00","tmp_dir":"/tmp/isabelle-achmadafriza/server_session10563511756019705044","task":"104b723e-863c-4d4e-801d-5acf61e6a529"}
+2024-01-06T00:42:17.309+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 183
+2024-01-06T00:42:17.309+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"6bf2228e-18e3-49cf-8003-f6b84ae0b429","tmp_dir":"/tmp/isabelle-achmadafriza/server_session15475313259952798095","task":"5a7e1043-f7bb-4746-9037-08484729fb3e"}
+2024-01-06T00:42:17.309+10:00 DEBUG 17552 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 104b723e-863c-4d4e-801d-5acf61e6a529 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:17.310+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 5a7e1043-f7bb-4746-9037-08484729fb3e got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:17.326+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:17.326+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+nitpick
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:17.326+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:17.326+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:17.328+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"6bf2228e-18e3-49cf-8003-f6b84ae0b429"}
+
+2024-01-06T00:42:17.339+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063"}
+2024-01-06T00:42:17.340+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"c97838a0-6ccd-4a92-83ba-230893178d00"}
+
+2024-01-06T00:42:17.340+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 4deece9e-8ebb-4dec-91dd-57dc39a0b063 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:17.340+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 4deece9e-8ebb-4dec-91dd-57dc39a0b063 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:17.341+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03"}
+2024-01-06T00:42:17.341+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 65c89c6c-e26b-4ab0-8957-3314d2bd1f03 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:17.341+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 65c89c6c-e26b-4ab0-8957-3314d2bd1f03 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:17.534+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:17.534+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":7,"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03","message":"theory Draft.AutomatedTest 7%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:17.534+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:17.534+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":7,"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063","message":"theory Draft.AutomatedTest 7%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:17.680+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:17.680+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":35,"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03","message":"theory Draft.AutomatedTest 35%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:17.724+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:17.724+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":21,"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063","message":"theory Draft.AutomatedTest 21%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:17.795+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:17.796+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:17.825+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:17.825+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:18.440+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:18.440+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:18.718+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:18.718+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:18.853+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:18.853+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:18.866+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:18.866+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:18.927+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:18.927+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:19.062+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:19.062+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:19.716+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:19.716+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:21.060+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 182
+2024-01-06T00:42:21.060+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"cb9ba6bf-80bf-4c26-8aac-0c1cd9895d44","tmp_dir":"/tmp/isabelle-achmadafriza/server_session4344927461688382328","task":"6945c9d0-0854-480d-9e9b-f6aeab844077"}
+2024-01-06T00:42:21.061+10:00 DEBUG 17552 --- [veritest] [nPool-worker-11] c.v.v.i.IsabelleProcess                  : 6945c9d0-0854-480d-9e9b-f6aeab844077 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:21.066+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:21.066+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+.
+
+end
+
+end
+
+2024-01-06T00:42:21.066+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"cb9ba6bf-80bf-4c26-8aac-0c1cd9895d44"}
+
+2024-01-06T00:42:21.068+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"ba439a85-343d-4784-91cf-073a52d47e20"}
+2024-01-06T00:42:21.068+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : ba439a85-343d-4784-91cf-073a52d47e20 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:21.068+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : ba439a85-343d-4784-91cf-073a52d47e20 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:21.213+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:21.213+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":8,"task":"ba439a85-343d-4784-91cf-073a52d47e20","message":"theory Draft.AutomatedTest 8%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:21.364+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:21.364+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":41,"task":"ba439a85-343d-4784-91cf-073a52d47e20","message":"theory Draft.AutomatedTest 41%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:21.493+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:21.493+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"ba439a85-343d-4784-91cf-073a52d47e20","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:32.628+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:42:32.628+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:32.628+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:42:32.628+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:32.642+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 1013
+2024-01-06T00:42:32.643+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy"}},{"kind":"writeln","message":"Nitpicking formula...","pos":{"line":12,"offset":190,"end_offset":197,"file":"/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy"}},{"kind":"writeln","message":"Nitpick checked 21 of 55 scopes","pos":{"line":12,"offset":190,"end_offset":197,"file":"/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":14,"failed":0,"total":14,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy"}],"task":"65c89c6c-e26b-4ab0-8957-3314d2bd1f03"}
+2024-01-06T00:42:32.648+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 4039
+2024-01-06T00:42:32.648+10:00 DEBUG 17552 --- [veritest] [nPool-worker-13] c.v.v.i.IsabelleProcess                  : 65c89c6c-e26b-4ab0-8957-3314d2bd1f03 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:32.648+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"Sledgehammering...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"e found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"verit found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"spass found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"zipperposition found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"cvc4 found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"zipperposition: Try this: apply (simp add: less_SucI size_binary_rhs trans_less_add2) (0.5 ms)","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"vampire found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"zipperposition found a proof...","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"spass: Try this: apply (simp add: less_Suc_eq size_binary_rhs trans_less_add2) (0.8 ms)","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"cvc4: Found duplicate proof","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"verit: Found duplicate proof","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"e: Try this: apply (metis Suc_eq_plus1 add.commute size_binary_rhs trans_less_add2) (55 ms)","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"zipperposition: Try this: using less_Suc_eq size_binary_rhs trans_less_add2 apply presburger (0.9 ms)","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"vampire: Try this: apply (simp add: less_SucI pos_add_strict size_binary_rhs size_pos) (1 ms)","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}},{"kind":"writeln","message":"Done","pos":{"line":12,"offset":190,"end_offset":202,"file":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":14,"failed":0,"total":14,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy"}],"task":"4deece9e-8ebb-4dec-91dd-57dc39a0b063"}
+2024-01-06T00:42:32.649+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 4deece9e-8ebb-4dec-91dd-57dc39a0b063 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:32.652+10:00 DEBUG 17552 --- [veritest] [       Thread-9] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"6bf2228e-18e3-49cf-8003-f6b84ae0b429"}
+
+2024-01-06T00:42:32.651+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Get Response for Nitpick: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=14, unprocessed=0, running=0, warned=0, failed=0, finished=14, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Nitpicking formula..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=197, file=/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Nitpick checked 21 of 55 scopes, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=197, file=/tmp/isabelle-achmadafriza/server_session10563511756019705044/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:42:32.651+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=14, unprocessed=0, running=0, warned=0, failed=0, finished=14, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=e found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=verit found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=spass found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=cvc4 found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition: Try this: apply (simp add: less_SucI size_binary_rhs trans_less_add2) (0.5 ms), position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=vampire found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition found a proof..., position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=spass: Try this: apply (simp add: less_Suc_eq size_binary_rhs trans_less_add2) (0.8 ms), position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=cvc4: Found duplicate proof, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=verit: Found duplicate proof, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=e: Try this: apply (metis Suc_eq_plus1 add.commute size_binary_rhs trans_less_add2) (55 ms), position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition: Try this: using less_Suc_eq size_binary_rhs trans_less_add2 apply presburger (0.9 ms), position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=vampire: Try this: apply (simp add: less_SucI pos_add_strict size_binary_rhs size_pos) (1 ms), position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Done, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=202, file=/tmp/isabelle-achmadafriza/server_session15475313259952798095/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:42:32.653+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"94b66367-e3da-468d-8f13-6238d90d73c2"}
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [       Thread-9] c.v.v.i.IsabelleProcess                  : 94b66367-e3da-468d-8f13-6238d90d73c2 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [       Thread-8] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"c97838a0-6ccd-4a92-83ba-230893178d00"}
+
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [       Thread-9] c.v.v.i.IsabelleProcess                  : 94b66367-e3da-468d-8f13-6238d90d73c2 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [nPool-worker-20] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.s.IsabelleService                  : Sledgehammer for ID = 1234
+2024-01-06T00:42:32.654+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"83b01580-757e-459c-b0bb-ef66424506e7"}
+2024-01-06T00:42:32.655+10:00 DEBUG 17552 --- [veritest] [       Thread-8] c.v.v.i.IsabelleProcess                  : 83b01580-757e-459c-b0bb-ef66424506e7 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:32.655+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:32.655+10:00 DEBUG 17552 --- [veritest] [       Thread-8] c.v.v.i.IsabelleProcess                  : 83b01580-757e-459c-b0bb-ef66424506e7 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:42:32.656+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:32.656+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 23762cda-6868-4632-89c0-02e53f53c6f8 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:32.656+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:32.656+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 23762cda-6868-4632-89c0-02e53f53c6f8 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:32.658+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:32.658+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcess                  : b51b1daf-d438-4b8d-a7a3-74dab1b0d635 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:32.658+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcess                  : b51b1daf-d438-4b8d-a7a3-74dab1b0d635 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:32.658+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:32.659+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:32.659+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 5e7e0feb-4bd2-434d-97c4-ff3f65483c93 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:32.659+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:32.659+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 5e7e0feb-4bd2-434d-97c4-ff3f65483c93 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:32.660+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:32.660+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 32eeb570-c1d6-4037-8b47-050da2794935 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:32.660+10:00 DEBUG 17552 --- [veritest] [nPool-worker-20] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-01-06T00:42:32.660+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 32eeb570-c1d6-4037-8b47-050da2794935 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:32.661+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:32.662+10:00 DEBUG 17552 --- [veritest] [nPool-worker-20] c.v.v.i.IsabelleProcess                  : 9b5bd7e3-ce25-48cc-8856-536b9f01b41a waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:32.662+10:00 DEBUG 17552 --- [veritest] [nPool-worker-20] c.v.v.i.IsabelleProcess                  : 9b5bd7e3-ce25-48cc-8856-536b9f01b41a waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:32.950+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"83b01580-757e-459c-b0bb-ef66424506e7"}
+2024-01-06T00:42:32.951+10:00 DEBUG 17552 --- [veritest] [nPool-worker-17] c.v.v.i.IsabelleProcess                  : 83b01580-757e-459c-b0bb-ef66424506e7 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:33.038+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"94b66367-e3da-468d-8f13-6238d90d73c2"}
+2024-01-06T00:42:33.039+10:00 DEBUG 17552 --- [veritest] [nPool-worker-22] c.v.v.i.IsabelleProcess                  : 94b66367-e3da-468d-8f13-6238d90d73c2 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:33.148+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:33.148+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:33.148+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:33.148+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:33.177+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:33.177+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:33.177+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:33.177+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:33.178+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:33.178+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:33.178+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:33.178+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:33.199+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:33.199+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:33.199+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:33.199+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:33.212+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:33.212+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:33.213+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:33.213+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:33.218+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:33.218+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:33.218+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:33.218+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:33.235+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:33.235+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:33.235+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:33.235+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:33.250+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:33.250+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:33.250+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:33.250+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:33.425+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:33.425+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:33.475+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:33.475+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:33.516+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:33.516+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:33.545+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:33.545+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:34.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:34.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:34.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:34.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:34.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:34.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:34.133+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:34.133+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:34.524+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:34.524+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:35.069+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:35.069+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:35.069+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:35.069+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:35.069+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:35.069+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:35.159+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:35.159+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:35.159+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:35.159+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:35.159+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:35.159+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:35.211+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:35.211+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:35.262+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:35.262+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:35.262+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:35.262+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:35.263+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:35.263+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:35.410+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:35.411+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:35.411+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:35.411+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:35.411+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:35.411+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:35.436+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:35.436+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:35.556+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:35.556+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:35.761+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:35.761+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:35.855+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:35.855+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:36.017+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:36.017+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:36.158+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:36.158+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:36.315+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:42:36.315+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"ba439a85-343d-4784-91cf-073a52d47e20","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:36.318+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 1964
+2024-01-06T00:42:36.319+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":false,"errors":[{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size y\n    < Suc (Suc (Canonicalization.size x +\n                Canonicalization.size (BinaryExpr BinSub x y)))\n 2. BinaryExpr BinSub x (BinaryExpr BinSub x y) \\<sqsupseteq> y\nvariables:\n    x, y :: IRExpr","pos":{"line":12,"offset":190,"end_offset":191,"file":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}},{"kind":"error","message":"Bad context for command \"end\"\\<^here> -- using reset state","pos":{"line":14,"offset":193,"end_offset":196,"file":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}}],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}},{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size y\n    < Suc (Suc (Canonicalization.size x +\n                Canonicalization.size (BinaryExpr BinSub x y)))\n 2. BinaryExpr BinSub x (BinaryExpr BinSub x y) \\<sqsupseteq> y\nvariables:\n    x, y :: IRExpr","pos":{"line":12,"offset":190,"end_offset":191,"file":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}},{"kind":"error","message":"Bad context for command \"end\"\\<^here> -- using reset state","pos":{"line":14,"offset":193,"end_offset":196,"file":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":10,"failed":2,"total":12,"consolidated":true,"canceled":false,"ok":false,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy"}],"task":"ba439a85-343d-4784-91cf-073a52d47e20"}
+2024-01-06T00:42:36.320+10:00 DEBUG 17552 --- [veritest] [nPool-worker-11] c.v.v.i.IsabelleProcess                  : ba439a85-343d-4784-91cf-073a52d47e20 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:36.322+10:00 DEBUG 17552 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Get Response for Auto: TheoryResponse(ok=false, errors=[TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size y
+    < Suc (Suc (Canonicalization.size x +
+                Canonicalization.size (BinaryExpr BinSub x y)))
+ 2. BinaryExpr BinSub x (BinaryExpr BinSub x y) \<sqsupseteq> y
+variables:
+    x, y :: IRExpr, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=191, file=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=14, offset=193, endOffset=196, file=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy), theory=null, session=null, percentage=null)], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=false, total=12, unprocessed=0, running=0, warned=0, failed=2, finished=10, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size y
+    < Suc (Suc (Canonicalization.size x +
+                Canonicalization.size (BinaryExpr BinSub x y)))
+ 2. BinaryExpr BinSub x (BinaryExpr BinSub x y) \<sqsupseteq> y
+variables:
+    x, y :: IRExpr, position=TaskMessage.Position(id=null, line=12, offset=190, endOffset=191, file=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=14, offset=193, endOffset=196, file=/tmp/isabelle-achmadafriza/server_session4344927461688382328/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:42:36.323+10:00 DEBUG 17552 --- [veritest] [      Thread-10] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"cb9ba6bf-80bf-4c26-8aac-0c1cd9895d44"}
+
+2024-01-06T00:42:36.324+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"95c177ff-4343-45bb-ad47-17c9bce42869"}
+2024-01-06T00:42:36.324+10:00 DEBUG 17552 --- [veritest] [      Thread-10] c.v.v.i.IsabelleProcess                  : 95c177ff-4343-45bb-ad47-17c9bce42869 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:36.324+10:00 DEBUG 17552 --- [veritest] [      Thread-10] c.v.v.i.IsabelleProcess                  : 95c177ff-4343-45bb-ad47-17c9bce42869 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:42:36.371+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:36.371+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:36.416+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:36.416+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.416+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:36.416+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.480+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:36.480+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.480+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:36.480+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.556+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:36.557+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.557+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:36.557+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.568+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:36.568+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.568+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:36.568+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.606+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:36.606+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.606+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:36.606+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.612+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"95c177ff-4343-45bb-ad47-17c9bce42869"}
+2024-01-06T00:42:36.613+10:00 DEBUG 17552 --- [veritest] [nPool-worker-22] c.v.v.i.IsabelleProcess                  : 95c177ff-4343-45bb-ad47-17c9bce42869 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:42:36.638+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:36.639+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:36.639+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:36.639+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:36.795+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:36.796+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:36.897+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:36.898+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:37.035+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:37.036+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:37.050+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:37.050+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:37.058+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:37.058+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.123+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:37.123+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:37.160+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:37.160+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.186+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:37.186+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:37.279+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:37.279+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.289+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:37.289+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.312+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:37.313+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:37.343+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:37.343+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.393+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:37.393+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:37.393+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:37.393+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:38.035+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:38.035+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:38.304+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:38.304+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.355+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:38.355+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:38.434+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:38.434+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.498+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:38.498+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:38.603+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:38.604+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.614+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:38.615+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:38.620+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:38.621+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.642+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:38.642+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:38.690+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:38.691+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.732+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:38.732+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:38.732+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:38.732+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:38.767+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:38.767+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:38.851+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:38.851+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:39.215+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:39.216+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:39.340+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:39.340+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:39.424+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:39.424+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:39.577+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:39.577+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:39.729+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:39.729+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:39.765+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 117
+2024-01-06T00:42:39.765+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:39.859+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:39.859+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:41.512+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 115
+2024-01-06T00:42:41.512+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:41.645+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:41.645+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:41.664+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 118
+2024-01-06T00:42:41.664+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:41.758+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:41.758+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:41.854+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:41.854+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:42.209+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:42.209+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:42.656+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:42.656+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:43.396+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:43.396+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:43.643+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:43.643+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:43.816+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:43.816+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:43.921+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:43.921+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:43.941+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:43.941+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:44.004+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:44.004+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:44.159+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:44.159+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:44.242+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:44.242+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:44.320+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:44.321+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:44.394+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:44.394+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:44.537+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:44.537+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:44.594+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:44.594+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:44.634+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:44.634+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:44.776+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 137
+2024-01-06T00:42:44.776+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:44.842+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:44.842+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:45.064+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:45.064+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:45.320+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:45.320+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:46.195+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:46.195+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.388+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:46.388+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.511+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:46.511+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:46.573+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:46.573+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:46.600+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:46.600+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.623+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:46.623+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.687+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:46.687+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:46.715+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:46.715+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.767+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:46.767+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:46.828+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 121
+2024-01-06T00:42:46.828+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:46.843+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:46.843+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:46.857+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:46.857+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:46.872+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:46.872+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:46.944+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:46.944+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:46.951+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:46.951+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:46.960+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:46.961+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:47.022+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 143
+2024-01-06T00:42:47.022+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:47.034+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:47.034+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:47.048+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:47.049+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:47.105+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:47.105+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:47.283+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 151
+2024-01-06T00:42:47.283+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:47.298+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:47.298+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:47.428+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:47.428+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:47.570+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:47.570+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:47.587+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 138
+2024-01-06T00:42:47.587+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:47.690+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:47.690+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:47.909+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:47.909+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.073+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:48.073+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.088+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:48.088+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.156+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:48.156+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.257+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:48.257+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.717+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:48.717+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:48.789+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 183
+2024-01-06T00:42:48.789+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"2251bec6-e6e9-41ef-a3fe-ae4e5ced30a5","tmp_dir":"/tmp/isabelle-achmadafriza/server_session10702945800228655961","task":"b51b1daf-d438-4b8d-a7a3-74dab1b0d635"}
+2024-01-06T00:42:48.789+10:00 DEBUG 17552 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : b51b1daf-d438-4b8d-a7a3-74dab1b0d635 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:48.792+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:48.792+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+apply (simp add: less_SucI pos_add_strict size_binary_rhs size_pos)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:48.793+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"2251bec6-e6e9-41ef-a3fe-ae4e5ced30a5"}
+
+2024-01-06T00:42:48.793+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca"}
+2024-01-06T00:42:48.794+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcess                  : dd1fd9fc-ebb0-4928-a933-c008ee2c6aca waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:48.794+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcess                  : dd1fd9fc-ebb0-4928-a933-c008ee2c6aca waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:48.851+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 180
+2024-01-06T00:42:48.851+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"bcb87eae-c6b0-4738-9012-c5b32c82f899","tmp_dir":"/tmp/isabelle-achmadafriza/server_session82804160113457621","task":"9b5bd7e3-ce25-48cc-8856-536b9f01b41a"}
+2024-01-06T00:42:48.852+10:00 DEBUG 17552 --- [veritest] [nPool-worker-25] c.v.v.i.IsabelleProcess                  : 9b5bd7e3-ce25-48cc-8856-536b9f01b41a got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:48.868+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 182
+2024-01-06T00:42:48.868+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"b8589e02-b419-4a9e-9cdb-7df57e7078cb","tmp_dir":"/tmp/isabelle-achmadafriza/server_session2897089433374026428","task":"32eeb570-c1d6-4037-8b47-050da2794935"}
+2024-01-06T00:42:48.869+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 32eeb570-c1d6-4037-8b47-050da2794935 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:48.872+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:48.872+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+apply (metis Suc_eq_plus1 add.commute size_binary_rhs trans_less_add2)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:48.872+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"b8589e02-b419-4a9e-9cdb-7df57e7078cb"}
+
+2024-01-06T00:42:48.873+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa"}
+2024-01-06T00:42:48.874+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:48.874+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:48.953+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:48.953+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":6,"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca","message":"theory Draft.AutomatedTest 6%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.034+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:49.034+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":6,"task":"3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa","message":"theory Draft.AutomatedTest 6%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.097+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:49.097+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":31,"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca","message":"theory Draft.AutomatedTest 31%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.176+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:49.176+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":25,"task":"3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa","message":"theory Draft.AutomatedTest 25%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.213+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:49.213+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.292+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:49.293+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:49.931+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 182
+2024-01-06T00:42:49.931+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"be3fda6b-69cd-4462-9e61-1bff9248f2c0","tmp_dir":"/tmp/isabelle-achmadafriza/server_session4112633325838615783","task":"5e7e0feb-4bd2-434d-97c4-ff3f65483c93"}
+2024-01-06T00:42:49.931+10:00 DEBUG 17552 --- [veritest] [nPool-worker-19] c.v.v.i.IsabelleProcess                  : 5e7e0feb-4bd2-434d-97c4-ff3f65483c93 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:49.935+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:49.935+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+apply (simp add: less_SucI size_binary_rhs trans_less_add2)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:49.935+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"be3fda6b-69cd-4462-9e61-1bff9248f2c0"}
+
+2024-01-06T00:42:49.936+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a"}
+2024-01-06T00:42:49.937+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 8eba8b0e-1486-4f06-bfc3-ed168959b29a waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:49.937+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 8eba8b0e-1486-4f06-bfc3-ed168959b29a waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:50.083+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:50.083+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":6,"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a","message":"theory Draft.AutomatedTest 6%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:50.237+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:50.237+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":18,"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a","message":"theory Draft.AutomatedTest 18%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:50.329+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 123
+2024-01-06T00:42:50.329+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:50.347+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:50.347+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":31,"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a","message":"theory Draft.AutomatedTest 31%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:50.453+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:50.453+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:50.762+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 125
+2024-01-06T00:42:50.762+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:50.976+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 124
+2024-01-06T00:42:50.976+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:50.997+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 122
+2024-01-06T00:42:50.997+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:51.078+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 131
+2024-01-06T00:42:51.078+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:51.251+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 133
+2024-01-06T00:42:51.251+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:52.084+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 139
+2024-01-06T00:42:52.084+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:54.744+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 183
+2024-01-06T00:42:54.744+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"session_id":"071da4f7-3552-40fc-b864-1e4217a1bc1d","tmp_dir":"/tmp/isabelle-achmadafriza/server_session12108735472319086609","task":"23762cda-6868-4632-89c0-02e53f53c6f8"}
+2024-01-06T00:42:54.745+10:00 DEBUG 17552 --- [veritest] [nPool-worker-10] c.v.v.i.IsabelleProcess                  : 23762cda-6868-4632-89c0-02e53f53c6f8 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-01-06T00:42:54.762+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : File exists: true
+2024-01-06T00:42:54.762+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Theory:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "(x - (x - y)) \<longmapsto>  y"
+apply (simp add: less_Suc_eq size_binary_rhs trans_less_add2)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-01-06T00:42:54.762+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"071da4f7-3552-40fc-b864-1e4217a1bc1d"}
+
+2024-01-06T00:42:54.765+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff"}
+2024-01-06T00:42:54.765+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : b5f1d842-b7c5-4236-9df4-dd00c1c39cff waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:42:54.765+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : b5f1d842-b7c5-4236-9df4-dd00c1c39cff waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-01-06T00:42:54.949+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 171
+2024-01-06T00:42:54.949+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":6,"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff","message":"theory Draft.AutomatedTest 6%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:55.475+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:55.475+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":31,"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff","message":"theory Draft.AutomatedTest 31%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:55.623+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:55.623+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":56,"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff","message":"theory Draft.AutomatedTest 56%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:42:55.743+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 173
+2024-01-06T00:42:55.743+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":99,"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff","message":"theory Draft.AutomatedTest 99%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:43:40.269+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 989
+2024-01-06T00:43:40.269+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy"}},{"kind":"writeln","message":"Sledgehammering...","pos":{"line":13,"offset":261,"end_offset":273,"file":"/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy"}},{"kind":"writeln","message":"No proof found","pos":{"line":13,"offset":261,"end_offset":273,"file":"/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":16,"failed":0,"total":16,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy"}],"task":"3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa"}
+2024-01-06T00:43:40.270+10:00 DEBUG 17552 --- [veritest] [nPool-worker-25] c.v.v.i.IsabelleProcess                  : 3a3b8654-9bac-4ff0-bf81-3d3ab09a56fa got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:43:40.274+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=13, offset=261, endOffset=273, file=/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=13, offset=261, endOffset=273, file=/tmp/isabelle-achmadafriza/server_session2897089433374026428/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:43:40.274+10:00 DEBUG 17552 --- [veritest] [      Thread-11] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"b8589e02-b419-4a9e-9cdb-7df57e7078cb"}
+
+2024-01-06T00:43:40.274+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"9e5a0fc6-c639-442f-bcaa-b8a48d0b5137"}
+2024-01-06T00:43:40.275+10:00 DEBUG 17552 --- [veritest] [      Thread-11] c.v.v.i.IsabelleProcess                  : 9e5a0fc6-c639-442f-bcaa-b8a48d0b5137 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:40.275+10:00 DEBUG 17552 --- [veritest] [      Thread-11] c.v.v.i.IsabelleProcess                  : 9e5a0fc6-c639-442f-bcaa-b8a48d0b5137 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:43:40.322+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:43:40.322+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:43:40.322+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 993
+2024-01-06T00:43:40.322+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy"}},{"kind":"writeln","message":"Sledgehammering...","pos":{"line":13,"offset":258,"end_offset":270,"file":"/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy"}},{"kind":"writeln","message":"No proof found","pos":{"line":13,"offset":258,"end_offset":270,"file":"/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":16,"failed":0,"total":16,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy"}],"task":"dd1fd9fc-ebb0-4928-a933-c008ee2c6aca"}
+2024-01-06T00:43:40.322+10:00 DEBUG 17552 --- [veritest] [nPool-worker-11] c.v.v.i.IsabelleProcess                  : dd1fd9fc-ebb0-4928-a933-c008ee2c6aca got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:43:40.324+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=13, offset=258, endOffset=270, file=/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=13, offset=258, endOffset=270, file=/tmp/isabelle-achmadafriza/server_session10702945800228655961/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:43:40.324+10:00 DEBUG 17552 --- [veritest] [      Thread-12] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"2251bec6-e6e9-41ef-a3fe-ae4e5ced30a5"}
+
+2024-01-06T00:43:40.325+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"f66e1924-e2cf-4b7a-be55-fc0a6b41ced9"}
+2024-01-06T00:43:40.326+10:00 DEBUG 17552 --- [veritest] [      Thread-12] c.v.v.i.IsabelleProcess                  : f66e1924-e2cf-4b7a-be55-fc0a6b41ced9 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:40.326+10:00 DEBUG 17552 --- [veritest] [      Thread-12] c.v.v.i.IsabelleProcess                  : f66e1924-e2cf-4b7a-be55-fc0a6b41ced9 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:43:40.611+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"9e5a0fc6-c639-442f-bcaa-b8a48d0b5137"}
+2024-01-06T00:43:40.612+10:00 DEBUG 17552 --- [veritest] [onPool-worker-7] c.v.v.i.IsabelleProcess                  : 9e5a0fc6-c639-442f-bcaa-b8a48d0b5137 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:40.659+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"f66e1924-e2cf-4b7a-be55-fc0a6b41ced9"}
+2024-01-06T00:43:40.660+10:00 DEBUG 17552 --- [veritest] [nPool-worker-14] c.v.v.i.IsabelleProcess                  : f66e1924-e2cf-4b7a-be55-fc0a6b41ced9 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:42.617+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:43:42.617+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:43:42.618+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 989
+2024-01-06T00:43:42.618+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy"}},{"kind":"writeln","message":"Sledgehammering...","pos":{"line":13,"offset":250,"end_offset":262,"file":"/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy"}},{"kind":"writeln","message":"No proof found","pos":{"line":13,"offset":250,"end_offset":262,"file":"/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":16,"failed":0,"total":16,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy"}],"task":"8eba8b0e-1486-4f06-bfc3-ed168959b29a"}
+2024-01-06T00:43:42.619+10:00 DEBUG 17552 --- [veritest] [nPool-worker-26] c.v.v.i.IsabelleProcess                  : 8eba8b0e-1486-4f06-bfc3-ed168959b29a got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:43:42.621+10:00 DEBUG 17552 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=13, offset=250, endOffset=262, file=/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=13, offset=250, endOffset=262, file=/tmp/isabelle-achmadafriza/server_session4112633325838615783/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:43:42.621+10:00 DEBUG 17552 --- [veritest] [      Thread-13] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"be3fda6b-69cd-4462-9e61-1bff9248f2c0"}
+
+2024-01-06T00:43:42.622+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"4d901ad3-6108-4989-8d21-e2d13177b6c1"}
+2024-01-06T00:43:42.622+10:00 DEBUG 17552 --- [veritest] [      Thread-13] c.v.v.i.IsabelleProcess                  : 4d901ad3-6108-4989-8d21-e2d13177b6c1 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:42.622+10:00 DEBUG 17552 --- [veritest] [      Thread-13] c.v.v.i.IsabelleProcess                  : 4d901ad3-6108-4989-8d21-e2d13177b6c1 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:43:42.956+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"4d901ad3-6108-4989-8d21-e2d13177b6c1"}
+2024-01-06T00:43:42.957+10:00 DEBUG 17552 --- [veritest] [nPool-worker-26] c.v.v.i.IsabelleProcess                  : 4d901ad3-6108-4989-8d21-e2d13177b6c1 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:47.730+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 175
+2024-01-06T00:43:47.730+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: NOTE {"percentage":100,"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff","message":"theory Draft.AutomatedTest 100%","kind":"writeln","session":"","theory":"Draft.AutomatedTest"}
+2024-01-06T00:43:47.731+10:00 ERROR 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Invalid response: 993
+2024-01-06T00:43:47.731+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"errors":[],"nodes":[{"messages":[{"kind":"writeln","message":"phase: TemporaryNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":93,"end_offset":98,"file":"/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy"}},{"kind":"writeln","message":"Sledgehammering...","pos":{"line":13,"offset":252,"end_offset":264,"file":"/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy"}},{"kind":"writeln","message":"No proof found","pos":{"line":13,"offset":252,"end_offset":264,"file":"/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":16,"failed":0,"total":16,"consolidated":true,"canceled":false,"ok":true,"warned":0},"theory_name":"Draft.AutomatedTest","node_name":"/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy"}],"task":"b5f1d842-b7c5-4236-9df4-dd00c1c39cff"}
+2024-01-06T00:43:47.732+10:00 DEBUG 17552 --- [veritest] [nPool-worker-19] c.v.v.i.IsabelleProcess                  : b5f1d842-b7c5-4236-9df4-dd00c1c39cff got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-01-06T00:43:47.734+10:00 DEBUG 17552 --- [veritest] [onPool-worker-2] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=7, offset=93, endOffset=98, file=/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=13, offset=252, endOffset=264, file=/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=13, offset=252, endOffset=264, file=/tmp/isabelle-achmadafriza/server_session12108735472319086609/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-01-06T00:43:47.734+10:00 DEBUG 17552 --- [veritest] [      Thread-14] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"071da4f7-3552-40fc-b864-1e4217a1bc1d"}
+
+2024-01-06T00:43:47.735+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: OK {"task":"c2784178-14c9-41d0-a144-02186bcdf5fa"}
+2024-01-06T00:43:47.735+10:00 DEBUG 17552 --- [veritest] [      Thread-14] c.v.v.i.IsabelleProcess                  : c2784178-14c9-41d0-a144-02186bcdf5fa waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-01-06T00:43:47.735+10:00 DEBUG 17552 --- [veritest] [      Thread-14] c.v.v.i.IsabelleProcess                  : c2784178-14c9-41d0-a144-02186bcdf5fa waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-01-06T00:43:48.067+10:00 DEBUG 17552 --- [veritest] [       Thread-4] c.v.v.i.I.Daemon                         : Read: FINISHED {"ok":true,"return_code":0,"task":"c2784178-14c9-41d0-a144-02186bcdf5fa"}
+2024-01-06T00:43:48.067+10:00 DEBUG 17552 --- [veritest] [nPool-worker-19] c.v.v.i.IsabelleProcess                  : c2784178-14c9-41d0-a144-02186bcdf5fa got class com.veriopt.veritest.isabelle.response.SessionStopResponse
