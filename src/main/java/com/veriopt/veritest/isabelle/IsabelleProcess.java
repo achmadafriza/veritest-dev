@@ -58,46 +58,35 @@ public class IsabelleProcess extends AbstractIsabelleClient {
         return future;
     }
 
-    private static class GetElement<T extends Task> implements Runnable {
-        private final IsabelleProcess process;
-
-        private final CompletableFuture<T> future;
-
-        private final String taskID;
-        private final Class<T> type;
-
-        GetElement(IsabelleProcess process, CompletableFuture<T> future, String taskID, Class<T> type) {
-            this.process = process;
-            this.future = future;
-            this.taskID = taskID;
-            this.type = type;
-        }
+    private record GetElement<T extends Task>(IsabelleProcess process,
+                                              CompletableFuture<T> future,
+                                              String taskID, Class<T> type) implements Runnable {
 
         @Override
-        public void run() {
-            while (true) {
-                // Await signal on not empty
-                this.process.asyncLock.lock();
-                try {
-                    while (this.process.getQueue().isEmpty()) {
-                        try {
-                            this.process.isEmpty.await();
-                        } catch (InterruptedException e) {
-                            future.completeExceptionally(e);
-                            Thread.currentThread().interrupt();
+            public void run() {
+                while (true) {
+                    // Await signal on not empty
+                    this.process.asyncLock.lock();
+                    try {
+                        while (this.process.getQueue().isEmpty()) {
+                            try {
+                                this.process.isEmpty.await();
+                            } catch (InterruptedException e) {
+                                future.completeExceptionally(e);
+                                Thread.currentThread().interrupt();
+                            }
                         }
+                    } finally {
+                        this.process.asyncLock.unlock();
                     }
-                } finally {
-                    this.process.asyncLock.unlock();
-                }
 
-                Task task = this.process.getQueue().peek();
-                if (type.isInstance(task) && (taskID.equals(task.getId()))) {
-                    log.debug("{} got {}", taskID, type);
-                    future.complete(type.cast(this.process.getQueue().remove()));
-                    break;
+                    Task task = this.process.getQueue().peek();
+                    if (type.isInstance(task) && (taskID.equals(task.getId()))) {
+                        log.debug("{} got {}", taskID, type);
+                        future.complete(type.cast(this.process.getQueue().remove()));
+                        break;
+                    }
                 }
             }
         }
-    }
 }
