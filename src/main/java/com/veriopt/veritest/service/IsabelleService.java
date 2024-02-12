@@ -78,35 +78,29 @@ public class IsabelleService {
     }
 
     private TheoryResponse submitTheory(String generatedTheory) {
-        Task sessionTask;
-        try {
-            sessionTask = this.client.startSession(new SessionStartRequest(this.sessionConfig));
-        } catch (InterruptedException e) {
-            // TODO: handle exception
-            throw new RuntimeException(e);
-        }
-
-        String sessionId;
-        Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-        switch (sessionTask) {
-            case IsabelleGenericError error -> {
-                log.error("Session start error: {} | {}", error.getKind(), error.getMessage());
-
-                // TODO: handle exception
-                throw new RuntimeException(error.getMessage());
-            }
-            case SessionStartResponse response -> {
-                sessionId = response.getSessionId();
-                tempDir = tempDir.resolve(response.getTempDir());
-            }
-            default -> throw new UnsupportedOperationException();
-        }
-
-        Path tempFile = tempDir.resolve(TheoryFileTemplate.theoryFilename());
-        File file = tempFile.toFile();
-
         TheoryResponse theoryResponse;
+        File file = null;
+        String sessionId = null;
         try {
+            Task sessionTask = this.client.startSession(new SessionStartRequest(this.sessionConfig));
+            Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+            switch (sessionTask) {
+                case IsabelleGenericError error -> {
+                    log.error("Session start error: {} | {}", error.getKind(), error.getMessage());
+
+                    // TODO: handle exception
+                    throw new RuntimeException(error.getMessage());
+                }
+                case SessionStartResponse response -> {
+                    sessionId = response.getSessionId();
+                    tempDir = tempDir.resolve(response.getTempDir());
+                }
+                default -> throw new UnsupportedOperationException();
+            }
+
+            Path tempFile = tempDir.resolve(TheoryFileTemplate.theoryFilename());
+            file = tempFile.toFile();
+
             if (file.exists() || !file.createNewFile()) {
                 throw new IOException("File Cannot be created");
             }
@@ -137,22 +131,25 @@ public class IsabelleService {
             // TODO: handle exception
             throw new RuntimeException(e);
         } finally {
-            boolean ignored = file.delete();
+            if (file != null) {
+                boolean ignored = file.delete();
+            }
 
-            SessionStopRequest stopRequest = SessionStopRequest.builder()
+            if (sessionId != null) {
+                SessionStopRequest stopRequest = SessionStopRequest.builder()
                     .sessionID(sessionId)
                     .build();
 
-            // TODO: fix this
-            Thread stopThread = new Thread(() -> {
-                try {
-                    client.stopSession(stopRequest);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+                Thread stopThread = new Thread(() -> {
+                    try {
+                        client.stopSession(stopRequest);
+                    } catch (InterruptedException e) {
+                        log.error("Stop Session Interrupted", e);
+                    }
+                });
 
-            stopThread.start();
+                stopThread.start();
+            }
         }
 
         return theoryResponse;
