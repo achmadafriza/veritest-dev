@@ -97,7 +97,7 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
     }
 
     @Override
-    public CompletableFuture<Task> useTheory(@Valid @NotNull UseTheoryRequest request) throws InterruptedException {
+    public Task useTheory(@Valid @NotNull UseTheoryRequest request) throws InterruptedException {
         String taskId;
         try {
             taskId = this.client.submitTask(TaskType.USE_THEORIES, request);
@@ -119,6 +119,6 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
                 yield error;
             }
             default -> throw new UnsupportedOperationException();
-        });
+        }).join();
     }
 }

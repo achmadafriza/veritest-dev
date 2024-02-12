@@ -125,7 +125,7 @@ public class IsabelleService {
                     .theories(Collections.singletonList(TheoryFileTemplate.theoryName()))
                     .build();
 
-            Task taskResult = client.useTheory(useTheoryRequest).join();
+            Task taskResult = client.useTheory(useTheoryRequest);
 
             // TODO: handle exceptions
             theoryResponse = switch (taskResult) {

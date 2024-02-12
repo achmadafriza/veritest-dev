@@ -7,11 +7,15 @@ import com.veriopt.veritest.isabelle.response.ErrorTask;
 import com.veriopt.veritest.isabelle.response.ResultType;
 import com.veriopt.veritest.isabelle.response.Task;
 import com.veriopt.veritest.isabelle.utils.AsyncQueueDTO;
+import io.github.bucket4j.Bandwidth;
+import io.github.bucket4j.BandwidthBuilder;
+import io.github.bucket4j.Bucket;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.*;
+import java.time.Duration;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Condition;
@@ -23,6 +27,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class IsabelleProcessFacade implements IsabelleProcessInterface {
     private @NonNull ObjectMapper mapper;
 
+    private Bucket rateLimiter;
     private Lock syncLock;
     private Process process;
     private BufferedWriter writer;
@@ -72,6 +77,21 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
 
             this.daemonThread = new Thread(this.daemon);
             this.daemonThread.start();
+
+            /*
+            * Isabelle deadlocks if requests aren't delayed for 2 seconds.
+            * Source: https://git.tu-berlin.de/cobalt.rocks/isa-bench
+            * From: Joshua Kobschätzki j.k@cobalt.rocks
+            * */
+            Bandwidth bandwidth = BandwidthBuilder.builder()
+                    .capacity(1)
+                    .refillIntervally(1, Duration.ofSeconds(2))
+                    .initialTokens(1)
+                    .build();
+
+            this.rateLimiter = Bucket.builder()
+                    .addLimit(bandwidth)
+                    .build();
         } catch (IOException e) {
             // TODO: handle exception
             log.error(e.getMessage(), e);
@@ -99,6 +119,8 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
     * */
     @Override
     public String submitTask(TaskType type, Object args) throws IOException, InterruptedException {
+        this.rateLimiter.asBlocking().consume(1);
+
         String request = type + " " + mapper.writeValueAsString(args) + System.lineSeparator();
         if (!this.process.isAlive()) {
             // TODO: handle exception
