@@ -28,6 +28,9 @@ isabelle:
     include_sessions:
       - OptimizationDSL
     verbose: true
+  rate-limit:
+    token: 1
+    period: 2
 
 management:
   endpoints:

@@ -3,6 +3,7 @@ package com.veriopt.veritest.isabelle;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
+import com.veriopt.veritest.config.LimiterConfig;
 import com.veriopt.veritest.isabelle.response.ErrorTask;
 import com.veriopt.veritest.isabelle.response.ResultType;
 import com.veriopt.veritest.isabelle.response.Task;
@@ -26,6 +27,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @RequiredArgsConstructor
 class IsabelleProcessFacade implements IsabelleProcessInterface {
     private @NonNull ObjectMapper mapper;
+    private @NonNull LimiterConfig config;
 
     private Bucket rateLimiter;
     private Lock syncLock;
@@ -84,9 +86,9 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
             * From: Joshua Kobschätzki j.k@cobalt.rocks
             * */
             Bandwidth bandwidth = BandwidthBuilder.builder()
-                    .capacity(1)
-                    .refillIntervally(1, Duration.ofSeconds(2))
-                    .initialTokens(1)
+                    .capacity(this.config.getToken())
+                    .refillIntervally(this.config.getToken(), Duration.ofSeconds(this.config.getPeriod()))
+                    .initialTokens(this.config.getToken())
                     .build();
 
             this.rateLimiter = Bucket.builder()

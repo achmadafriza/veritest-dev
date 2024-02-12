@@ -1,6 +1,7 @@
 package com.veriopt.veritest.isabelle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.veriopt.veritest.config.LimiterConfig;
 import com.veriopt.veritest.isabelle.response.Task;
 import com.veriopt.veritest.isabelle.utils.AsyncQueueDTO;
 import lombok.NonNull;
@@ -25,10 +26,11 @@ public class IsabelleProcess extends AbstractIsabelleClient {
     public IsabelleProcess(@Value("${isabelle.server.name}") @NonNull String serverName,
                            @Value("${isabelle.server.port}") @NonNull String serverPort,
                            @Value("${isabelle.server.password}") @NonNull String password,
+                           @NonNull LimiterConfig config,
                            @Qualifier("isabelleMapper") @NonNull ObjectMapper mapper) {
         super();
 
-        IsabelleProcessInterface client = new IsabelleProcessFacade(mapper);
+        IsabelleProcessInterface client = new IsabelleProcessFacade(mapper, config);
         this.setClient(client);
 
         AsyncQueueDTO dto = client.open(serverName, serverPort, password);
