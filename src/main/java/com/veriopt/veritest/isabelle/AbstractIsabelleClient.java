@@ -13,9 +13,9 @@ import lombok.extern.log4j.Log4j2;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 @Log4j2
 @RequiredArgsConstructor
@@ -29,96 +29,99 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
 
     protected abstract <T extends Task> CompletableFuture<T> getElement(String taskID, Class<T> type);
 
+    protected CompletableFuture<Object> anyOfCancelOthers(CompletableFuture<?>... futures) {
+        final CompletableFuture<Object> futureResult = CompletableFuture.anyOf(futures);
+        futureResult.thenRun(() -> Arrays.stream(futures)
+                .filter(completableFuture -> !completableFuture.isDone())
+                .forEach(completableFuture -> completableFuture.cancel(true)));
+
+        return futureResult;
+    }
+
     /**
      * 1 User -> 1 Session ID
      *        -> n Thread for each fork of Use Theory
      * 1 Thread -> 1 Task ID
     * */
     @Override
-    public Task startSession(@Valid @NotNull SessionStartRequest request) throws InterruptedException {
-        // TODO: Handle exception
-        Task result;
-        try {
-            String taskId = this.client.submitTask(TaskType.SESSION_START, request);
+    public CompletableFuture<Task> startSession(@Valid @NotNull SessionStartRequest request) {
+        CompletableFuture<String> future = new CompletableFuture<>();
+        CompletableFuture.runAsync(() -> {
+            try {
+                future.complete(this.client.submitTask(TaskType.SESSION_START, request));
+            } catch (IOException e) {
+                log.error("IO error on starting session", e);
+                future.completeExceptionally(e);
+            } catch (InterruptedException e) {
+                future.completeExceptionally(e);
+            }
+        });
 
-            result = (Task) CompletableFuture.anyOf(
-                    getElement(taskId, SessionStartResponse.class),
-                    getElement(taskId, IsabelleGenericError.class)
-            ).get();
-        } catch (ExecutionException e) {
-            // TODO: Handle logging
-            log.error("Task failure", e);
-            return null;
-        } catch (IOException e) {
-            // TODO: Handle logging
-            log.error("IO failure", e);
-            return null;
-        }
+        return future.thenCompose(taskId -> anyOfCancelOthers(
+                getElement(taskId, SessionStartResponse.class),
+                getElement(taskId, IsabelleGenericError.class)
+        )).thenApplyAsync(result -> {
+            if (result instanceof Task task) {
+                return task;
+            }
 
-        return switch (result) {
-            case SessionStartResponse response -> response;
-            case IsabelleGenericError error -> {
-                log.error("Isabelle start session error | {}: {}", error.getKind(), error.getMessage());
+            throw new UnsupportedOperationException();
+        });
+    }
+
+    @Override
+    public CompletableFuture<Task> stopSession(SessionStopRequest request) {
+        CompletableFuture<String> future = new CompletableFuture<>();
+        CompletableFuture.runAsync(() -> {
+            try {
+                future.complete(this.client.submitTask(TaskType.SESSION_STOP, request));
+            } catch (IOException e) {
+                log.error("IO error on stopping session", e);
+                future.completeExceptionally(e);
+            } catch (InterruptedException e) {
+                future.completeExceptionally(e);
+            }
+        });
+
+        return future.thenCompose(taskId -> anyOfCancelOthers(
+                getElement(taskId, SessionStopResponse.class),
+                getElement(taskId, SessionStopError.class)
+        )).thenApplyAsync(result -> switch (result) {
+            case SessionStopResponse response -> response;
+            case SessionStopError error -> {
+                log.error("Isabelle stop session error | {}: {}", error.getKind(), error.getMessage());
+
                 yield error;
             }
             default -> throw new UnsupportedOperationException();
-        };
+        });
     }
 
     @Override
-    public Task stopSession(SessionStopRequest request) throws InterruptedException {
-        String taskId;
-        try {
-            taskId = this.client.submitTask(TaskType.SESSION_STOP, request);
+    public CompletableFuture<Task> useTheory(@Valid @NotNull UseTheoryRequest request) {
+        CompletableFuture<String> future = new CompletableFuture<>();
+        CompletableFuture.runAsync(() -> {
+            try {
+                future.complete(this.client.submitTask(TaskType.USE_THEORIES, request));
+            } catch (IOException e) {
+                log.error("IO error on stopping session", e);
+                future.completeExceptionally(e);
+            } catch (InterruptedException e) {
+                future.completeExceptionally(e);
+            }
+        });
 
-            return CompletableFuture.anyOf(
-                    getElement(taskId, SessionStopResponse.class),
-                    getElement(taskId, SessionStopError.class)
-            ).thenApply(result -> switch (result) {
-                case SessionStopResponse response -> response;
-                case SessionStopError error -> {
-                    // TODO: throw exception
-                    log.error("Isabelle stop session error | {}: {}", error.getKind(), error.getMessage());
-                    yield error;
-                }
-                default -> throw new UnsupportedOperationException();
-            }).get();
-        } catch (ExecutionException e) {
-            // TODO: Handle exception
-            // TODO: Handle logging
-            log.error("Task failure", e);
-            return null;
-        } catch (IOException e) {
-            // TODO: Handle exception
-            // TODO: Handle logging
-            log.error("IO failure", e);
-            return null;
-        }
-    }
-
-    @Override
-    public Task useTheory(@Valid @NotNull UseTheoryRequest request) throws InterruptedException {
-        String taskId;
-        try {
-            taskId = this.client.submitTask(TaskType.USE_THEORIES, request);
-        }  catch (IOException e) {
-            // TODO: Handle exception
-            // TODO: Handle logging
-            log.error("IO failure", e);
-            return null;
-        }
-
-        return CompletableFuture.anyOf(
+        return future.thenCompose(taskId -> anyOfCancelOthers(
                 getElement(taskId, TheoryResponse.class),
                 getElement(taskId, IsabelleGenericError.class)
-        ).thenApply(result -> switch (result) {
+        )).thenApplyAsync(result -> switch (result) {
             case TheoryResponse response -> response;
             case IsabelleGenericError error -> {
-                // TODO: throw exception
-                log.error("Isabelle submit theory error | {}: {}", error.getKind(), error.getMessage());
+                log.error("Isabelle stop session error | {}: {}", error.getKind(), error.getMessage());
+
                 yield error;
             }
             default -> throw new UnsupportedOperationException();
-        }).join();
+        });
     }
 }

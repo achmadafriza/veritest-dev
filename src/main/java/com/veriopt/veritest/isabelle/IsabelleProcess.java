@@ -13,14 +13,15 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 @Log4j2
 @Component
 public class IsabelleProcess extends AbstractIsabelleClient {
-    private Lock asyncLock;
-    private Condition isEmpty;
+    private final Lock asyncLock;
+    private final Condition isEmpty;
 
     @Autowired
     public IsabelleProcess(@Value("${isabelle.server.name}") @NonNull String serverName,
@@ -44,51 +45,40 @@ public class IsabelleProcess extends AbstractIsabelleClient {
         this.getClient().close();
     }
 
-    // TODO: refactor this
     @Override
     protected <T extends Task> CompletableFuture<T> getElement(String taskID, Class<T> type) {
         log.debug("{} waiting for {}", taskID, type);
 
         // Source: https://stackoverflow.com/questions/23184964/jdk8-completablefuture-supplyasync-how-to-deal-with-interruptedexception
         CompletableFuture<T> future = new CompletableFuture<>();
+        CompletableFuture.runAsync(() -> {
+            while (Future.State.RUNNING.equals(future.state())) {
+                // Await signal on not empty
+                asyncLock.lock();
+                try {
+                    while (getQueue().isEmpty()) {
+                        try {
+                            isEmpty.await();
+                        } catch (InterruptedException e) {
+                            future.completeExceptionally(e);
+                            Thread.currentThread().interrupt();
+                        }
+                    }
 
-        /*
-        * Usage of runAsync() starves the ThreadPool as some of getElement() run indefinitely
-        * */
-        new Thread(new GetElement<T>(this, future, taskID, type)).start();
+                    Task task = getQueue().peek();
+                    if (type.isInstance(task) && (taskID.equals(task.getId()))) {
+                        log.debug("{} got {}", taskID, type);
+
+                        // Only one thread will have the corresponding Task
+                        future.complete(type.cast(getQueue().remove()));
+                        break;
+                    }
+                } finally {
+                    asyncLock.unlock();
+                }
+            }
+        });
 
         return future;
     }
-
-    private record GetElement<T extends Task>(IsabelleProcess process,
-                                              CompletableFuture<T> future,
-                                              String taskID, Class<T> type) implements Runnable {
-
-        @Override
-            public void run() {
-                while (true) {
-                    // Await signal on not empty
-                    this.process.asyncLock.lock();
-                    try {
-                        while (this.process.getQueue().isEmpty()) {
-                            try {
-                                this.process.isEmpty.await();
-                            } catch (InterruptedException e) {
-                                future.completeExceptionally(e);
-                                Thread.currentThread().interrupt();
-                            }
-                        }
-                    } finally {
-                        this.process.asyncLock.unlock();
-                    }
-
-                    Task task = this.process.getQueue().peek();
-                    if (type.isInstance(task) && (taskID.equals(task.getId()))) {
-                        log.debug("{} got {}", taskID, type);
-                        future.complete(type.cast(this.process.getQueue().remove()));
-                        break;
-                    }
-                }
-            }
-        }
 }

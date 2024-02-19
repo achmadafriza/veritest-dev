@@ -8,7 +8,10 @@ import com.veriopt.veritest.isabelle.IsabelleClient;
 import com.veriopt.veritest.isabelle.request.SessionStartRequest;
 import com.veriopt.veritest.isabelle.request.SessionStopRequest;
 import com.veriopt.veritest.isabelle.request.UseTheoryRequest;
-import com.veriopt.veritest.isabelle.response.*;
+import com.veriopt.veritest.isabelle.response.IsabelleGenericError;
+import com.veriopt.veritest.isabelle.response.SessionStartResponse;
+import com.veriopt.veritest.isabelle.response.TaskMessage;
+import com.veriopt.veritest.isabelle.response.TheoryResponse;
 import com.veriopt.veritest.isabelle.utils.Command;
 import com.veriopt.veritest.isabelle.utils.TheoryFileTemplate;
 import lombok.NonNull;
@@ -23,10 +26,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
-import java.util.*;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.*;
 
 @Log4j2
 @Service
@@ -54,10 +58,12 @@ public class IsabelleService {
 
         try {
             // TODO: should change this to return early on success
+            // idea: similar to anyOfCancelOthers
             CompletableFuture.allOf(futures).join();
         } catch (CancellationException | CompletionException e) {
             log.error(e.getMessage(), e);
 
+            // TODO: differentiate between failed and errors
             return IsabelleResult.builder()
                         .requestID(request.getRequestId())
                         .status(Status.FAILED)
@@ -77,144 +83,148 @@ public class IsabelleService {
                 .orElse(failedResult);
     }
 
-    private TheoryResponse submitTheory(String generatedTheory) {
-        TheoryResponse theoryResponse;
-        File file = null;
-        String sessionId = null;
-        try {
-            Task sessionTask = this.client.startSession(new SessionStartRequest(this.sessionConfig));
-            Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-            switch (sessionTask) {
-                case IsabelleGenericError error -> {
-                    log.error("Session start error: {} | {}", error.getKind(), error.getMessage());
-
-                    // TODO: handle exception
-                    throw new RuntimeException(error.getMessage());
-                }
-                case SessionStartResponse response -> {
-                    sessionId = response.getSessionId();
-                    tempDir = tempDir.resolve(response.getTempDir());
-                }
-                default -> throw new UnsupportedOperationException();
-            }
-
-            Path tempFile = tempDir.resolve(TheoryFileTemplate.theoryFilename());
-            file = tempFile.toFile();
-
-            if (file.exists() || !file.createNewFile()) {
-                throw new IOException("File Cannot be created");
-            }
-
-            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
-            PrintWriter writer = new PrintWriter(fileWriter);
-
-            writer.print(generatedTheory);
-            writer.close();
-
-            log.debug("File exists: {}", file.exists());
-            log.debug("Theory: \n{}", generatedTheory);
-
-            UseTheoryRequest useTheoryRequest = UseTheoryRequest.builder()
-                    .sessionID(sessionId)
-                    .theories(Collections.singletonList(TheoryFileTemplate.theoryName()))
-                    .build();
-
-            Task taskResult = client.useTheory(useTheoryRequest);
-
-            // TODO: handle exceptions
-            theoryResponse = switch (taskResult) {
-                case TheoryResponse response -> response;
-                case IsabelleGenericError error -> throw new RuntimeException(error.getMessage());
-                default -> throw new UnsupportedOperationException();
-            };
-        } catch (InterruptedException | IOException e) {
-            // TODO: handle exception
-            throw new RuntimeException(e);
-        } finally {
-            if (file != null) {
-                boolean ignored = file.delete();
-            }
-
-            if (sessionId != null) {
-                SessionStopRequest stopRequest = SessionStopRequest.builder()
-                    .sessionID(sessionId)
-                    .build();
-
-                Thread stopThread = new Thread(() -> {
-                    try {
-                        client.stopSession(stopRequest);
-                    } catch (InterruptedException e) {
-                        log.error("Stop Session Interrupted", e);
-                    }
-                });
-
-                stopThread.start();
-            }
+    private static File generateFile(String generatedTheory, Path path) throws IOException {
+        File file = path.toFile();
+        if (file.exists() || !file.createNewFile()) {
+            throw new IOException("File Cannot be created");
         }
 
-        return theoryResponse;
+        try (PrintWriter writer = new PrintWriter(new FileWriter(file.getAbsoluteFile()))) {
+            writer.print(generatedTheory);
+        }
+
+        return file;
+    }
+
+    private CompletableFuture<TheoryResponse> submitTheory(String generatedTheory) {
+        record TheorySubmission(File file, SessionStartResponse response) { }
+
+        return this.client.startSession(new SessionStartRequest(this.sessionConfig))
+                .thenApplyAsync(task -> switch (task) {
+                    case IsabelleGenericError error -> {
+                        log.error("Session start error: {} | {}", error.getKind(), error.getMessage());
+
+                        // TODO: handle exception
+                        throw new RuntimeException(error.getMessage());
+                    }
+                    case SessionStartResponse startResponse -> startResponse;
+                    default -> throw new UnsupportedOperationException();
+                })
+                .thenApplyAsync(response -> {
+                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+                    tempDir = tempDir.resolve(response.getTempDir());
+
+                    Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
+                    try {
+                        File file = generateFile(generatedTheory, filePath);
+                        log.debug("Theory: \n{}", generatedTheory);
+
+                        return new TheorySubmission(file, response);
+                    } catch (IOException e) {
+                        throw new CompletionException(e);
+                    }
+                }).thenComposeAsync(theorySubmission -> {
+                    final String sessionId = theorySubmission.response().getSessionId();
+
+                    return CompletableFuture.supplyAsync(() -> UseTheoryRequest.builder()
+                                    .sessionID(sessionId)
+                                    .theories(Collections.singletonList(TheoryFileTemplate.theoryName()))
+                                    .build())
+                            .thenComposeAsync(client::useTheory)
+                            .thenApplyAsync(task -> switch (task) {
+                                case TheoryResponse theoryResponse -> theoryResponse;
+                                case IsabelleGenericError error -> {
+                                    log.error("Isabelle submit theory error | {}: {}", error.getKind(), error.getMessage());
+
+                                    throw new RuntimeException(error.getMessage());
+                                }
+                                default -> throw new UnsupportedOperationException();
+                            })
+                            .whenComplete((theoryResponse, throwable) -> {
+                                boolean ignored = theorySubmission.file().delete();
+
+                                Thread stopThread = new Thread(() -> {
+                                    SessionStopRequest request = SessionStopRequest.builder()
+                                            .sessionID(sessionId)
+                                            .build();
+
+                                    try {
+                                        client.stopSession(request).join();
+                                    } catch (Throwable e) {
+                                        log.error(String.format("Session %s failed to stop", sessionId), e);
+                                    }
+                                }, String.format("Stop-Thread-%s", sessionId.substring(24)));
+
+                                stopThread.start();
+                            });
+                });
     }
 
     private CompletableFuture<IsabelleResult> tryAutoProof(@Valid @NotNull TheoryRequest request) {
-        return CompletableFuture.supplyAsync(() -> {
-            log.debug("Auto Proof for ID = {}", request.getRequestId());
-            String generatedTheory = TheoryFileTemplate.generate(Command.AUTO, request);
-            TheoryResponse theoryResponse = submitTheory(generatedTheory);
+        log.debug("Auto Proof for ID = {}", request.getRequestId());
 
-            log.debug("Get Response for Auto: {}", theoryResponse);
+        return CompletableFuture.supplyAsync(() ->
+                        TheoryFileTemplate.generate(Command.AUTO, request))
+                .thenComposeAsync(this::submitTheory)
+                .whenComplete((theoryResponse, ignored) ->
+                        log.debug("Get Response for Auto: {}", theoryResponse))
+                .thenApplyAsync(theoryResponse -> buildAutoResult(request, theoryResponse));
+    }
 
-            if (!theoryResponse.getOk()) {
-                // TODO: log error nodes
-                return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FAILED)
-                                .build();
-            }
-
+    private static IsabelleResult buildAutoResult(TheoryRequest request, TheoryResponse theoryResponse) {
+        if (!theoryResponse.getOk()) {
+            // TODO: log error nodes
             return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FOUND_AUTO_PROOF)
-                                .build();
-        });
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .build();
+        }
+
+        return IsabelleResult.builder()
+                .requestID(request.getRequestId())
+                .status(Status.FOUND_AUTO_PROOF)
+                .build();
     }
 
     private CompletableFuture<IsabelleResult> tryNitpick(@Valid @NotNull TheoryRequest request) {
-        return CompletableFuture.supplyAsync(() -> {
-            log.debug("Nitpick for ID = {}", request.getRequestId());
-            String generatedTheory = TheoryFileTemplate.generate(Command.NITPICK, request);
-            TheoryResponse theoryResponse = submitTheory(generatedTheory);
+        log.debug("Nitpick for ID = {}", request.getRequestId());
 
-            log.debug("Get Response for Nitpick: {}", theoryResponse);
+        return CompletableFuture.supplyAsync(() -> TheoryFileTemplate.generate(Command.NITPICK, request))
+                .thenComposeAsync(this::submitTheory)
+                .whenComplete((theoryResponse, ignored) ->
+                        log.debug("Get Response for Nitpick: {}", theoryResponse))
+                .thenApplyAsync(theoryResponse -> buildNitpickResult(request, theoryResponse));
+    }
 
-            /* Task Processing */
-            if (!theoryResponse.getOk()) {
-                // TODO: log error nodes
-                return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FAILED)
-                                .build();
-            }
-
-            List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
-            List<String> counterexamples = messages.stream()
-                    .parallel()
-                    .map(TaskMessage::getMessage)
-                    .filter(message -> message.contains(NITPICK_FOUND_STRING))
-                    .toList();
-
-            if (counterexamples.isEmpty()) {
-                return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FAILED)
-                                .build();
-            }
-
+    /* Task Processing */
+    private static IsabelleResult buildNitpickResult(TheoryRequest request, TheoryResponse theoryResponse) {
+        if (!theoryResponse.getOk()) {
+            // TODO: log error nodes
             return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FOUND_COUNTEREXAMPLE)
-                                .counterexample(counterexamples.get(0))
-                                .build();
-        });
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .build();
+        }
+
+        List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
+        List<String> counterexamples = messages.stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(NITPICK_FOUND_STRING))
+                .toList();
+
+        if (counterexamples.isEmpty()) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .build();
+        }
+
+        return IsabelleResult.builder()
+                .requestID(request.getRequestId())
+                .status(Status.FOUND_COUNTEREXAMPLE)
+                .counterexample(counterexamples.get(0))
+                .build();
     }
 
     /*
@@ -223,99 +233,100 @@ public class IsabelleService {
     * No Proof -> No try this and not done
     * */
     private CompletableFuture<IsabelleResult> trySledgehammer(@Valid @NotNull TheoryRequest request) {
-        return CompletableFuture.supplyAsync(() -> {
-            log.debug("Sledgehammer for ID = {}", request.getRequestId());
-            String generatedTheory = TheoryFileTemplate.generate(Command.SLEDGEHAMMER, request);
-            TheoryResponse theoryResponse = submitTheory(generatedTheory);
+        log.debug("Sledgehammer for ID = {}", request.getRequestId());
+        return CompletableFuture.supplyAsync(() -> TheoryFileTemplate.generate(Command.SLEDGEHAMMER, request))
+                .thenComposeAsync(this::submitTheory)
+                .whenCompleteAsync((theoryResponse, ignored) -> log.debug("Get Response for Sledgehammer: {}", theoryResponse))
+                .thenApplyAsync(theoryResponse -> recursiveSledgehammer(request, theoryResponse));
+    }
 
-            log.debug("Get Response for Sledgehammer: {}", theoryResponse);
+    private IsabelleResult recursiveSledgehammer(TheoryRequest request, TheoryResponse theoryResponse) {
+        /* Base Case: Error in processing */
+        if (!theoryResponse.getOk()) {
+            // TODO: log error nodes
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .build();
+        }
 
-            /* Base Case: Error in processing */
-            if (!theoryResponse.getOk()) {
-                // TODO: log error nodes
-                return IsabelleResult.builder()
-                                .requestID(request.getRequestId())
-                                .status(Status.FAILED)
-                                .build();
+        List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
+
+        long done = messages.stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL))
+                .count();
+
+        /* Base Case: Found Proof */
+        if (done > 0) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FOUND_PROOF)
+                    .proofs(request.getProofs())
+                    .build();
+        }
+
+        List<String> proofs = messages.stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(SLEDGEHAMMER_FOUND_STRING))
+                .map(message -> {
+                    String s = message.substring(
+                            message.indexOf(SLEDGEHAMMER_FOUND_STRING) + SLEDGEHAMMER_FOUND_STRING.length(),
+                            message.lastIndexOf('(')
+                    );
+
+                    return s.trim();
+                })
+                .toList();
+
+        /* Base Case: Proof not found */
+        if (proofs.isEmpty()) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .message("Proof not found")
+                    .build();
+        }
+
+        /* Recursion: Try proofs */
+        CompletableFuture<IsabelleResult>[] futures = new CompletableFuture[proofs.size()];
+        for (int i = 0; i < proofs.size(); i++) {
+            TheoryRequest childRequest = TheoryRequest.builder()
+                    .requestId(request.getRequestId())
+                    .theory(request.getTheory())
+                    .build();
+
+            if (request.getProofs() == null) {
+                childRequest.setProofs(new ArrayList<>());
+            } else {
+                childRequest.setProofs(new ArrayList<>(request.getProofs()));
             }
 
-            List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
+            childRequest.getProofs().add(proofs.get(i));
 
-            long done = messages.stream()
-                    .parallel()
-                    .map(TaskMessage::getMessage)
-                    .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL))
-                    .count();
+            futures[i] = trySledgehammer(childRequest);
+        }
 
-            /* Base Case: Found Proof */
-            if (done > 0) {
-                return IsabelleResult.builder()
-                        .requestID(request.getRequestId())
-                        .status(Status.FOUND_PROOF)
-                        .proofs(request.getProofs())
-                        .build();
-            }
+        // TODO: handle childs which doesn't throw exception
+        CompletableFuture.allOf(futures).join();
 
-            List<String> proofs = messages.stream()
-                    .parallel()
-                    .map(TaskMessage::getMessage)
-                    .filter(message -> message.contains(SLEDGEHAMMER_FOUND_STRING))
-                    .map(message -> {
-                        String s = message.substring(
-                                message.indexOf(SLEDGEHAMMER_FOUND_STRING) + SLEDGEHAMMER_FOUND_STRING.length(),
-                                message.lastIndexOf('(')
-                        );
+        /* Recursion end: Propagate successful proofs */
+        List<IsabelleResult> results = Arrays.stream(futures)
+                .parallel()
+                .map(CompletableFuture::resultNow)
+                .filter(isabelleResult -> Status.FOUND_PROOF.equals(isabelleResult.getStatus()))
+                .toList();
 
-                        return s.trim();
-                    })
-                    .toList();
+        if (results.isEmpty()) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .message("Proof not found")
+                    .build();
+        }
 
-            /* Base Case: Proof not found */
-            if (proofs.isEmpty()) {
-                return IsabelleResult.builder()
-                        .requestID(request.getRequestId())
-                        .status(Status.FAILED)
-                        .message("Proof not found")
-                        .build();
-            }
-
-            /* Recursion: Try proofs */
-            CompletableFuture<IsabelleResult>[] futures = new CompletableFuture[proofs.size()];
-            for (int i = 0; i < proofs.size(); i++) {
-                TheoryRequest childRequest = TheoryRequest.builder()
-                        .requestId(request.getRequestId())
-                        .theory(request.getTheory())
-                        .build();
-
-                if (request.getProofs() == null) {
-                    childRequest.setProofs(new ArrayList<>());
-                } else {
-                    childRequest.setProofs(new ArrayList<>(request.getProofs()));
-                }
-
-                childRequest.getProofs().add(proofs.get(i));
-
-                futures[i] = trySledgehammer(childRequest);
-            }
-
-            CompletableFuture.allOf(futures).join();
-
-            /* Recursion end: Propagate successful proofs */
-            List<IsabelleResult> results = Arrays.stream(futures)
-                    .parallel()
-                    .map(CompletableFuture::resultNow)
-                    .filter(isabelleResult -> Status.FOUND_PROOF.equals(isabelleResult.getStatus()))
-                    .toList();
-
-            if (results.isEmpty()) {
-                return IsabelleResult.builder()
-                        .requestID(request.getRequestId())
-                        .status(Status.FAILED)
-                        .message("Proof not found")
-                        .build();
-            }
-
-            return results.get(0);
-        });
+        return results.get(0);
     }
 }

@@ -143,6 +143,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                 if (response instanceof ErrorTask error) {
                     log.error("Error on submitting task: {}", error.getError());
 
+                    // TODO: handle exception
                     throw new RuntimeException(error.getError());
                 }
 
@@ -181,6 +182,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                         throw new IOException(String.format("Client IO died for process %d", process.pid()));
                     }
 
+                    // TODO: handle int responses
                     String[] responseArgs = response.trim().split("\\s+", 2);
                     if (responseArgs.length != 2) {
                         // TODO: handle exception
