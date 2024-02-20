@@ -206,7 +206,7 @@ public class IsabelleService {
                     .build();
         }
 
-        List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
+        List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
         List<String> counterexamples = messages.stream()
                 .parallel()
                 .map(TaskMessage::getMessage)
@@ -223,7 +223,7 @@ public class IsabelleService {
         return IsabelleResult.builder()
                 .requestID(request.getRequestId())
                 .status(Status.FOUND_COUNTEREXAMPLE)
-                .counterexample(counterexamples.get(0))
+                .counterexample(counterexamples.getFirst())
                 .build();
     }
 
@@ -250,7 +250,7 @@ public class IsabelleService {
                     .build();
         }
 
-        List<TaskMessage> messages = theoryResponse.getNodes().get(0).getMessages();
+        List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
 
         long done = messages.stream()
                 .parallel()
