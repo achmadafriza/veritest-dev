@@ -327,6 +327,6 @@ public class IsabelleService {
                     .build();
         }
 
-        return results.get(0);
+        return results.getFirst();
     }
 }
