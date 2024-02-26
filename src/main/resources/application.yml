@@ -30,7 +30,7 @@ isabelle:
     verbose: true
   rate-limit:
     token: 1
-    period: 2
+    period: 3
 
 management:
   endpoints:

@@ -1,4 +1,4 @@
-package com.veriopt.veritest.isabelle.utils;
+package com.veriopt.veritest.isabelle.command;
 
 import com.veriopt.veritest.dto.TheoryRequest;
 

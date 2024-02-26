@@ -9,6 +9,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -28,7 +30,8 @@ public class IsabelleProcess extends AbstractIsabelleClient {
                            @Value("${isabelle.server.port}") @NonNull String serverPort,
                            @Value("${isabelle.server.password}") @NonNull String password,
                            @NonNull LimiterConfig config,
-                           @Qualifier("isabelleMapper") @NonNull ObjectMapper mapper) {
+                           @Qualifier("isabelleMapper") @NonNull ObjectMapper mapper,
+                           ApplicationContext context) {
         super();
 
         IsabelleProcessInterface client = new IsabelleProcessFacade(mapper, config);
@@ -38,10 +41,14 @@ public class IsabelleProcess extends AbstractIsabelleClient {
         this.setQueue(dto.getAsyncQueue());
         this.asyncLock = dto.getLock();
         this.isEmpty = dto.getIsEmpty();
+
+        client.onExit().thenRun(() -> SpringApplication.exit(context));
     }
 
     @Override
     public void close() throws IOException {
+        log.info("Closing {}", IsabelleProcess.class);
+
         this.getClient().close();
     }
 

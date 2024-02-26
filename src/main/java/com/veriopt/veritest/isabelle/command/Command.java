@@ -1,4 +1,4 @@
-package com.veriopt.veritest.isabelle.utils;
+package com.veriopt.veritest.isabelle.command;
 
 public enum Command {
     AUTO("."),

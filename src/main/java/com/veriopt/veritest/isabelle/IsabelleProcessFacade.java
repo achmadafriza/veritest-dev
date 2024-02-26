@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import com.veriopt.veritest.config.LimiterConfig;
+import com.veriopt.veritest.errors.InstantiationException;
+import com.veriopt.veritest.errors.IsabelleException;
 import com.veriopt.veritest.isabelle.response.ErrorTask;
 import com.veriopt.veritest.isabelle.response.ResultType;
 import com.veriopt.veritest.isabelle.response.Task;
@@ -18,6 +20,7 @@ import lombok.extern.log4j.Log4j2;
 import java.io.*;
 import java.time.Duration;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -77,7 +80,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                     this.syncQueue
             );
 
-            this.daemonThread = new Thread(this.daemon);
+            this.daemonThread = new Thread(this.daemon, "isabelle-daemon");
             this.daemonThread.start();
 
             /*
@@ -95,16 +98,22 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                     .addLimit(bandwidth)
                     .build();
         } catch (IOException e) {
-            // TODO: handle exception
-            log.error(e.getMessage(), e);
+            log.error("Unable to create IO Pipe from isabelle", e);
+
+            throw new InstantiationException(String.format("%s instantiation error", IsabelleProcessFacade.class), e);
         }
 
         return dto;
     }
 
+    public CompletableFuture<Void> onExit() {
+        return this.process.onExit().thenApply(ignored -> null);
+    }
+
     @Override
     public void close() throws IOException {
-        this.syncLock = null;
+        log.info("Closing {}", IsabelleProcessFacade.class);
+
         this.process.destroy();
         this.writer.close();
         this.daemon.close();
@@ -120,22 +129,27 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
      * If server died, then IO pipe is broken, and IOException is going to occur.
     * */
     @Override
-    public String submitTask(TaskType type, Object args) throws IOException, InterruptedException {
+    public String submitTask(TaskType type, Object args) throws InterruptedException {
         this.rateLimiter.asBlocking().consume(1);
+        this.syncLock.lockInterruptibly();
 
-        String request = type + " " + mapper.writeValueAsString(args) + System.lineSeparator();
         if (!this.process.isAlive()) {
-            // TODO: handle exception
-            throw new RuntimeException("Process died");
+            throw new IsabelleException("Isabelle has died");
         }
 
-        this.syncLock.lockInterruptibly();
-        writer.write(request);
-        writer.flush();
-        log.debug("Submit request: {}", request);
+        Task response;
+        try {
+            String request = type + " " + mapper.writeValueAsString(args) + System.lineSeparator();
+            writer.write(request);
+            writer.flush();
+            log.debug("Submit request: {}", request);
 
-        Task response = this.syncQueue.take();
-        this.syncLock.unlock();
+            response = this.syncQueue.take();
+        } catch (IOException e) {
+            throw new IsabelleException("I/O error has occurred", e);
+        } finally {
+            this.syncLock.unlock();
+        }
 
         return switch (response.getType()) {
             case OK -> response.getId();
@@ -143,13 +157,12 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                 if (response instanceof ErrorTask error) {
                     log.error("Error on submitting task: {}", error.getError());
 
-                    // TODO: handle exception
-                    throw new RuntimeException(error.getError());
+                    throw new IsabelleException(error, error.getError());
                 }
 
                 throw new UnsupportedOperationException();
             }
-            default -> throw new UnsupportedOperationException();
+            default -> throw new IllegalStateException("Unexpected value: " + response.getType());
         };
     }
 
@@ -169,6 +182,8 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
 
         @Override
         public void close() throws IOException {
+            log.info("Closing {}", Daemon.class);
+
             this.reader.close();
         }
 
@@ -178,15 +193,17 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                 while (this.process.isAlive()) {
                     String response = reader.readLine();
                     if (response == null) {
-                        // TODO: On destroy this throws
-                        throw new IOException(String.format("Client IO died for process %d", process.pid()));
+                        log.info("Isabelle process has died");
+
+                        return;
                     }
 
-                    // TODO: handle int responses
                     String[] responseArgs = response.trim().split("\\s+", 2);
                     if (responseArgs.length != 2) {
-                        // TODO: handle exception
-                        log.error("Invalid response: {}", response);
+                        if (!isInteger(response)) {
+                            log.error("Invalid response: {}", response);
+                        }
+
                         continue;
                     }
 
@@ -195,15 +212,44 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                     parseAndSendTask(responseArgs);
                 }
             } catch (IOException e) {
-                // TODO: handle exception
                 log.error("IO error occurred", e);
             } catch (InterruptedException e) {
-                // TODO: handle exception
-                log.error("Daemon interrupted", e);
+                if (this.process.isAlive()) {
+                    log.error("Daemon interrupted", e);
+
+                    Thread.currentThread().interrupt();
+                }
             }
         }
 
-        private void parseAndSendTask(String[] responseArgs) throws JsonProcessingException, InterruptedException {
+        public static boolean isInteger(String s) {
+            return isInteger(s,10);
+        }
+
+        public static boolean isInteger(String s, int radix) {
+            if (s.isEmpty()) {
+                return false;
+            }
+
+            for(int i = 0; i < s.length(); i++) {
+                if (i == 0 && s.charAt(i) == '-') {
+                    if(s.length() == 1) {
+                        return false;
+                    } else {
+                        continue;
+                    }
+                }
+
+                if (Character.digit(s.charAt(i), radix) < 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        private void parseAndSendTask(String[] responseArgs) throws InterruptedException {
             try {
                 ResultType resultType = ResultType.valueOf(responseArgs[0]);
                 Task task;
@@ -238,7 +284,9 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                         throw new UnsupportedOperationException();
                 }
             } catch (IllegalArgumentException | MismatchedInputException e) {
-                log.error(e.getMessage(), e);
+                log.debug(e.getMessage(), e);
+            } catch (JsonProcessingException e) {
+                log.error("Isabelle returned bad JSON {}: {}", responseArgs, e);
             }
         }
     }

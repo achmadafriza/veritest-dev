@@ -12,7 +12,6 @@ import lombok.extern.log4j.Log4j2;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletableFuture;
@@ -49,9 +48,6 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         CompletableFuture.runAsync(() -> {
             try {
                 future.complete(this.client.submitTask(TaskType.SESSION_START, request));
-            } catch (IOException e) {
-                log.error("IO error on starting session", e);
-                future.completeExceptionally(e);
             } catch (InterruptedException e) {
                 future.completeExceptionally(e);
             }
@@ -60,12 +56,14 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         return future.thenCompose(taskId -> anyOfCancelOthers(
                 getElement(taskId, SessionStartResponse.class),
                 getElement(taskId, IsabelleGenericError.class)
-        )).thenApplyAsync(result -> {
-            if (result instanceof Task task) {
-                return task;
-            }
+        )).thenApplyAsync(result -> switch (result) {
+            case SessionStartResponse response -> response;
+            case IsabelleGenericError error -> {
+                log.error("Isabelle start session error | {}: {}", error.getKind(), error.getMessage());
 
-            throw new UnsupportedOperationException();
+                yield error;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + result);
         });
     }
 
@@ -75,9 +73,6 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         CompletableFuture.runAsync(() -> {
             try {
                 future.complete(this.client.submitTask(TaskType.SESSION_STOP, request));
-            } catch (IOException e) {
-                log.error("IO error on stopping session", e);
-                future.completeExceptionally(e);
             } catch (InterruptedException e) {
                 future.completeExceptionally(e);
             }
@@ -93,7 +88,7 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
 
                 yield error;
             }
-            default -> throw new UnsupportedOperationException();
+            default -> throw new IllegalStateException("Unexpected value: " + result);
         });
     }
 
@@ -103,9 +98,6 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         CompletableFuture.runAsync(() -> {
             try {
                 future.complete(this.client.submitTask(TaskType.USE_THEORIES, request));
-            } catch (IOException e) {
-                log.error("IO error on stopping session", e);
-                future.completeExceptionally(e);
             } catch (InterruptedException e) {
                 future.completeExceptionally(e);
             }
@@ -117,11 +109,11 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         )).thenApplyAsync(result -> switch (result) {
             case TheoryResponse response -> response;
             case IsabelleGenericError error -> {
-                log.error("Isabelle stop session error | {}: {}", error.getKind(), error.getMessage());
+                log.error("Isabelle use theory error | {}: {}", error.getKind(), error.getMessage());
 
                 yield error;
             }
-            default -> throw new UnsupportedOperationException();
+            default -> throw new IllegalStateException("Unexpected value: " + result);
         });
     }
 }

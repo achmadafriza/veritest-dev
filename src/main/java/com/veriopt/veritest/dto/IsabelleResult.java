@@ -15,4 +15,5 @@ public class IsabelleResult {
     private String message;
     private String counterexample;
     private List<String> proofs;
+    private List<String> isabelleMessages;
 }
