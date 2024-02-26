@@ -49,24 +49,36 @@ public class IsabelleService {
         this.sessionConfig = sessionConfig;
     }
 
-    public IsabelleResult validateTheory(@Valid @NotNull TheoryRequest request) {
-        CompletableFuture<IsabelleResult>[] futures = new CompletableFuture[]{
+    private CompletableFuture<Void> allOfReturnOnSuccess(List<CompletableFuture<IsabelleResult>> futures) {
+        final CompletableFuture<Void> futureResult = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
+
+        futures.forEach(future -> future.thenAccept(result -> {
+            if(Future.State.SUCCESS.equals(future.state())
+                    && !Status.FAILED.equals(result.getStatus())) {
+                futureResult.complete(null);
+            }
+        }));
+
+        return futureResult;
+    }
+
+    public IsabelleResult validateTheory(@Valid @NotNull TheoryRequest request) throws Throwable {
+        List<CompletableFuture<IsabelleResult>> futures = Arrays.asList(
                 tryAutoProof(request),
                 tryNitpick(request),
                 trySledgehammer(request)
-        };
+        );
 
         try {
-            // TODO: should change this to return early on success
-            // idea: similar to anyOfCancelOthers
-            CompletableFuture.allOf(futures).join();
-        } catch (CancellationException | CompletionException e) {
+            allOfReturnOnSuccess(futures).get();
+        } catch (ExecutionException e) {
+            throw e.getCause();
+        } catch (InterruptedException | CancellationException e) {
             log.error(e.getMessage(), e);
 
-            // TODO: differentiate between failed and errors
             return IsabelleResult.builder()
                         .requestID(request.getRequestId())
-                        .status(Status.FAILED)
+                        .status(Status.ERROR)
                         .message(e.getMessage())
                         .build();
         }

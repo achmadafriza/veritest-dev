@@ -15,7 +15,7 @@ public class VeritestController {
     private @NonNull IsabelleService isabelleService;
 
     @PostMapping("/submit")
-    public IsabelleResult submitTheory(@RequestBody TheoryRequest request) {
+    public IsabelleResult submitTheory(@RequestBody TheoryRequest request) throws Throwable {
         return isabelleService.validateTheory(request);
     }
 }
