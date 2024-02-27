@@ -21,6 +21,7 @@ import java.io.*;
 import java.time.Duration;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -31,6 +32,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class IsabelleProcessFacade implements IsabelleProcessInterface {
     private @NonNull ObjectMapper mapper;
     private @NonNull LimiterConfig config;
+    private @NonNull Executor ioExecutor;
 
     private Bucket rateLimiter;
     private Lock syncLock;
@@ -80,8 +82,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                     this.syncQueue
             );
 
-            this.daemonThread = new Thread(this.daemon, "isabelle-daemon");
-            this.daemonThread.start();
+            this.ioExecutor.execute(this.daemon);
 
             /*
             * Isabelle deadlocks if requests aren't delayed for 2 seconds.
@@ -117,7 +118,6 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
         this.process.destroy();
         this.writer.close();
         this.daemon.close();
-        this.daemonThread.interrupt();
     }
 
     /**
