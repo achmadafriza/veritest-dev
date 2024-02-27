@@ -9,6 +9,9 @@ import com.veriopt.veritest.isabelle.response.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 @Configuration
 public class IsabelleConfig {
     @Bean("isabelleMapper")
@@ -29,5 +32,10 @@ public class IsabelleConfig {
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
         return mapper;
+    }
+
+    @Bean("ioExecutor")
+    public Executor executor() {
+        return Executors.newCachedThreadPool();
     }
 }

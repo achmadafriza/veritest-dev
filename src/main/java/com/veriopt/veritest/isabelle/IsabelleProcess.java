@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -24,6 +25,7 @@ import java.util.concurrent.locks.Lock;
 public class IsabelleProcess extends AbstractIsabelleClient {
     private final Lock asyncLock;
     private final Condition isEmpty;
+    private final Executor ioExecutor;
 
     @Autowired
     public IsabelleProcess(@Value("${isabelle.server.name}") @NonNull String serverName,
@@ -31,8 +33,11 @@ public class IsabelleProcess extends AbstractIsabelleClient {
                            @Value("${isabelle.server.password}") @NonNull String password,
                            @NonNull LimiterConfig config,
                            @Qualifier("isabelleMapper") @NonNull ObjectMapper mapper,
+                           @Qualifier("ioExecutor") @NonNull Executor executor,
                            ApplicationContext context) {
         super();
+
+        this.ioExecutor = executor;
 
         IsabelleProcessInterface client = new IsabelleProcessFacade(mapper, config);
         this.setClient(client);
@@ -84,7 +89,7 @@ public class IsabelleProcess extends AbstractIsabelleClient {
                     asyncLock.unlock();
                 }
             }
-        });
+        }, this.ioExecutor);
 
         return future;
     }
