@@ -24,7 +24,8 @@ isabelle:
       - show_question_marks=false
       - quick_and_dirty
     dirs:
-      - /mnt/c/Programming/Thesis/veriopt-dev/isabelle
+#      - /mnt/c/Programming/Thesis/veriopt-dev/isabelle
+      - /home/isabelle/source
     include_sessions:
       - OptimizationDSL
     verbose: true

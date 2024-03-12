@@ -41,7 +41,6 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
     private BlockingQueue<Task> syncQueue;
 
     private Daemon daemon;
-    private Thread daemonThread;
 
     // TODO: need to change this to a TCP client.
     @Override
@@ -58,8 +57,8 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
 
         try {
             this.process = new ProcessBuilder()
-                    .command("wsl.exe", "/mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle", "client", "-n", name, "-p", port)
-//                    .command("isabelle client", "-n", name, "-p", port)
+//                    .command("wsl.exe", "/mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle", "client", "-n", name, "-p", port)
+                    .command("/home/isabelle/Isabelle/bin/isabelle", "client", "-n", name, "-p", port)
                     .redirectErrorStream(true)
                     .start();
 

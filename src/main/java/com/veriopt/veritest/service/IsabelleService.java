@@ -116,8 +116,9 @@ public class IsabelleService {
                     default -> throw new IllegalStateException("Unexpected value: " + task);
                 })
                 .thenApplyAsync(response -> {
-                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-                    tempDir = tempDir.resolve(response.getTempDir());
+//                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+//                    tempDir = tempDir.resolve(response.getTempDir());
+                    Path tempDir = Path.of(response.getTempDir());
 
                     Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
                     try {
