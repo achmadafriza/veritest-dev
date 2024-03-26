@@ -26,7 +26,8 @@ public class IsabelleProcess extends AbstractIsabelleClient {
     private final ExecutorService ioExecutor;
 
     @Autowired
-    public IsabelleProcess(@Value("${isabelle.server.name}") @NonNull String serverName,
+    public IsabelleProcess(@Value("${isabelle.location}") String isabelleExecutableLocation,
+                           @Value("${isabelle.server.name}") @NonNull String serverName,
                            @Value("${isabelle.server.port}") @NonNull String serverPort,
                            @Value("${isabelle.server.password}") @NonNull String password,
                            @NonNull LimiterConfig config,
@@ -36,7 +37,7 @@ public class IsabelleProcess extends AbstractIsabelleClient {
 
         this.ioExecutor = Executors.newCachedThreadPool();
 
-        IsabelleProcessInterface client = new IsabelleProcessFacade(mapper, config, this.ioExecutor);
+        IsabelleProcessInterface client = new IsabelleProcessFacade(isabelleExecutableLocation, mapper, config, this.ioExecutor);
         this.setClient(client);
 
         AsyncQueueDTO dto = client.open(serverName, serverPort, password);

@@ -109,16 +109,14 @@ public class IsabelleService {
     private CompletableFuture<TheoryResponse> submitTheory(String generatedTheory) {
         return this.client.startSession(new SessionStartRequest(this.sessionConfig))
                 .thenApplyAsync(task -> switch (task) {
-                    case IsabelleGenericError error -> {
-                        throw new IsabelleException(error, "Session start error");
-                    }
+                    case IsabelleGenericError error -> throw new IsabelleException(error, "Session start error");
                     case SessionStartResponse startResponse -> startResponse;
                     default -> throw new IllegalStateException("Unexpected value: " + task);
                 })
                 .thenApplyAsync(response -> {
-//                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-//                    tempDir = tempDir.resolve(response.getTempDir());
-                    Path tempDir = Path.of(response.getTempDir());
+                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+                    tempDir = tempDir.resolve(response.getTempDir());
+//                    Path tempDir = Path.of(response.getTempDir());
 
                     Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
                     try {

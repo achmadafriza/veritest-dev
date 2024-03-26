@@ -11,6 +11,10 @@ java {
     sourceCompatibility = '21'
 }
 
+bootJar {
+    mainClass = 'com.veriopt.veritest.VeritestApplication'
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor

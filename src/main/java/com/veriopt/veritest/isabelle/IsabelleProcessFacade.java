@@ -30,6 +30,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Log4j2
 @RequiredArgsConstructor
 class IsabelleProcessFacade implements IsabelleProcessInterface {
+    private final @NonNull String executableLocation;
     private @NonNull ObjectMapper mapper;
     private @NonNull LimiterConfig config;
     private @NonNull Executor ioExecutor;
@@ -58,7 +59,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
         try {
             this.process = new ProcessBuilder()
 //                    .command("wsl.exe", "/mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle", "client", "-n", name, "-p", port)
-                    .command("/home/isabelle/Isabelle/bin/isabelle", "client", "-n", name, "-p", port)
+                    .command(executableLocation, "client", "-n", name, "-p", port)
                     .redirectErrorStream(true)
                     .start();
 

@@ -1,2 +1,0 @@
-/home/isabelle/Isabelle/bin/isabelle server -p 8081
-java -jar /home/isabelle/app/app.jar -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector

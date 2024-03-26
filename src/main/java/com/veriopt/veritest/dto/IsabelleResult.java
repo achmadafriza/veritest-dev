@@ -16,4 +16,6 @@ public class IsabelleResult {
     private String counterexample;
     private List<String> proofs;
     private List<String> isabelleMessages;
+    
+    private String stackTrace;
 }
