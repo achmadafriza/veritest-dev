@@ -45,6 +45,8 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
     // https://mvnrepository.com/artifact/com.bucket4j/bucket4j-core
     implementation group: 'com.bucket4j', name: 'bucket4j-core', version: '8.7.1'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-text
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.11.0'
 
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'

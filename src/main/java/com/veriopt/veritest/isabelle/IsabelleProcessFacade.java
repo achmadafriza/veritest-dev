@@ -157,7 +157,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                 if (response instanceof ErrorTask error) {
                     log.error("Error on submitting task: {}", error.getError());
 
-                    throw new IsabelleException(error, error.getError());
+                    throw new IsabelleException(error, "Error on submitting task");
                 }
 
                 throw new UnsupportedOperationException();
