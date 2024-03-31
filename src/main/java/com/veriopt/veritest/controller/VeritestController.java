@@ -7,14 +7,12 @@ import com.veriopt.veritest.errors.IsabelleException;
 import com.veriopt.veritest.service.IsabelleService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -48,16 +46,11 @@ public class VeritestController {
     })
     public ResponseEntity<IsabelleResult> submitTheory(@RequestParam Map<String, String> request,
                                                        @RequestHeader(value = "X-REQUEST-ID", required = false) String header) {
-        request = request.entrySet().stream()
-                .parallel()
-                .map(entry -> Map.entry(entry.getKey(), StringEscapeUtils.unescapeJson(entry.getValue())))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-
         TheoryRequest theoryRequest;
         try {
             theoryRequest = mapper.convertValue(request, TheoryRequest.class);
         } catch (IllegalArgumentException e) {
-            throw new IsabelleException(e.getMessage(), e);
+            throw new IsabelleException("Bad Request Format", e);
         }
 
         return submitTheory(theoryRequest, header);

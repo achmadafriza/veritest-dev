@@ -13,5 +13,6 @@ import java.util.List;
 public class TheoryRequest {
     private String requestId;
     private @NotNull String theory;
+    // TODO: either skip this on request, or elaborate for sledgehammer
     private List<String> proofs;
 }

@@ -1,4 +1,4 @@
-package com.veriopt.veritest.config;
+package com.veriopt.veritest.isabelle.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

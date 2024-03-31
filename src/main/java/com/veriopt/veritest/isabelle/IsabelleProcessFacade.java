@@ -3,7 +3,7 @@ package com.veriopt.veritest.isabelle;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
-import com.veriopt.veritest.config.LimiterConfig;
+import com.veriopt.veritest.isabelle.config.LimiterConfig;
 import com.veriopt.veritest.errors.InstantiationException;
 import com.veriopt.veritest.errors.IsabelleException;
 import com.veriopt.veritest.isabelle.response.ErrorTask;

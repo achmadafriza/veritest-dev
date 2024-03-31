@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "fca98037-bb16-4f9b-b64c-13a7c534de65",
+		"name": "Veritest",
+		"description": "# Veritest\n\n## Running as a Docker Container\n\n``` bash\ndocker pull achmadafriza/veritest:latest\ndocker run --rm -it -p 8080:8080 achmadafriza/veritest:latest\n\n ```\n\n### Links\n\n- [Docker](https://hub.docker.com/r/achmadafriza/veritest)\n- [Github](https://github.com/achmadafriza/veritest-dev)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12004801"
+	},
+	"item": [
+		{
+			"name": "Submit Theory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"theory\": \"(x - (x - y)) \\\\<longmapsto>  y\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/submit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"submit"
+					]
+				},
+				"description": "This endpoint allows you to submit a POST request to the server to process the optimization rule based on Veriopt's DSL. The request should include a payload (application/json, application/x-www-form-urlencoded, or multipart/form-data) in the raw request body type with a \"theory\" field.\n\n### Request Header\n\n- X-REQUEST-ID (string, optional): Request ID to mark the request. Can either be a field or a header.\n    \n\n### Request Body\n\n- requestId (string, optional): Request ID to mark the request. Can either be a field or a header.\n- theory (string, required): The optimization rule to be submitted.\n    \n\n### Response\n\nUpon successful execution, the server will respond with a status code of 200 and a JSON object with the following fields:\n\n- request_id (string): The ID of the submitted request.\n- status (string): The status of the submission.\n- message (string): Any additional message related to the submission.\n- counterexample (string, optional): A counterexample if found on the optimization rule.\n- proofs (List, optional): A list of proofs for the optimization rule that is found.\n- isabelleMessages (List, optional): A more in-depth explanation for the response from Isabelle."
+			},
+			"response": [
+				{
+					"name": "Submit Auto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"theory\": \"(true ? x : y) \\\\<longmapsto> x\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/submit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-REQUEST-ID",
+							"value": "39886929-b006-4535-8d11-5761ef61868d"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Mar 2024 11:52:30 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{ // Elapsed Time: 23s\n    \"request_id\": \"39886929-b006-4535-8d11-5761ef61868d\",\n    \"status\": \"FOUND_AUTO_PROOF\"\n}"
+				},
+				{
+					"name": "Non-Sledgehamered Theory",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"theory\": \"x + -e \\\\<longmapsto> x - e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/submit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-REQUEST-ID",
+							"value": "ef784d6f-24a5-4c21-ad06-fd5bb234fd11"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Mar 2024 11:54:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{ // Elapsed Time: 1m\n    \"request_id\": \"ef784d6f-24a5-4c21-ad06-fd5bb234fd11\",\n    \"status\": \"FAILED\",\n    \"isabelle_messages\": [\n        \"Failed to finish proof:\\ngoal (2 subgoals):\\n 1. Canonicalization.size (BinaryExpr BinSub x e)\\n    < Suc (Suc (Suc (Suc (Canonicalization.size x +\\n                          Canonicalization.size e))))\\n 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \\\\<sqsupseteq> BinaryExpr BinSub x e\\nvariables:\\n    e, x :: IRExpr\",\n        \"Bad context for command \\\"end\\\"\\\\<^here> -- using reset state\"\n    ]\n}"
+				},
+				{
+					"name": "Submit Nitpick",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"theory\": \"x + y \\\\<longmapsto> x - y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/submit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-REQUEST-ID",
+							"value": "db792c36-3e16-4ac0-871a-72a38ccc8bf0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Mar 2024 11:55:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{ // Elapsed Time: 30s\n    \"request_id\": \"db792c36-3e16-4ac0-871a-72a38ccc8bf0\",\n    \"status\": \"FOUND_COUNTEREXAMPLE\",\n    \"counterexample\": \"Nitpick found a counterexample:\\n  Free variables:\\n    x::IRExpr = ConstantExpr V\\\\<^sub>1\\n    y::IRExpr = ConstantExpr V\\\\<^sub>2\"\n}"
+				},
+				{
+					"name": "Submit Complex Theory",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"theory\": \"(x - (x - y)) \\\\<longmapsto>  y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/submit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-REQUEST-ID",
+							"value": "db474973-50ec-47e9-a17c-474fe717aa82"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Mar 2024 11:57:59 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{ // Elapsed Time: 1m 51s\n    \"request_id\": \"db474973-50ec-47e9-a17c-474fe717aa82\",\n    \"status\": \"FAILED\",\n    \"isabelle_messages\": [\n        \"Failed to finish proof:\\ngoal (2 subgoals):\\n 1. Canonicalization.size y\\n    < Suc (Suc (Canonicalization.size x +\\n                Canonicalization.size (BinaryExpr BinSub x y)))\\n 2. BinaryExpr BinSub x (BinaryExpr BinSub x y) \\\\<sqsupseteq> y\\nvariables:\\n    x, y :: IRExpr\",\n        \"Bad context for command \\\"end\\\"\\\\<^here> -- using reset state\"\n    ]\n}"
+				}
+			]
+		}
+	]
+}

@@ -9,6 +9,10 @@ public enum Command {
     NITPICK("""
             nitpick
             sorry
+            """),
+    QUICKCHECK("""
+            quickcheck
+            sorry
             """);
 
     private final String isabelleCommand;

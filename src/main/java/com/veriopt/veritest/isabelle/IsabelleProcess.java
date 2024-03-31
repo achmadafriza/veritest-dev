@@ -1,7 +1,7 @@
 package com.veriopt.veritest.isabelle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.veriopt.veritest.config.LimiterConfig;
+import com.veriopt.veritest.isabelle.config.LimiterConfig;
 import com.veriopt.veritest.isabelle.response.Task;
 import com.veriopt.veritest.isabelle.utils.AsyncQueueDTO;
 import lombok.NonNull;

@@ -1,14 +1,35 @@
 package com.veriopt.veritest.isabelle.command;
 
 import com.veriopt.veritest.dto.TheoryRequest;
+import com.veriopt.veritest.isabelle.config.TheoryImportConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TheoryFileTemplate {
-    public static String generate(Command command, TheoryRequest request) {
+    private TheoryImportConfig importConfig;
+
+    private final String theoryImports;
+
+    @Autowired
+    public TheoryFileTemplate(TheoryImportConfig importConfig) {
+        this.importConfig = importConfig;
+
         StringBuilder builder = new StringBuilder();
+        for (String imports : importConfig.getInclude()) {
+            builder.append(imports);
+            builder.append(System.lineSeparator());
+        }
+
+        this.theoryImports = builder.toString();
+    }
+
+    public String generate(Command command, TheoryRequest request) {
+        StringBuilder proofBuilder = new StringBuilder();
         if (request.getProofs() != null) {
             for (String proof : request.getProofs()) {
-                builder.append(System.lineSeparator());
-                builder.append(proof);
+                proofBuilder.append(System.lineSeparator());
+                proofBuilder.append(proof);
             }
         }
 
@@ -17,6 +38,7 @@ public class TheoryFileTemplate {
           imports
             Canonicalizations.Common
             Proofs.StampEvalThms
+            %s
         begin
                 
         phase TemporaryNode
@@ -29,7 +51,7 @@ public class TheoryFileTemplate {
         end
                 
         end
-        """.formatted(request.getTheory(), builder, command);
+        """.formatted(this.theoryImports, request.getTheory(), proofBuilder, command);
     }
 
     public static String theoryFilename() {

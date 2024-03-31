@@ -1,6 +1,6 @@
 package com.veriopt.veritest.service;
 
-import com.veriopt.veritest.config.SessionConfig;
+import com.veriopt.veritest.isabelle.config.SessionConfig;
 import com.veriopt.veritest.dto.IsabelleResult;
 import com.veriopt.veritest.dto.Status;
 import com.veriopt.veritest.dto.TheoryRequest;
@@ -34,6 +34,7 @@ import java.util.function.BiConsumer;
 @Log4j2
 @Service
 public class IsabelleService {
+    private static final String QUICKCHECK_FOUND_STRING = "Quickcheck found a counterexample.";
     private static final String NITPICK_FOUND_STRING = "Nitpick found a counterexample:";
     private static final String SLEDGEHAMMER_FOUND_STRING = "Try this:";
     private static final String SLEDGEHAMMER_DONE = "No proof state";
@@ -41,11 +42,15 @@ public class IsabelleService {
 
     private final @NonNull IsabelleClient client;
     private final @NonNull SessionConfig sessionConfig;
+    private final @NonNull TheoryFileTemplate fileTemplate;
 
     @Autowired
-    public IsabelleService(@NonNull IsabelleClient client, @NonNull SessionConfig sessionConfig) {
+    public IsabelleService(@NonNull IsabelleClient client,
+                           @NonNull SessionConfig sessionConfig,
+                           @NonNull TheoryFileTemplate fileTemplate) {
         this.client = client;
         this.sessionConfig = sessionConfig;
+        this.fileTemplate = fileTemplate;
     }
 
     private CompletableFuture<Void> allOfReturnOnSuccess(List<CompletableFuture<IsabelleResult>> futures) {
@@ -64,7 +69,7 @@ public class IsabelleService {
     public IsabelleResult validateTheory(@Valid @NotNull TheoryRequest request) {
         List<CompletableFuture<IsabelleResult>> futures = Arrays.asList(
                 tryAutoProof(request),
-                tryNitpick(request),
+                tryCounterexamples(request),
                 trySledgehammer(request)
         );
 
@@ -114,9 +119,9 @@ public class IsabelleService {
                     default -> throw new IllegalStateException("Unexpected value: " + task);
                 })
                 .thenApplyAsync(response -> {
-                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-                    tempDir = tempDir.resolve(response.getTempDir());
-//                    Path tempDir = Path.of(response.getTempDir());
+//                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+//                    tempDir = tempDir.resolve(response.getTempDir());
+                    Path tempDir = Path.of(response.getTempDir());
 
                     Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
                     try {
@@ -172,7 +177,7 @@ public class IsabelleService {
         log.debug("Auto Proof for ID = {}", request.getRequestId());
 
         return CompletableFuture.supplyAsync(() ->
-                        TheoryFileTemplate.generate(Command.AUTO, request))
+                        fileTemplate.generate(Command.AUTO, request))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) ->
                         log.debug("Get Response for Auto: {}", theoryResponse))
@@ -204,18 +209,51 @@ public class IsabelleService {
                 .build();
     }
 
+    private CompletableFuture<IsabelleResult> tryCounterexamples(@Valid @NotNull TheoryRequest request) {
+        return tryQuickcheck(request)
+                .thenCombine(tryNitpick(request), (quickcheckResult, nitpickResult) -> {
+                    // Prioritize Nitpick results
+                    if (!Status.FAILED.equals(nitpickResult.getStatus())) {
+                        return nitpickResult;
+                    }
+
+                    if (!Status.FAILED.equals(quickcheckResult.getStatus())) {
+                        return quickcheckResult;
+                    }
+
+                    return IsabelleResult.builder()
+                        .requestID(request.getRequestId())
+                        .status(Status.FAILED)
+                        .build();
+                });
+    }
+
     private CompletableFuture<IsabelleResult> tryNitpick(@Valid @NotNull TheoryRequest request) {
         log.debug("Nitpick for ID = {}", request.getRequestId());
 
-        return CompletableFuture.supplyAsync(() -> TheoryFileTemplate.generate(Command.NITPICK, request))
+        return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.NITPICK, request))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) ->
                         log.debug("Get Response for Nitpick: {}", theoryResponse))
-                .thenApplyAsync(theoryResponse -> buildNitpickResult(request, theoryResponse));
+                .thenApplyAsync(theoryResponse ->
+                        buildCounterexampleResult(request, theoryResponse, NITPICK_FOUND_STRING));
+    }
+
+    private CompletableFuture<IsabelleResult> tryQuickcheck(@Valid @NotNull TheoryRequest request) {
+        log.debug("Quickcheck for ID = {}", request.getRequestId());
+
+        return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.QUICKCHECK, request))
+                .thenComposeAsync(this::submitTheory)
+                .whenCompleteAsync((theoryResponse, ignored) ->
+                        log.debug("Get Response for Quickcheck: {}", theoryResponse))
+                .thenApplyAsync(theoryResponse ->
+                        buildCounterexampleResult(request, theoryResponse, QUICKCHECK_FOUND_STRING));
     }
 
     /* Task Processing */
-    private static IsabelleResult buildNitpickResult(TheoryRequest request, TheoryResponse theoryResponse) {
+    private static IsabelleResult buildCounterexampleResult(TheoryRequest request,
+                                                            TheoryResponse theoryResponse,
+                                                            String foundString) {
         if (!theoryResponse.getOk()) {
             return handleErrorResult(request, theoryResponse);
         }
@@ -224,7 +262,7 @@ public class IsabelleService {
         List<String> counterexamples = messages.stream()
                 .parallel()
                 .map(TaskMessage::getMessage)
-                .filter(message -> message.contains(NITPICK_FOUND_STRING))
+                .filter(message -> message.contains(foundString))
                 .toList();
 
         if (counterexamples.isEmpty()) {
@@ -248,18 +286,13 @@ public class IsabelleService {
     * */
     private CompletableFuture<IsabelleResult> trySledgehammer(@Valid @NotNull TheoryRequest request) {
         log.debug("Sledgehammer for ID = {}", request.getRequestId());
-        return CompletableFuture.supplyAsync(() -> TheoryFileTemplate.generate(Command.SLEDGEHAMMER, request))
+        return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.SLEDGEHAMMER, request))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) -> log.debug("Get Response for Sledgehammer: {}", theoryResponse))
                 .thenApplyAsync(theoryResponse -> recursiveSledgehammer(request, theoryResponse));
     }
 
     private IsabelleResult recursiveSledgehammer(TheoryRequest request, TheoryResponse theoryResponse) {
-        /* Base Case: Error in processing */
-        if (!theoryResponse.getOk()) {
-            return handleErrorResult(request, theoryResponse);
-        }
-
         List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
 
         long done = messages.stream()
@@ -298,6 +331,11 @@ public class IsabelleService {
                     .status(Status.FAILED)
                     .message("Proof not found")
                     .build();
+        }
+
+        /* Base Case: Error in processing */
+        if (!theoryResponse.getOk()) {
+            return handleErrorResult(request, theoryResponse);
         }
 
         /* Recursion: Try proofs */

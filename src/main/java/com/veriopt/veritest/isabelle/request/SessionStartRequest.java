@@ -1,7 +1,7 @@
 package com.veriopt.veritest.isabelle.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.veriopt.veritest.config.SessionConfig;
+import com.veriopt.veritest.isabelle.config.SessionConfig;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;

@@ -13,6 +13,22 @@ server:
 
 isabelle:
   location: /root/Isabelle/bin/isabelle
+  theories:
+    include:
+      - Canonicalizations.AbsPhase
+      - Canonicalizations.AddPhase
+      - Canonicalizations.AndPhase
+      - Canonicalizations.BinaryNode
+      - Canonicalizations.ConditionalPhase
+      - Canonicalizations.MulPhase
+      - Canonicalizations.NewAnd
+      - Canonicalizations.NotPhase
+      - Canonicalizations.OrPhase
+      - Canonicalizations.ShiftPhase
+      - Canonicalizations.SignedDivPhase
+      - Canonicalizations.SignedRemPhase
+      - Canonicalizations.SubPhase
+      - Canonicalizations.XorPhase
   server:
     name: isabelle
     port: 8081
