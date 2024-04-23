@@ -1,0 +1,1 @@
+{"theory":"((x eq y) ? x : y) \\<longmapsto> y when (type x = Integer \\<and> type_safe x y)","request_id":"ConditionalEqualIsRHS_2"}

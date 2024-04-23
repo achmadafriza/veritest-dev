@@ -1,0 +1,1 @@
+{"request_id":"UnsignedRemWhenYPower2_1","theory":"x |%| const(c) \\<longmapsto> (x & (c - 1)) when (c = const(2^j))"}

@@ -1,0 +1,1 @@
+{"request_id":"AddNot2_1","theory":"exp[(~n) + n] \\<longmapsto> (const (new_int b (not 0)))\n                        when (stamp_expr n = IntegerStamp b l h \\<and> wf_stamp n)"}

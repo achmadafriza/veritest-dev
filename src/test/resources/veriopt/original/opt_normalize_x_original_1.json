@@ -1,0 +1,1 @@
+{"request_id":"opt_normalize_x_original_1","theory":"((BinaryExpr BinIntegerEquals x (ConstantExpr (IntVal32 0))) ? \n                                (ConstantExpr (IntVal32 0)) : (ConstantExpr (IntVal32 1))) \\<longmapsto> x\n                                when (stamp_expr x = IntegerStamp 32 0 1 \\<and> \n                                      wf_stamp x)"}

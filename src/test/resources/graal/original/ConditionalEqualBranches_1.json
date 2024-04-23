@@ -1,0 +1,1 @@
+{"theory":"(cond ? v : v) \\<longmapsto> v","request_id":"ConditionalEqualBranches_1"}

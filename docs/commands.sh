@@ -27,5 +27,11 @@ apt update
 apt install wget lualatex curl less libfontconfig1 libgomp1 openssh-client pwgen rlwrap
 wget https://isabelle.in.tum.de/dist/Isabelle2023_linux.tar.gz
 
+docker build . -t veritest
 docker run --rm -it -p 8080:8080 veritest
-docker tag
+
+docker tag veritest achmadafriza/veritest:0.1.3
+docker push achmadafriza/veritest:0.1.3
+
+docker tag veritest achmadafriza/veritest:latest
+docker push achmadafriza/veritest:latest

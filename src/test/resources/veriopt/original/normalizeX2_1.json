@@ -1,0 +1,1 @@
+{"request_id":"normalizeX2_1","theory":"((x eq (const (IntVal 32 1))) ? \n                                  (const (IntVal 32 1)) : (const (IntVal 32 0))) \\<longmapsto> x\n                                   when (x = ConstantExpr (IntVal 32 0) | \n                                        (x = ConstantExpr (IntVal 32 1)))"}

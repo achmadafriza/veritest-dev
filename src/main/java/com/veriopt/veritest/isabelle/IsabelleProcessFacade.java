@@ -207,7 +207,7 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
                         continue;
                     }
 
-                    log.debug("Read: {}", response);
+                    log.trace("Read: {}", response);
 
                     parseAndSendTask(responseArgs);
                 }

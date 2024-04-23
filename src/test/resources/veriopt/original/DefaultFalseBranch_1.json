@@ -1,0 +1,1 @@
+{"theory":"(false ? x : y) \\<longmapsto> y","request_id":"DefaultFalseBranch_1"}

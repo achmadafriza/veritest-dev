@@ -1,0 +1,1 @@
+{"theory":"((const IntVal b 0) - x) \\<longmapsto> (-x) \n                                  when (wf_stamp x \\<and> stamp_expr x = IntegerStamp b lo hi \\<and> \\<not>(is_ConstantExpr x))","request_id":"ZeroSubtractValue_1"}

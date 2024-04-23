@@ -1,0 +1,1 @@
+{"theory":"(x \\<oplus> x) \\<longmapsto> false when \n                      (wf_stamp x \\<and> stamp_expr x = default_stamp)","request_id":"XorSelfIsFalse_1"}

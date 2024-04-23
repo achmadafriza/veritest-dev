@@ -1,0 +1,1 @@
+{"theory":"((!e) ? x : y) \\<longmapsto> (e ? y : x)","request_id":"NegateConditionFlipBranches_1"}

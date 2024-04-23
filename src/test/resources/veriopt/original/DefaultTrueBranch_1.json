@@ -1,0 +1,1 @@
+{"request_id":"DefaultTrueBranch_1","theory":"(true ? x : y) \\<longmapsto> x"}

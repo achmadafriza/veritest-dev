@@ -1,0 +1,1 @@
+{"request_id":"opt_DivisionByOneIsSelf32_1","theory":"x / ConstantExpr (IntVal32 1) \\<longmapsto> x"}

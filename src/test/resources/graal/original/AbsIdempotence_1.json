@@ -1,0 +1,1 @@
+{"theory":"abs(abs(e)) \\<longmapsto> abs(e)","request_id":"AbsIdempotence_1"}

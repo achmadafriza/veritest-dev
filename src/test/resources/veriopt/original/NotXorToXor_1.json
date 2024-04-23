@@ -1,0 +1,1 @@
+{"request_id":"NotXorToXor_1","theory":"exp[(~x) \\<oplus> (~y)] \\<longmapsto> (x \\<oplus> y)\n                        when (stamp_expr x = IntegerStamp 32 lx hx \\<and> wf_stamp x) \\<and>\n                             (stamp_expr y = IntegerStamp 32 ly hy \\<and> wf_stamp y)"}

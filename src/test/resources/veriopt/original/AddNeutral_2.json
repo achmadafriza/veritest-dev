@@ -1,0 +1,1 @@
+{"theory":"(e + (const (IntVal 32 0))) \\<longmapsto> e when (stamp_expr e = IntegerStamp 32 l u)","request_id":"AddNeutral_2"}

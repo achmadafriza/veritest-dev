@@ -1,0 +1,1 @@
+{"theory":"((u < v) ? x : y) \\<longmapsto> y \n    when (stamp_under (stamp_expr v) (stamp_expr u) \\<and> wf_stamp u \\<and> wf_stamp v)","request_id":"condition_bounds_y_1"}

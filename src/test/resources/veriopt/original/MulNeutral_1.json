@@ -1,0 +1,1 @@
+{"theory":"x * ConstantExpr (IntVal b 1) \\<longmapsto> x","request_id":"MulNeutral_1"}

@@ -1,0 +1,1 @@
+{"request_id":"MulEliminator_1","theory":"x * ConstantExpr (IntVal b 0) \\<longmapsto> const (IntVal b 0)"}
