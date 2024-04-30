@@ -189,20 +189,6 @@ public class IsabelleService {
     }
 
     private static IsabelleResult handleErrorResult(TheoryRequest request, TheoryResponse theoryResponse) {
-        List<String> errors = theoryResponse.getErrors().stream()
-                .parallel()
-                .map(TaskMessage::getMessage)
-                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
-                .toList();
-
-        if (!errors.isEmpty()) {
-            return IsabelleResult.builder()
-                .requestID(request.getRequestId())
-                .status(Status.MALFORMED)
-                .isabelleMessages(errors)
-                .build();
-        }
-
         List<String> messages = theoryResponse.getErrors().stream()
                 .parallel()
                 .filter(taskMessage -> "error".equals(taskMessage.getKind()))
@@ -217,6 +203,20 @@ public class IsabelleService {
     }
 
     private static IsabelleResult buildAutoResult(TheoryRequest request, TheoryResponse theoryResponse) {
+        List<String> errors = theoryResponse.getErrors().stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
+                .toList();
+
+        if (!errors.isEmpty()) {
+            return IsabelleResult.builder()
+                .requestID(request.getRequestId())
+                .status(Status.MALFORMED)
+                .isabelleMessages(errors)
+                .build();
+        }
+
         if (!theoryResponse.getOk()) {
             return handleErrorResult(request, theoryResponse);
         }
