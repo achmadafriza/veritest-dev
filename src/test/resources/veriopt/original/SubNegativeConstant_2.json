@@ -1,1 +1,0 @@
-{"request_id":"SubNegativeConstant_2","theory":"x - (const (val[-y])) \\<longmapsto> x + (const y)"}

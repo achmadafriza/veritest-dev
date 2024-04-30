@@ -1,1 +1,0 @@
-{"theory":"((const x) & y) \\<longmapsto> y & (const x) \n                                         when \\<not>(is_ConstantExpr y)","request_id":"AndShiftConstantRight_1"}

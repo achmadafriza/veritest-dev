@@ -1,0 +1,1 @@
+{"request_id":"TransformShiftIntoMul_1","theory":"(x << const(y)) \\<longmapsto> x * 2^(const(y))"}

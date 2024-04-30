@@ -1,1 +1,0 @@
-{"request_id":"RightShiftsBecomeNegativeOne_1","theory":"((a >> const(b)) >> const(y)) \\<longmapsto> const(-1)"}

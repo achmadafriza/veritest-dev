@@ -1,1 +1,0 @@
-{"theory":"((x - x % y) / y) \\<longmapsto> x / y","request_id":"EliminateRedundantMod_1"}

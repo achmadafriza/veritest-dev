@@ -1,1 +1,0 @@
-{"request_id":"FloatDivByOneIsSelf_1","theory":"(x / 1.0) \\<longmapsto> x"}

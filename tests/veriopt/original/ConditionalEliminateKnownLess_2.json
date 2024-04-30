@@ -1,0 +1,1 @@
+{"theory":"(x < y ? x : y) \\<mapsto> x when (x.stamp.upper <= y.stamp.lower)","request_id":"ConditionalEliminateKnownLess_2"}

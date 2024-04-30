@@ -1,1 +1,0 @@
-{"request_id":"ConditionalEliminateKnownLess_1","theory":"((x < y) ? x : y) \\<longmapsto> x \n                                 when (stamp_under (stamp_expr x) (stamp_expr y)\n                                      \\<and> wf_stamp x \\<and> wf_stamp y)"}

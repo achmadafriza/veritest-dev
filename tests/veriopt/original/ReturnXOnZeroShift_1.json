@@ -1,0 +1,1 @@
+{"request_id":"ReturnXOnZeroShift_1","theory":"(x >> const(new_int 32 0)) \\<longmapsto> x when \n                                  ((stamp_expr x = IntegerStamp 32 lo hi) \\<and> (wf_stamp x))"}

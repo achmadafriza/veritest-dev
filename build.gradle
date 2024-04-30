@@ -15,6 +15,11 @@ bootJar {
     mainClass = 'com.veriopt.veritest.VeritestApplication'
 }
 
+test {
+    testLogging.showStandardStreams = true
+    systemProperties['spring.test.context.cache.maxSize'] = 64
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -34,6 +39,8 @@ repositories {
 dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.session:spring-session-core'
@@ -45,7 +52,6 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
     // https://mvnrepository.com/artifact/com.bucket4j/bucket4j-core
     implementation group: 'com.bucket4j', name: 'bucket4j-core', version: '8.7.1'
-
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
@@ -59,6 +65,10 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-log4j2')
     // https://mvnrepository.com/artifact/com.lmax/disruptor
     implementation group: 'com.lmax', name: 'disruptor', version: '4.0.0'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+    implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.10.0'
+    testImplementation group: 'org.apache.commons', name: 'commons-csv', version: '1.10.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

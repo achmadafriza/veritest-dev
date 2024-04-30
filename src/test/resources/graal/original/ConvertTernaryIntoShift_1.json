@@ -1,1 +1,0 @@
-{"request_id":"ConvertTernaryIntoShift_1","theory":"((x < 0) ? (x + y) : x) \\<longmapsto>"}

@@ -1,1 +1,0 @@
-{"request_id":"FloatDoubleRHSMinNaNIsNaN_1","theory":"Math.min(x, y) \\<longmapsto> NaN (when (is_Float y | is_Double y) && is_NaN y)"}

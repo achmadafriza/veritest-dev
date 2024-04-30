@@ -1,1 +1,0 @@
-{"request_id":"NeverEqNotSelf_1","theory":"exp[BinaryExpr BinIntegerEquals (\\<not>x) x] \\<longmapsto> \n                              exp[(const (bool_to_val False))]\n                        when (stamp_expr x = IntegerStamp 32 xl xh \\<and> wf_stamp x)"}

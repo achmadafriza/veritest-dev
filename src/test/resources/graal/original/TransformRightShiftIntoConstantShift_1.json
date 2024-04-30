@@ -1,1 +1,0 @@
-{"theory":"(x >> const(y)) \\<longmapsto> const(lo >> (y & mask(x >> y)))","request_id":"TransformRightShiftIntoConstantShift_1"}

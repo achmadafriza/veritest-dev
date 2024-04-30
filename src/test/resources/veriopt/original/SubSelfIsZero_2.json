@@ -1,1 +1,0 @@
-{"request_id":"SubSelfIsZero_2","theory":"(x - x) \\<longmapsto> const IntVal b 0 when \n                      (wf_stamp x \\<and> stamp_expr x = IntegerStamp b lo hi)"}

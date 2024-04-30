@@ -1,1 +1,0 @@
-{"request_id":"OrShiftConstantRight_1","theory":"((const x) | y) \\<longmapsto> y | (const x) when \\<not>(is_ConstantExpr y)"}

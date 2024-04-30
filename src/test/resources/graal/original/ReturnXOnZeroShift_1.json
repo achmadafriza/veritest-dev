@@ -1,1 +1,0 @@
-{"theory":"(x >> const(0)) \\<longmapsto> x","request_id":"ReturnXOnZeroShift_1"}

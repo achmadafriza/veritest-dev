@@ -34,6 +34,8 @@ import java.util.function.BiConsumer;
 @Log4j2
 @Service
 public class IsabelleService {
+    private static final String MALFORMED_STRING = "Inner syntax error";
+    private static final String TYPE_ERROR_STRING = "Type unification failed";
     private static final String QUICKCHECK_FOUND_STRING = "Quickcheck found a counterexample.";
     private static final String NITPICK_FOUND_STRING = "Nitpick found a counterexample:";
     private static final String SLEDGEHAMMER_FOUND_STRING = "Try this:";
@@ -57,6 +59,7 @@ public class IsabelleService {
         final CompletableFuture<Void> futureResult = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
 
         futures.forEach(future -> future.thenAccept(result -> {
+            /* If the future is finished, and result is not failed, then terminate allOf() */
             if(Future.State.SUCCESS.equals(future.state())
                     && !Status.FAILED.equals(result.getStatus())) {
                 futureResult.complete(null);
@@ -92,6 +95,7 @@ public class IsabelleService {
                 .filter(future -> Future.State.SUCCESS.equals(future.state()))
                 .map(CompletableFuture::resultNow)
                 .filter(result -> !Status.FAILED.equals(result.getStatus()))
+                .peek(result -> log.info("Result for {}: {}", request.getRequestId(), result))
                 .findAny()
                 .orElse(futures.getFirst().join());
     }
@@ -119,9 +123,9 @@ public class IsabelleService {
                     default -> throw new IllegalStateException("Unexpected value: " + task);
                 })
                 .thenApplyAsync(response -> {
-//                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-//                    tempDir = tempDir.resolve(response.getTempDir());
-                    Path tempDir = Path.of(response.getTempDir());
+                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+                    tempDir = tempDir.resolve(response.getTempDir());
+//                    Path tempDir = Path.of(response.getTempDir()); // TODO: for linux env
 
                     Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
                     try {
@@ -185,6 +189,20 @@ public class IsabelleService {
     }
 
     private static IsabelleResult handleErrorResult(TheoryRequest request, TheoryResponse theoryResponse) {
+        List<String> errors = theoryResponse.getErrors().stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
+                .toList();
+
+        if (!errors.isEmpty()) {
+            return IsabelleResult.builder()
+                .requestID(request.getRequestId())
+                .status(Status.MALFORMED)
+                .isabelleMessages(errors)
+                .build();
+        }
+
         List<String> messages = theoryResponse.getErrors().stream()
                 .parallel()
                 .filter(taskMessage -> "error".equals(taskMessage.getKind()))
@@ -250,7 +268,6 @@ public class IsabelleService {
                         buildCounterexampleResult(request, theoryResponse, QUICKCHECK_FOUND_STRING));
     }
 
-    /* Task Processing */
     private static IsabelleResult buildCounterexampleResult(TheoryRequest request,
                                                             TheoryResponse theoryResponse,
                                                             String foundString) {
@@ -295,6 +312,22 @@ public class IsabelleService {
     private IsabelleResult recursiveSledgehammer(TheoryRequest request, TheoryResponse theoryResponse) {
         List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
 
+        /* Don't check if not theoryResponse.getOk() as theory is going to be malformed with sorry at the end */
+        long errors = messages.stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
+                .count();
+
+        /* Base Case: Errors in Optimization rule */
+        if (errors > 0) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.FAILED)
+                    .proofs(request.getProofs())
+                    .build();
+        }
+
         long done = messages.stream()
                 .parallel()
                 .map(TaskMessage::getMessage)
@@ -315,6 +348,7 @@ public class IsabelleService {
                 .map(TaskMessage::getMessage)
                 .filter(message -> message.contains(SLEDGEHAMMER_FOUND_STRING))
                 .map(message -> {
+                    /* Parse substring of: "Try this: {substring} (Elapsed Time: ...ms)" */
                     String s = message.substring(
                             message.indexOf(SLEDGEHAMMER_FOUND_STRING) + SLEDGEHAMMER_FOUND_STRING.length(),
                             message.lastIndexOf('(')

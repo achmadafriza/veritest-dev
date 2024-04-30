@@ -1,1 +1,0 @@
-{"theory":"(x - (const (IntVal b y))) \\<longmapsto> \n                                    x + (const (IntVal b y))  when (y < 0)","request_id":"SubNegativeConstant_1"}

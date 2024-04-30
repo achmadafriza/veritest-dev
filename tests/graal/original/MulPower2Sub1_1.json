@@ -1,0 +1,1 @@
+{"request_id":"MulPower2Sub1_1","theory":"x * const((2^j) - 1) \\<longmapsto> x << const(j) - x"}

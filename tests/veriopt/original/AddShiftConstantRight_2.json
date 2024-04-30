@@ -1,0 +1,1 @@
+{"theory":"((const c) + y) \\<longmapsto> y + (const c) when ~(is_ConstantExpr y)","request_id":"AddShiftConstantRight_2"}

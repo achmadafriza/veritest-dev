@@ -1,0 +1,1 @@
+{"theory":"((a >> const(b)) >> const(y)) \\<longmapsto> const(-1)","request_id":"RightShiftsBecomeNegativeOne_1"}

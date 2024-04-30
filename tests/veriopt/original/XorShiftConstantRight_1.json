@@ -1,0 +1,1 @@
+{"request_id":"XorShiftConstantRight_1","theory":"((const x) \\<oplus> y) \\<longmapsto> y \\<oplus> (const x) when \\<not>(is_ConstantExpr y)"}

@@ -1,1 +1,0 @@
-{"request_id":"FloatLHSMinOfPosInfinity_1","theory":"Math.min(inf, y) \\<longmapsto> y"}

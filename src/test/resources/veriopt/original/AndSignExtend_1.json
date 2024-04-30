@@ -1,1 +1,0 @@
-{"theory":"BinaryExpr BinAnd (UnaryExpr (UnarySignExtend In Out) (x)) \n                                               (const (new_int b e))\n                              \\<longmapsto> (UnaryExpr (UnaryZeroExtend In Out) (x))\n                                  when (e = (1 << In) - 1)","request_id":"AndSignExtend_1"}

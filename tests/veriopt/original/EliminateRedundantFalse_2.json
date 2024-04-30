@@ -1,0 +1,1 @@
+{"request_id":"EliminateRedundantFalse_2","theory":"(x \\<oplus> false) \\<longmapsto> x"}

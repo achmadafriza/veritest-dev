@@ -1,1 +1,0 @@
-{"theory":"abs(abs(Rep_int32 e)) \\<mapsto> abs(Rep_int32 e)","request_id":"AbsIdempotence_1"}

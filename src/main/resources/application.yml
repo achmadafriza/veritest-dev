@@ -12,7 +12,8 @@ server:
     connection-timeout: -1
 
 isabelle:
-  location: /root/Isabelle/bin/isabelle
+#  location: /root/Isabelle/bin/isabelle # For Docker
+  location: /mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle
   theories:
     include:
       - Canonicalizations.AbsPhase
@@ -40,8 +41,8 @@ isabelle:
       - show_question_marks=false
       - quick_and_dirty
     dirs:
-#      - /mnt/c/Programming/Thesis/veriopt-dev/isabelle
-      - /root/source
+      - /mnt/c/Programming/Thesis/veriopt-dev/isabelle
+#      - /root/source # For Docker
     include_sessions:
       - OptimizationDSL
     verbose: true

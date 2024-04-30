@@ -1,1 +1,0 @@
-{"request_id":"redundant_lhs_add_1","theory":"((x + y) & z) \\<longmapsto> x & z\n                               when ((and (IRExpr_up y) (IRExpr_down z)) = 0)"}

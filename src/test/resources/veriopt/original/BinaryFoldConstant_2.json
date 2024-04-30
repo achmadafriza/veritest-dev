@@ -1,1 +1,0 @@
-{"theory":"BinaryExpr op (const e1) (const e2) \\<longmapsto>\n                                  ConstantExpr (bin_eval op e1 e2) when int_and_equal_bits e1 e2","request_id":"BinaryFoldConstant_2"}

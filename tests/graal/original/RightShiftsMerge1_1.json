@@ -1,0 +1,1 @@
+{"request_id":"RightShiftsMerge1_1","theory":"((a >> const(b)) >> const(y)) \\<longmapsto> (a >> const(mask(x >> y)))"}

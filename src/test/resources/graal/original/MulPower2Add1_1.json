@@ -1,1 +1,0 @@
-{"theory":"x * const((2^j) + 1) \\<longmapsto> x << const(j) + x","request_id":"MulPower2Add1_1"}

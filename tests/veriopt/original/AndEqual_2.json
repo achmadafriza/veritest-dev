@@ -1,0 +1,1 @@
+{"request_id":"AndEqual_2","theory":"((x::intexp) & x) \\<longmapsto> x"}

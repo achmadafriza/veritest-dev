@@ -1,1 +1,0 @@
-{"request_id":"TrueCLessZero_1","theory":"x / c \\<longmapsto> -((x + ((x >> const(x.getBits() - 1)) >>> const(x.getBits() - j))) >> const(j))"}

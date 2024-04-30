@@ -1,1 +1,0 @@
-{"request_id":"DistributeSubtraction_1","theory":"-(x - y) \\<longmapsto> (y - x) if ~(is_Float (x - y))"}

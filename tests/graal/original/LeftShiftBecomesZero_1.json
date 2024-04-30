@@ -1,0 +1,1 @@
+{"theory":"((a << const(b)) << const(y)) \\<longmapsto> 0","request_id":"LeftShiftBecomesZero_1"}

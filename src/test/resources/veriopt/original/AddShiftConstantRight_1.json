@@ -1,1 +1,0 @@
-{"request_id":"AddShiftConstantRight_1","theory":"((const v) + y) \\<longmapsto> y + (const v) when \\<not>(is_ConstantExpr y)"}

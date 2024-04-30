@@ -1,0 +1,1 @@
+{"request_id":"MulEliminator_2","theory":"((x::i32exp) * const(IntVal 32 0)) \\<longmapsto> const(IntVal 32 0)"}

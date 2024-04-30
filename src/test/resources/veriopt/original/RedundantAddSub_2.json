@@ -1,1 +1,0 @@
-{"request_id":"RedundantAddSub_2","theory":"isAssociative + => (b + a) - b \\<mapsto> a"}

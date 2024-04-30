@@ -1,0 +1,1 @@
+{"theory":"Math.max(y, -inf) \\<longmapsto> y","request_id":"FloatRHSMaxOfNegInfinity_1"}

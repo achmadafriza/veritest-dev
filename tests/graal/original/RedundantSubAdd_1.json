@@ -1,0 +1,1 @@
+{"theory":"(a - b) + b \\<longmapsto> a when isAssociative +","request_id":"RedundantSubAdd_1"}

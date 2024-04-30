@@ -1,1 +1,0 @@
-{"request_id":"RemainderCompareZeroEquivalent_1","theory":"x % y == 0 \\<longmapsto> (x & (y-1)) == 0 when (y = const(2^j))"}

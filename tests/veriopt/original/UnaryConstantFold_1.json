@@ -1,0 +1,1 @@
+{"theory":"UnaryExpr op c \\<mapsto> ConstantExpr (unary_eval op val_c) when is_int_val val_c","request_id":"UnaryConstantFold_1"}

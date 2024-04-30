@@ -1,1 +1,0 @@
-{"request_id":"AndNeutral_2","theory":"((x::i32exp) & (const (IntVal 32 (neg_one 32)))) \\<longmapsto> x"}

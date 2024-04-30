@@ -1,0 +1,1 @@
+{"theory":"(x >> y) \\<longmapsto> (x >>> y)","request_id":"TransformToUnsignedOnPositiveX_1"}

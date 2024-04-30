@@ -1,1 +1,0 @@
-{"theory":"x |%| y \\<longmapsto> const(x |%| y) when (is_Constant y && is_Constant x && y != 0)","request_id":"UnsignedRemXYConst_1"}

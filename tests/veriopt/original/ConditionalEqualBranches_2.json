@@ -1,0 +1,1 @@
+{"request_id":"ConditionalEqualBranches_2","theory":"(b ? v : v) \\<longmapsto> v"}

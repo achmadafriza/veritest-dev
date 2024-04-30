@@ -1,0 +1,1 @@
+{"request_id":"MulNegate_2","theory":"(x * const (-1) ) \\<mapsto> -x when (stamp_expr x = IntegerStamp 32 l u)"}

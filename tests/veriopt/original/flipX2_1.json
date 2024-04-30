@@ -1,0 +1,1 @@
+{"request_id":"flipX2_1","theory":"((x eq (const (IntVal 32 1))) ? \n                             (const (IntVal 32 0)) : (const (IntVal 32 1))) \\<longmapsto> x \\<oplus> (const (IntVal 32 1))\n                              when (x = ConstantExpr (IntVal 32 0) | \n                                   (x = ConstantExpr (IntVal 32 1)))"}

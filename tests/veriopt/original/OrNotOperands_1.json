@@ -1,0 +1,1 @@
+{"request_id":"OrNotOperands_1","theory":"(~x | ~y) \\<longmapsto> ~(x & y)"}

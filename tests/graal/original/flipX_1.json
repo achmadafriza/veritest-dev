@@ -1,0 +1,1 @@
+{"theory":"x == 0 ? 1 : 0 \\<longmapsto> (x ^ 1) (when (stamp_expr x = IntegerStamp xBits lo hi) && x.upMask == 1)","request_id":"flipX_1"}

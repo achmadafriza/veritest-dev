@@ -1,0 +1,1 @@
+{"request_id":"DivItself_1","theory":"(x / x) \\<longmapsto> const IntVal b 1 when \n                      (wf_stamp x \\<and> stamp_expr x = IntegerStamp b lo hi)"}

@@ -1,1 +1,0 @@
-{"theory":"(x >> const(y)) \\<longmapsto> x","request_id":"EliminateConstantRHS_1"}
