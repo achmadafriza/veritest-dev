@@ -29,6 +29,7 @@ import java.util.stream.Stream;
 @Log4j2
 @Disabled
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@Execution(ExecutionMode.SAME_THREAD)
 abstract class BaseTestFactory {
     public abstract String getTestName();
     public abstract Path getTestDirectory();
