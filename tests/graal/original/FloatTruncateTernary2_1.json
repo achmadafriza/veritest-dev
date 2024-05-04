@@ -1,1 +1,1 @@
-{"theory":"0.0 < x ? floor(x) : ceil(x) \\<longmapsto> RoundNode(x, TRUNCATE)","request_id":"FloatTruncateTernary2_1"}
+{"request_id":"FloatTruncateTernary2_1","theory":"0.0 < x ? floor(x) : ceil(x) \\<longmapsto> RoundNode(x, TRUNCATE)"}

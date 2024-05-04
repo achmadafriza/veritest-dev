@@ -1,1 +1,1 @@
-{"theory":"x * const(1) \\<longmapsto> x","request_id":"MulNeutral2_1"}
+{"request_id":"MulNeutral2_1","theory":"x * const(1) \\<longmapsto> x"}

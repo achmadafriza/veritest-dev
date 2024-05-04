@@ -1,1 +1,1 @@
-{"theory":"x |/| const(1) \\<longmapsto> x","request_id":"DivisionByOneIsSelf_2"}
+{"request_id":"DivisionByOneIsSelf_2","theory":"x |/| const(1) \\<longmapsto> x"}

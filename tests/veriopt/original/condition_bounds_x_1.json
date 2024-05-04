@@ -1,1 +1,1 @@
-{"request_id":"condition_bounds_x_1","theory":"((u < v) ? x : y) \\<longmapsto> x \n    when (stamp_under (stamp_expr u) (stamp_expr v) \\<and> wf_stamp u \\<and> wf_stamp v)"}
+{"theory":"((u < v) ? x : y) \\<longmapsto> x \n    when (stamp_under (stamp_expr u) (stamp_expr v) \\<and> wf_stamp u \\<and> wf_stamp v)","request_id":"condition_bounds_x_1"}

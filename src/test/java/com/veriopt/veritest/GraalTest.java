@@ -9,15 +9,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class VerioptTest extends BaseTestFactory {
+class GraalTest extends BaseTestFactory {
     @Override
     public String getTestName() {
-        return "VerioptTest";
+        return "GraalTest";
     }
 
     @Override
     public Path getTestDirectory() {
-        return Paths.get("tests/veriopt/original");
+        return Paths.get("tests/graal/original");
     }
 
     @Override

@@ -1,1 +1,1 @@
-{"theory":"(x | false) \\<longmapsto> x","request_id":"EliminateRedundantFalse_1"}
+{"request_id":"EliminateRedundantFalse_1","theory":"(x | false) \\<longmapsto> x"}

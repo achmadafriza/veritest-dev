@@ -1,1 +1,1 @@
-{"request_id":"normalizeX2_1","theory":"x == 1 ? 1 : 0 \\<longmapsto> x (when (stamp_expr x = IntegerStamp xBits lo hi) && x.upMask == 1)"}
+{"theory":"x == 1 ? 1 : 0 \\<longmapsto> x (when (stamp_expr x = IntegerStamp xBits lo hi) && x.upMask == 1)","request_id":"normalizeX2_1"}

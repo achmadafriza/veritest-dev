@@ -1,1 +1,1 @@
-{"request_id":"OptimiseIntegerTest_1","theory":"(x & 1) == 0 ? 0 : 1 \\<longmapsto> (x & 1)"}
+{"theory":"(x & 1) == 0 ? 0 : 1 \\<longmapsto> (x & 1)","request_id":"OptimiseIntegerTest_1"}

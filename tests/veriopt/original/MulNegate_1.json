@@ -1,1 +1,1 @@
-{"theory":"x * -(const (IntVal b 1)) \\<longmapsto> -x","request_id":"MulNegate_1"}
+{"request_id":"MulNegate_1","theory":"x * -(const (IntVal b 1)) \\<longmapsto> -x"}

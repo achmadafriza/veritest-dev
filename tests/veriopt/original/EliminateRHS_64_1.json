@@ -1,1 +1,1 @@
-{"theory":"(x << const(y)) \\<longmapsto> x when \n                               (stamp_expr x = IntegerStamp 64 lo hi \\<and> \n                                wf_stamp x)","request_id":"EliminateRHS_64_1"}
+{"request_id":"EliminateRHS_64_1","theory":"(x << const(y)) \\<longmapsto> x when \n                               (stamp_expr x = IntegerStamp 64 lo hi \\<and> \n                                wf_stamp x)"}

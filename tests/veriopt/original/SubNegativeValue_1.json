@@ -1,1 +1,1 @@
-{"theory":"(x - (-y)) \\<longmapsto> x + y","request_id":"SubNegativeValue_1"}
+{"request_id":"SubNegativeValue_1","theory":"(x - (-y)) \\<longmapsto> x + y"}

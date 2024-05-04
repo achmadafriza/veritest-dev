@@ -1,1 +1,1 @@
-{"theory":"(x | y) \\<longmapsto> x when (canBeZero x.stamp & canBeOne y.stamp) = 0","request_id":"OrLeftFallthrough_1"}
+{"request_id":"OrLeftFallthrough_1","theory":"(x | y) \\<longmapsto> x when (canBeZero x.stamp & canBeOne y.stamp) = 0"}

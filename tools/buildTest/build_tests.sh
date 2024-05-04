@@ -21,4 +21,4 @@ grep -r 'veriopt:' /mnt/c/Programming/Thesis/graal/compiler/**/*.java | \
   grep -v 'MergeZeroExtendAdd\|MergeSignExtendAdd' > \
   ../../tests/graal/veriopt-rules.log
 
-perl parse_optimization.pl ./tests/graal/veriopt-rules.log ./tests/graal/original/
+perl parse_optimization.pl ../../tests/graal/veriopt-rules.log ../../tests/graal/original/

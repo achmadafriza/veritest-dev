@@ -1,1 +1,1 @@
-{"request_id":"XorShiftConstantRight_1","theory":"((ConstantExpr x) ^ y) \\<longmapsto> (y ^ (ConstantExpr x)) when ~(is_ConstantExpr y)"}
+{"theory":"((ConstantExpr x) ^ y) \\<longmapsto> (y ^ (ConstantExpr x)) when ~(is_ConstantExpr y)","request_id":"XorShiftConstantRight_1"}

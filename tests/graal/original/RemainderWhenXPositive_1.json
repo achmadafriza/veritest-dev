@@ -1,1 +1,1 @@
-{"request_id":"RemainderWhenXPositive_1","theory":"x % y \\<longmapsto> (x & (y - 1)) when (is_Constant y && stamp_expr x = IntegerStamp b lo hi && lo >= 0)"}
+{"theory":"x % y \\<longmapsto> (x & (y - 1)) when (is_Constant y && stamp_expr x = IntegerStamp b lo hi && lo >= 0)","request_id":"RemainderWhenXPositive_1"}
