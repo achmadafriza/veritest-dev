@@ -59,9 +59,9 @@ class IsabelleProcessFacade implements IsabelleProcessInterface {
         try {
             this.process = new ProcessBuilder()
                     // TODO: temp fix for windows env
-                    .command("wsl.exe", "/mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle", "client", "-n", name, "-p", port)
+//                    .command("wsl.exe", "/mnt/c/Programming/Thesis/Isabelle2023/bin/isabelle", "client", "-n", name, "-p", port)
                     // TODO: for linux env
-//                    .command(executableLocation, "client", "-n", name, "-p", port)
+                    .command(executableLocation, "client", "-n", name, "-p", port)
                     .redirectErrorStream(true)
                     .start();
 

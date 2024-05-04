@@ -35,3 +35,5 @@ docker push achmadafriza/veritest:0.1.3
 
 docker tag veritest achmadafriza/veritest:latest
 docker push achmadafriza/veritest:latest
+
+poetry run python parse.py ./result-logs.txt

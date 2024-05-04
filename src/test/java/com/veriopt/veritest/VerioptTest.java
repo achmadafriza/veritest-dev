@@ -22,14 +22,19 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
 @Log4j2
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class VerioptTest {
+class VerioptTest {
     private static final String testName = "VerioptTest";
-    private final List<TestResult> testResults = new ArrayList<>();
+    private static final int ITERATION_COUNT = 5;
+
+    private final List<TestResult> testResults = Collections.synchronizedList(new ArrayList<>());
+    private final List<TestResult> summaryResults = Collections.synchronizedList(new ArrayList<>());
 
     private IsabelleService service;
     private ObjectMapper mapper;
@@ -55,14 +60,23 @@ public class VerioptTest {
     }
 
     @BeforeAll
-    public void clearTestResults() throws InterruptedException {
+    public void clearTestResults() throws InterruptedException, IOException {
         this.testResults.clear();
+        this.summaryResults.clear();
+
+        if (!Files.exists(getTestDirectory())) {
+            throw new IllegalArgumentException("Path does not exist!");
+        }
+
+        Path resultPath = this.getTestDirectory().resolve("results");
+        Files.createDirectories(resultPath);
 
         ConfigurableApplicationContext context = SpringApplication.run(TestApplication.class);
 
         this.service = context.getBean(IsabelleService.class);
         this.mapper = context.getBean("isabelleMapper", ObjectMapper.class);
 
+        /* Wait for Isabelle Client to connect */
         Thread.sleep(5000);
     }
 
@@ -72,42 +86,89 @@ public class VerioptTest {
         return loadTestCases().map(test -> DynamicTest.dynamicTest(
                 test.getRequestId(),
                 () -> {
-                    long startTime = System.currentTimeMillis();
-                    IsabelleResult result = service.validateTheory(test);
-                    long endTime = System.currentTimeMillis();
+                    List<TestResult> iterations = new ArrayList<>();
+                    for (int i = 1; i <= ITERATION_COUNT; i++) {
+                        long startTime = System.currentTimeMillis();
+                        IsabelleResult result = service.validateTheory(test);
+                        long endTime = System.currentTimeMillis();
 
-                    TestResult testResult = TestResult.builder()
+                        TestResult testResult = TestResult.builder()
+                                .requestId(String.format("%s-%d", test.getRequestId(), i))
+                                .resultStatus(result.getStatus())
+                                .elapsedTime(endTime - startTime)
+                                .result(result.toString())
+                                .build();
+
+                        this.testResults.add(testResult);
+                        iterations.add(testResult);
+                    }
+
+                    long averageElapsedTime = 0;
+                    for (TestResult result : iterations) {
+                        averageElapsedTime += result.getElapsedTime();
+                    }
+
+                    averageElapsedTime = averageElapsedTime / ITERATION_COUNT;
+
+                    TestResult summary = TestResult.builder()
                             .requestId(test.getRequestId())
-                            .resultStatus(result.getStatus())
-                            .elapsedTime(endTime - startTime)
-                            .result(result.toString())
+                            .resultStatus(iterations.getFirst().getResultStatus())
+                            .elapsedTime(averageElapsedTime)
                             .build();
 
-                    this.testResults.add(testResult);
+                    this.summaryResults.add(summary);
                 })
         );
     }
 
-    private void generateCsv(List<TestResult> results) {
+    private void generateCsv(List<TestResult> results, List<TestResult> summaryResults) {
         CSVFormat format = CSVFormat.DEFAULT.builder()
                 .setHeader(TestHeaders.class)
                 .build();
 
-        StandardOpenOption[] options = {StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE};
-        Path filePath = this.getTestDirectory().resolve(String.format("%s.csv", testName));
-        try (final BufferedWriter writer = Files.newBufferedWriter(filePath, options);
-             final CSVPrinter printer = new CSVPrinter(writer, format)) {
-            printer.printRecords(results);
+        Path resultPath = this.getTestDirectory().resolve("results");
+        Path collatedPath = resultPath.resolve(String.format("%s.csv", testName));
+        Path summaryPath = resultPath.resolve(String.format("%s-summary.csv", testName));
+
+        try {
+            if (!Files.exists(collatedPath)) {
+                Files.createFile(collatedPath);
+            }
+
+            if (!Files.exists(summaryPath)) {
+                Files.createFile(summaryPath);
+            }
+
+            StandardOpenOption[] options = {StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE};
+            try (final BufferedWriter writer = Files.newBufferedWriter(collatedPath, options);
+                 final CSVPrinter printer = new CSVPrinter(writer, format);
+                 final BufferedWriter summaryWriter = Files.newBufferedWriter(summaryPath, options);
+                 final CSVPrinter summaryPrinter = new CSVPrinter(summaryWriter, format)) {
+                for (TestResult result : results) {
+                    printer.printRecord(result.getRequestId(), result.getElapsedTime(), result.getResultStatus(), result.getResult());
+                }
+
+                for (TestResult result : summaryResults) {
+                    summaryPrinter.printRecord(result.getRequestId(), result.getElapsedTime(), result.getResultStatus(), result.getResult());
+                }
+            }
         } catch (IOException e) {
             log.error("Error occurred after test", e);
             for (TestResult result : results) {
                 log.info("Test Result {}: {}", result.getRequestId(), result);
+            }
+
+            for (TestResult result : summaryResults) {
+                log.info("Summary for {}: {}", result.getRequestId(), result);
             }
         }
     }
 
     @AfterAll
     public void tearDown() {
-        this.generateCsv(testResults);
+        this.testResults.sort(Comparator.comparing(TestResult::getRequestId));
+        this.summaryResults.sort(Comparator.comparing(TestResult::getRequestId));
+
+        this.generateCsv(testResults, summaryResults);
     }
 }

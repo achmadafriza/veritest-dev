@@ -34,13 +34,18 @@ import java.util.function.BiConsumer;
 @Log4j2
 @Service
 public class IsabelleService {
+    private static final String GENERATED_FILE_ERROR_STRING = "Bad context for command";
+
     private static final String MALFORMED_STRING = "Inner syntax error";
-    private static final String TYPE_ERROR_STRING = "Type unification failed";
-    private static final String QUICKCHECK_FOUND_STRING = "Quickcheck found a counterexample.";
-    private static final String NITPICK_FOUND_STRING = "Nitpick found a counterexample:";
+    private static final String UNDEFINED_TYPE_ERROR_STRING = "Undefined type name";
+    private static final String TYPE_UNIFICATION_ERROR_STRING = "Type unification failed";
+    private static final String NO_SUBGOAL_ERROR_STRING = "(a total of 0 subgoals)";
+
+    private static final String QUICKCHECK_FOUND_STRING = "Quickcheck found a counterexample";
+    private static final String NITPICK_FOUND_STRING = "Nitpick found a counterexample";
     private static final String SLEDGEHAMMER_FOUND_STRING = "Try this:";
     private static final String SLEDGEHAMMER_DONE = "No proof state";
-    public static final String NO_SUBGOAL = "No subgoal!";
+    public static final String NO_SUBGOAL_ON_PROOFING = "No subgoal!";
 
     private final @NonNull IsabelleClient client;
     private final @NonNull SessionConfig sessionConfig;
@@ -85,19 +90,22 @@ public class IsabelleService {
                 default -> throw new IsabelleException("Execution Error", e.getCause());
             }
         } catch (InterruptedException | CancellationException e) {
-            log.error(e.getMessage(), e);
+            log.error("Request {}: {}", request.getRequestId(), e.getMessage(), e);
 
             throw new IsabelleException("Process is interrupted", e);
         }
 
-        return futures.stream()
+        IsabelleResult isabelleResult = futures.stream()
                 .parallel()
                 .filter(future -> Future.State.SUCCESS.equals(future.state()))
                 .map(CompletableFuture::resultNow)
                 .filter(result -> !Status.FAILED.equals(result.getStatus()))
-                .peek(result -> log.info("Result for {}: {}", request.getRequestId(), result))
                 .findAny()
                 .orElse(futures.getFirst().join());
+
+        log.info("Result for {}: {}", request.getRequestId(), isabelleResult);
+
+        return isabelleResult;
     }
 
     private static File generateFile(String generatedTheory, Path path) throws IOException {
@@ -123,14 +131,13 @@ public class IsabelleService {
                     default -> throw new IllegalStateException("Unexpected value: " + task);
                 })
                 .thenApplyAsync(response -> {
-                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
-                    tempDir = tempDir.resolve(response.getTempDir());
-//                    Path tempDir = Path.of(response.getTempDir()); // TODO: for linux env
+//                    Path tempDir = Path.of("\\\\wsl$\\Ubuntu"); // TODO: temp fix for windows env
+//                    tempDir = tempDir.resolve(response.getTempDir());
+                    Path tempDir = Path.of(response.getTempDir()); // TODO: for linux env
 
                     Path filePath = tempDir.resolve(TheoryFileTemplate.theoryFilename());
                     try {
                         File file = generateFile(generatedTheory, filePath);
-                        log.debug("Theory: \n{}", generatedTheory);
 
                         return new TheorySubmission(file, response);
                     } catch (IOException e) {
@@ -182,9 +189,11 @@ public class IsabelleService {
 
         return CompletableFuture.supplyAsync(() ->
                         fileTemplate.generate(Command.AUTO, request))
+                .whenComplete((generatedTheory, ignored) ->
+                        log.debug("Auto Theory for {}: \n{}", request.getRequestId(), generatedTheory))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) ->
-                        log.debug("Get Response for Auto: {}", theoryResponse))
+                        log.debug("Get Response for {} Auto: {}", request.getRequestId(), theoryResponse))
                 .thenApplyAsync(theoryResponse -> buildAutoResult(request, theoryResponse));
     }
 
@@ -193,6 +202,7 @@ public class IsabelleService {
                 .parallel()
                 .filter(taskMessage -> "error".equals(taskMessage.getKind()))
                 .map(TaskMessage::getMessage)
+                .filter(message -> !message.contains(GENERATED_FILE_ERROR_STRING))
                 .toList();
 
         return IsabelleResult.builder()
@@ -203,28 +213,60 @@ public class IsabelleService {
     }
 
     private static IsabelleResult buildAutoResult(TheoryRequest request, TheoryResponse theoryResponse) {
-        List<String> errors = theoryResponse.getErrors().stream()
-                .parallel()
-                .map(TaskMessage::getMessage)
-                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
-                .toList();
-
-        if (!errors.isEmpty()) {
+        if (theoryResponse.getOk()) {
             return IsabelleResult.builder()
-                .requestID(request.getRequestId())
-                .status(Status.MALFORMED)
-                .isabelleMessages(errors)
-                .build();
-        }
-
-        if (!theoryResponse.getOk()) {
-            return handleErrorResult(request, theoryResponse);
-        }
-
-        return IsabelleResult.builder()
                 .requestID(request.getRequestId())
                 .status(Status.FOUND_AUTO_PROOF)
                 .build();
+        }
+
+        List<String> errors = theoryResponse.getErrors().stream()
+                .parallel()
+                .map(TaskMessage::getMessage)
+                .toList();
+
+        List<String> malformedErrors = errors.stream()
+                .parallel()
+                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(UNDEFINED_TYPE_ERROR_STRING))
+                .toList();
+
+        if (!malformedErrors.isEmpty()) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.MALFORMED)
+                    .message("Malformed rule found!")
+                    .isabelleMessages(errors)
+                    .build();
+        }
+
+        List<String> typeErrors = errors.stream()
+                .parallel()
+                .filter(message -> message.contains(TYPE_UNIFICATION_ERROR_STRING))
+                .toList();
+
+        if (!typeErrors.isEmpty()) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.TYPE_ERROR)
+                    .message("Rule have type unification errors!")
+                    .isabelleMessages(errors)
+                    .build();
+        }
+
+        boolean noSubgoalError = errors.stream()
+                .parallel()
+                .anyMatch(message -> message.contains(NO_SUBGOAL_ERROR_STRING));
+
+        /* TODO: Isabelle2023 specific error */
+        if (noSubgoalError) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.NO_SUBGOAL)
+                    .message("Rule has no subgoal to proof!")
+                    .build();
+        }
+
+        return handleErrorResult(request, theoryResponse);
     }
 
     private CompletableFuture<IsabelleResult> tryCounterexamples(@Valid @NotNull TheoryRequest request) {
@@ -250,6 +292,8 @@ public class IsabelleService {
         log.debug("Nitpick for ID = {}", request.getRequestId());
 
         return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.NITPICK, request))
+                .whenComplete((generatedTheory, ignored) ->
+                        log.debug("Nitpick Theory for {}: \n{}", request.getRequestId(), generatedTheory))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) ->
                         log.debug("Get Response for Nitpick: {}", theoryResponse))
@@ -261,6 +305,8 @@ public class IsabelleService {
         log.debug("Quickcheck for ID = {}", request.getRequestId());
 
         return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.QUICKCHECK, request))
+                .whenComplete((generatedTheory, ignored) ->
+                        log.debug("Quickcheck Theory for {}: \n{}", request.getRequestId(), generatedTheory))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) ->
                         log.debug("Get Response for Quickcheck: {}", theoryResponse))
@@ -304,6 +350,8 @@ public class IsabelleService {
     private CompletableFuture<IsabelleResult> trySledgehammer(@Valid @NotNull TheoryRequest request) {
         log.debug("Sledgehammer for ID = {}", request.getRequestId());
         return CompletableFuture.supplyAsync(() -> fileTemplate.generate(Command.SLEDGEHAMMER, request))
+                .whenComplete((generatedTheory, ignored) ->
+                        log.debug("Sledgehammer Theory for {}: \n{}", request.getRequestId(), generatedTheory))
                 .thenComposeAsync(this::submitTheory)
                 .whenCompleteAsync((theoryResponse, ignored) -> log.debug("Get Response for Sledgehammer: {}", theoryResponse))
                 .thenApplyAsync(theoryResponse -> recursiveSledgehammer(request, theoryResponse));
@@ -312,26 +360,28 @@ public class IsabelleService {
     private IsabelleResult recursiveSledgehammer(TheoryRequest request, TheoryResponse theoryResponse) {
         List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
 
-        /* Don't check if not theoryResponse.getOk() as theory is going to be malformed with sorry at the end */
-        long errors = messages.stream()
+        /* Don't check if not theoryResponse.getOk() early as theory is going to be malformed with sorry at the end */
+        boolean error = messages.stream()
                 .parallel()
                 .map(TaskMessage::getMessage)
-                .filter(message -> message.contains(MALFORMED_STRING) || message.contains(TYPE_ERROR_STRING))
-                .count();
+                .anyMatch(message -> message.contains(MALFORMED_STRING)
+                        || message.contains(TYPE_UNIFICATION_ERROR_STRING)
+                        || message.contains(UNDEFINED_TYPE_ERROR_STRING)
+                        || message.contains(NO_SUBGOAL_ERROR_STRING));
 
         /* Base Case: Errors in Optimization rule */
-        if (errors > 0) {
+        if (error) {
             return IsabelleResult.builder()
                     .requestID(request.getRequestId())
                     .status(Status.FAILED)
-                    .proofs(request.getProofs())
+                    .message("Tried to proof malformed rule")
                     .build();
         }
 
         long done = messages.stream()
                 .parallel()
                 .map(TaskMessage::getMessage)
-                .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL))
+                .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL_ON_PROOFING))
                 .count();
 
         /* Base Case: Found Proof */
