@@ -1,0 +1,476 @@
+C:\Users\Afriza\.jdks\graalvm-jdk-21.0.1\bin\java.exe -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true "-Dmanagement.endpoints.jmx.exposure.include=*" "-javaagent:C:\Users\Afriza\AppData\Local\Programs\IntelliJ IDEA Ultimate\lib\idea_rt.jar=65125:C:\Users\Afriza\AppData\Local\Programs\IntelliJ IDEA Ultimate\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Programming\Thesis\Veritest\build\classes\java\main;C:\Programming\Thesis\Veritest\build\resources\main;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.projectlombok\lombok\1.18.30\f195ee86e6c896ea47a1d39defbe20eb59cd149d\lombok-1.18.30.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-configuration-processor\3.2.1-SNAPSHOT\856612c59b631e175843761099e61fcc1f0f6c5b\spring-boot-configuration-processor-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\3.2.1-SNAPSHOT\a704f7448ff1285aff1d940da016279e2071f464\spring-boot-starter-web-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.session\spring-session-core\3.2.1\417add3d75616b4693dfa125d2b34a6650138ecb\spring-session-core-3.2.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-aop\3.2.1-SNAPSHOT\b090225ccd6773a9ec67d82109459882b682a15f\spring-boot-starter-aop-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.15.1\f11560da189ab563a5c8e351941415430e9304ea\commons-io-2.15.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.bucket4j\bucket4j-core\8.7.1\426a868f01925f31a184c107eb1088b4471625b3\bucket4j-core-8.7.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-actuator\3.2.1-SNAPSHOT\9ebdd0652383459531a07db2168623fffa823d87\spring-boot-starter-actuator-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-validation\3.2.1-SNAPSHOT\d053a0420a546bee9925006c9814dae4868c1b1c\spring-boot-starter-validation-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\javax.validation\validation-api\2.0.1.Final\cb855558e6271b1b32e716d24cb85c7f583ce09e\validation-api-2.0.1.Final.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-log4j2\3.2.1-SNAPSHOT\c40d0d4b3863271d8ac747599a7b30719230d5f2\spring-boot-starter-log4j2-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.lmax\disruptor\4.0.0\9e77a6b0b1d3d0dac3e9f7f63535dad8ef217cbc\disruptor-4.0.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-csv\1.10.0\8669bee353424c3223c93723291b5c3753260c1c\commons-csv-1.10.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\3.2.1-SNAPSHOT\e0d8e1f64e6e79aacd2928118c313a43296e77db\spring-boot-starter-json-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\3.2.1-SNAPSHOT\838199a4295de7a4c389cf239f13b9b53644fd3f\spring-boot-starter-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\3.2.1-SNAPSHOT\7df879aab30f08e721d037ef6e0a5a35e21da926\spring-boot-starter-tomcat-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\6.1.2\906ee995372076e22ef9666d8628845c75bf5c42\spring-webmvc-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\6.1.2\f26b98778376cc39afb04fbb6fdd7543bef89f2\spring-web-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\6.1.2\285eb725861c9eacf2a3e4965d4e897932e335ea\spring-jcl-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\6.1.2\a247bd81df8fa9c6a002b95969692bfd146a70b2\spring-aop-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjweaver\1.9.21\beaabaea95c7f3330f415c72ee0ffe79b51d172f\aspectjweaver-1.9.21.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator-autoconfigure\3.2.1-SNAPSHOT\e99507450df9faff0e6f195f158d8c29b829e596\spring-boot-actuator-autoconfigure-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-jakarta9\1.12.1\2dc7257970669fa45e342b0b36902d868af2dbed\micrometer-jakarta9-1.12.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-observation\1.12.1\fbd0e0e9b6a36effd53e0eee35b050ed1f548ae5\micrometer-observation-1.12.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\10.1.17\9ad7312421535d7d3aabe0f541e852baccb59726\tomcat-embed-el-10.1.17.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.hibernate.validator\hibernate-validator\8.0.1.Final\e49e116b3d3928060599b176b3538bb848718e95\hibernate-validator-8.0.1.Final.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j2-impl\2.21.1\77d14bb4ef6487833652c443dd7d264e26e2e968\log4j-slf4j2-impl-2.21.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.21.1\eba8eac8d464791c84e4bafa0fea7cdf7113168\log4j-core-2.21.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-jul\2.21.1\70b87f59c89cc1c0b1136443a70091c82127a4c1\log4j-jul-2.21.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.15.3\4a20a0e104931bfa72f24ef358c2eb63f1ef2aaf\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.15.3\8d251b90c5358677e7d8161e0c2488e6f84f49da\jackson-module-parameter-names-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.15.3\80158cb020c7bd4e4ba94d8d752a65729dc943b2\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.15.3\a734bc2c47a9453c4efa772461a3aeb273c010d9\jackson-databind-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\3.2.1-SNAPSHOT\42868dd69d1b381649e30eb3dc64d647c02694f1\spring-boot-autoconfigure-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\3.2.1-SNAPSHOT\5f3b9edaeefe7d3b5be642e806b91ec714b80602\spring-boot-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\6.1.2\e43c71a9eaca454654621f7d272f15b53c68d583\spring-core-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\jakarta.annotation\jakarta.annotation-api\2.1.1\48b9bda22b091b1f48b13af03fe36db3be6e1ae3\jakarta.annotation-api-2.1.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\2.2\3af797a25458550a16bf89acc8e4ab2b7f2bfce0\snakeyaml-2.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\10.1.17\9ee2f34b51144b75878c9b42768e17de8fbdc74b\tomcat-embed-websocket-10.1.17.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\10.1.17\5b9185ee002f9e194d2cb21ddcf8bc5f3d4a69da\tomcat-embed-core-10.1.17.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\6.1.2\15df19852991220556b4462a366269b8e15278eb\spring-context-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\6.1.2\abf52f2254975a3b1e95b2b63fb8b01d891cdc51\spring-beans-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\6.1.2\98786397734b27b7c8843a6b01a7fa34d40d6806\spring-expression-6.1.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator\3.2.1-SNAPSHOT\e23a29c4a3a1df248f1611db372cf77ebecf061\spring-boot-actuator-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-core\1.12.1\b72e9a2f26355ecb8ababa0148a5c3c4ac648f14\micrometer-core-1.12.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-commons\1.12.1\abcc6b294e60582afdfae6c559c94ad1d412ce2d\micrometer-commons-1.12.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\jakarta.validation\jakarta.validation-api\3.0.2\92b6631659ba35ca09e44874d3eb936edfeee532\jakarta.validation-api-3.0.2.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.jboss.logging\jboss-logging\3.5.3.Final\c88fc1d8a96d4c3491f55d4317458ccad53ca663\jboss-logging-3.5.3.Final.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml\classmate\1.6.0\91affab6f84a2182fce5dd72a8d01bc14346dddd\classmate-1.6.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.21.1\74c65e87b9ce1694a01524e192d7be989ba70486\log4j-api-2.21.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.9\7cf2726fdcfbc8610f9a71fb3ed639871f315340\slf4j-api-2.0.9.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.15.3\79baf4e605eb3bbb60b1c475d44a7aecceea1d60\jackson-annotations-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.15.3\60d600567c1862840397bf9ff5a92398edc5797b\jackson-core-2.15.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-devtools\3.2.1-SNAPSHOT\674fd4bc6658e26df0b2fdf48f18134563181d00\spring-boot-devtools-3.2.1-SNAPSHOT.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-registry-prometheus\1.12.1\2430b21a18fae0fd08e18e7d10f4f8ab84831094\micrometer-registry-prometheus-1.12.1.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.prometheus\simpleclient_common\0.16.0\a09a8c790a20309b942a9fdbfe77da22407096e6\simpleclient_common-0.16.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.hdrhistogram\HdrHistogram\2.1.12\6eb7552156e0d517ae80cc2247be1427c8d90452\HdrHistogram-2.1.12.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\org.latencyutils\LatencyUtils\2.0.3\769c0b82cb2421c8256300e907298a9410a2a3d3\LatencyUtils-2.0.3.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.prometheus\simpleclient\0.16.0\28b0eaf7c500c506976da8d0fc9cad6c278e8d87\simpleclient-0.16.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.prometheus\simpleclient_tracer_otel\0.16.0\cc3d2b7b7cb6f077e3b1ee1d3e99eb54fddfa151\simpleclient_tracer_otel-0.16.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.prometheus\simpleclient_tracer_otel_agent\0.16.0\9d724771e339ff7ec6cd7c0cc170d3470904c5\simpleclient_tracer_otel_agent-0.16.0.jar;C:\Users\Afriza\.gradle\caches\modules-2\files-2.1\io.prometheus\simpleclient_tracer_common\0.16.0\dec00ef7c6155c4ca1109ec8248f7ff58d8f6cd3\simpleclient_tracer_common-0.16.0.jar com.veriopt.veritest.VeritestApplication
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v3.2.1-SNAPSHOT)
+
+2024-05-04T20:37:08.194+10:00  INFO 48744 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Starting VeritestApplication using Java 21.0.1 with PID 48744 (C:\Programming\Thesis\Veritest\build\classes\java\main started by Afriza in C:\Programming\Thesis\Veritest)
+2024-05-04T20:37:08.198+10:00 DEBUG 48744 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Running with Spring Boot v3.2.1-SNAPSHOT, Spring v6.1.2
+2024-05-04T20:37:08.199+10:00  INFO 48744 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T20:37:08.222+10:00  INFO 48744 --- [veritest] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-04T20:37:08.222+10:00  INFO 48744 --- [veritest] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-04T20:37:09.059+10:00  INFO 48744 --- [veritest] [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2024-05-04T20:37:09.066+10:00  INFO 48744 --- [veritest] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-05-04T20:37:09.066+10:00  INFO 48744 --- [veritest] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-05-04T20:37:09.091+10:00  INFO 48744 --- [veritest] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-05-04T20:37:09.092+10:00  INFO 48744 --- [veritest] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2024-05-04T20:37:09.710+10:00  INFO 48744 --- [veritest] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-04T20:37:09.717+10:00  INFO 48744 --- [veritest] [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-05-04T20:37:09.760+10:00  INFO 48744 --- [veritest] [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T20:37:09.766+10:00  INFO 48744 --- [veritest] [  restartedMain] c.v.v.VeritestApplication                : Started VeritestApplication in 1.815 seconds (process running for 2.208)
+2024-05-04T20:37:09.847+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-1] c.v.v.i.I.Daemon                         : No enum constant com.veriopt.veritest.isabelle.response.ResultType.###
+
+java.lang.IllegalArgumentException: No enum constant com.veriopt.veritest.isabelle.response.ResultType.###
+	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[?:?]
+	at com.veriopt.veritest.isabelle.response.ResultType.valueOf(ResultType.java:3) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:256) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:214) ~[main/:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-05-04T20:37:10.169+10:00  INFO 48744 --- [veritest] [(3)-172.24.48.1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T20:37:10.169+10:00  INFO 48744 --- [veritest] [(3)-172.24.48.1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-05-04T20:37:10.169+10:00  INFO 48744 --- [veritest] [(3)-172.24.48.1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2024-05-04T20:37:11.790+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-1] c.v.v.i.I.Daemon                         : No enum constant com.veriopt.veritest.isabelle.response.ResultType.server
+
+java.lang.IllegalArgumentException: No enum constant com.veriopt.veritest.isabelle.response.ResultType.server
+	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[?:?]
+	at com.veriopt.veritest.isabelle.response.ResultType.valueOf(ResultType.java:3) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:256) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:214) ~[main/:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-05-04T20:37:11.801+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-1] c.v.v.i.I.Daemon                         : Invalid Task
+ at [Source: (String)"{"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}"; line: 1, column: 61]
+
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Invalid Task
+ at [Source: (String)"{"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}"; line: 1, column: 61]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.veriopt.veritest.isabelle.TaskDeserializer.deserialize(TaskDeserializer.java:59) ~[main/:?]
+	at com.veriopt.veritest.isabelle.TaskDeserializer.deserialize(TaskDeserializer.java:20) ~[main/:?]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4825) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3772) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3740) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.parseAndSendTask(IsabelleProcessFacade.java:272) ~[main/:?]
+	at com.veriopt.veritest.isabelle.IsabelleProcessFacade$Daemon.run(IsabelleProcessFacade.java:214) ~[main/:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2024-05-04T20:37:25.658+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Auto Proof for ID = XorIsEqual_64_1_1
+2024-05-04T20:37:25.659+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Auto Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+.
+
+end
+
+end
+
+2024-05-04T20:37:25.659+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Quickcheck for ID = XorIsEqual_64_1_1
+2024-05-04T20:37:25.659+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Quickcheck Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+quickcheck
+sorry
+
+
+end
+
+end
+
+2024-05-04T20:37:25.660+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Nitpick for ID = XorIsEqual_64_1_1
+2024-05-04T20:37:25.660+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Nitpick Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+nitpick
+sorry
+
+
+end
+
+end
+
+2024-05-04T20:37:25.661+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Sledgehammer for ID = XorIsEqual_64_1_1
+2024-05-04T20:37:25.661+10:00 DEBUG 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Sledgehammer Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-05-04T20:37:25.663+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:37:25.710+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 424ba944-25ee-4d63-97ba-4b70ea600eac waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:25.711+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 424ba944-25ee-4d63-97ba-4b70ea600eac waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:27.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:37:27.245+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : a192076e-f3c9-456d-87ff-2cda8c3e0009 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:27.246+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : a192076e-f3c9-456d-87ff-2cda8c3e0009 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:30.244+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:37:30.246+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 7c099de4-cd69-413d-b7ef-f9cd8d4a1ec0 waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:30.247+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 7c099de4-cd69-413d-b7ef-f9cd8d4a1ec0 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:33.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:37:33.245+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : be361fc0-e22c-4858-a58c-e91a3c53664c waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:33.245+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : be361fc0-e22c-4858-a58c-e91a3c53664c waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:39.338+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-2] c.v.v.i.IsabelleProcess                  : 424ba944-25ee-4d63-97ba-4b70ea600eac got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:39.358+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"1112e0d9-01cf-43f6-9497-ae9ce1a966a3"}
+
+2024-05-04T20:37:39.368+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 915968cd-dee3-41d5-bccd-67244f2d5163 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:37:39.368+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 915968cd-dee3-41d5-bccd-67244f2d5163 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:39.952+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : a192076e-f3c9-456d-87ff-2cda8c3e0009 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:42.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"2fe82919-aaf0-41f2-a5b8-dcb6b459cbea"}
+
+2024-05-04T20:37:42.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : c17fc25a-a4d8-472c-a2c6-30aefd237adc waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:37:42.244+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : c17fc25a-a4d8-472c-a2c6-30aefd237adc waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:43.318+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-6] c.v.v.i.IsabelleProcess                  : 7c099de4-cd69-413d-b7ef-f9cd8d4a1ec0 got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:45.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"3c42ca1c-0cf5-4279-bea6-199e240fede1"}
+
+2024-05-04T20:37:45.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 66f88499-bfc4-4a3f-986b-b6461d0dd269 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:37:45.244+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 66f88499-bfc4-4a3f-986b-b6461d0dd269 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:45.829+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : be361fc0-e22c-4858-a58c-e91a3c53664c got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:37:48.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"fe2acf5f-fe11-4f3b-be6a-9079068be15d"}
+
+2024-05-04T20:37:48.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 6678cfd7-5636-47f3-8466-28b9c8c0f0e0 waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:37:48.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-2] c.v.v.i.IsabelleProcess                  : 6678cfd7-5636-47f3-8466-28b9c8c0f0e0 waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:37:54.687+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-2] c.v.v.i.IsabelleProcess                  : 915968cd-dee3-41d5-bccd-67244f2d5163 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:37:54.694+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"1112e0d9-01cf-43f6-9497-ae9ce1a966a3"}
+
+2024-05-04T20:37:54.693+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Get Response for XorIsEqual_64_1_1 Auto: TheoryResponse(ok=false, errors=[TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. stamp_expr x = IntegerStamp (64::nat) xl xh \<Longrightarrow>
+    wf_stamp x \<Longrightarrow>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<Longrightarrow>
+    wf_stamp y \<Longrightarrow>
+    stamp_expr z = IntegerStamp (64::nat) zl zh \<Longrightarrow>
+    wf_stamp z \<Longrightarrow>
+    Canonicalization.size (BinaryExpr BinIntegerEquals y z)
+    < Suc (Suc (Canonicalization.size (BinaryExpr BinXor x y) +
+                Canonicalization.size (BinaryExpr BinXor x z)))
+ 2. stamp_expr x = IntegerStamp (64::nat) xl xh \<and>
+    wf_stamp x \<and>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<and>
+    wf_stamp y \<and> stamp_expr z = IntegerStamp (64::nat) zl zh \<and> wf_stamp z \<longrightarrow>
+    BinaryExpr BinIntegerEquals (BinaryExpr BinXor x y)
+     (BinaryExpr BinXor x z) \<sqsupseteq>
+    BinaryExpr BinIntegerEquals y z
+variables:
+    xh, xl, yh, yl, zh, zl :: int
+    x, y, z :: IRExpr, position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=943, file=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=33, offset=945, endOffset=948, file=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy), theory=null, session=null, percentage=null)], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=false, total=12, unprocessed=0, running=0, warned=0, failed=2, finished=10, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Failed to finish proof:
+goal (2 subgoals):
+ 1. stamp_expr x = IntegerStamp (64::nat) xl xh \<Longrightarrow>
+    wf_stamp x \<Longrightarrow>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<Longrightarrow>
+    wf_stamp y \<Longrightarrow>
+    stamp_expr z = IntegerStamp (64::nat) zl zh \<Longrightarrow>
+    wf_stamp z \<Longrightarrow>
+    Canonicalization.size (BinaryExpr BinIntegerEquals y z)
+    < Suc (Suc (Canonicalization.size (BinaryExpr BinXor x y) +
+                Canonicalization.size (BinaryExpr BinXor x z)))
+ 2. stamp_expr x = IntegerStamp (64::nat) xl xh \<and>
+    wf_stamp x \<and>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<and>
+    wf_stamp y \<and> stamp_expr z = IntegerStamp (64::nat) zl zh \<and> wf_stamp z \<longrightarrow>
+    BinaryExpr BinIntegerEquals (BinaryExpr BinXor x y)
+     (BinaryExpr BinXor x z) \<sqsupseteq>
+    BinaryExpr BinIntegerEquals y z
+variables:
+    xh, xl, yh, yl, zh, zl :: int
+    x, y, z :: IRExpr, position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=943, file=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=error, message=Bad context for command "end"\<^here> -- using reset state, position=TaskMessage.Position(id=null, line=33, offset=945, endOffset=948, file=/tmp/isabelle-achmadafriza/server_session11984200792601597250/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:37:54.696+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 765c0d78-6e79-4c19-b295-d80eaf9c7579 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:37:54.696+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.i.IsabelleProcess                  : 765c0d78-6e79-4c19-b295-d80eaf9c7579 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:37:54.956+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-2] c.v.v.i.IsabelleProcess                  : 765c0d78-6e79-4c19-b295-d80eaf9c7579 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:38:00.499+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-6] c.v.v.i.IsabelleProcess                  : 66f88499-bfc4-4a3f-986b-b6461d0dd269 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:38:00.505+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Get Response for Nitpick: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session9853008532197706828/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=14, unprocessed=0, running=0, warned=1, failed=0, finished=13, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session9853008532197706828/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Nitpicking formula..., position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=949, file=/tmp/isabelle-achmadafriza/server_session9853008532197706828/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=warning, message=Unsupported case: representation function on "Int.int", position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=949, file=/tmp/isabelle-achmadafriza/server_session9853008532197706828/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:38:00.505+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"3c42ca1c-0cf5-4279-bea6-199e240fede1"}
+
+2024-05-04T20:38:00.506+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : b6df01a6-2d84-4cf5-976e-858da354e66b waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:38:00.506+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : b6df01a6-2d84-4cf5-976e-858da354e66b waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:38:00.755+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-6] c.v.v.i.IsabelleProcess                  : b6df01a6-2d84-4cf5-976e-858da354e66b got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:38:28.844+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : c17fc25a-a4d8-472c-a2c6-30aefd237adc got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:38:28.857+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.s.IsabelleService                  : Get Response for Quickcheck: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session12791342983081046280/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=14, unprocessed=0, running=0, warned=0, failed=0, finished=14, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session12791342983081046280/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Quickcheck ran out of time, position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=952, file=/tmp/isabelle-achmadafriza/server_session12791342983081046280/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Quickcheck found no counterexample., position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=952, file=/tmp/isabelle-achmadafriza/server_session12791342983081046280/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:38:28.857+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"2fe82919-aaf0-41f2-a5b8-dcb6b459cbea"}
+
+2024-05-04T20:38:28.859+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : a6ccc01b-0560-4f6b-a3cf-442e405743eb waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:38:28.859+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : a6ccc01b-0560-4f6b-a3cf-442e405743eb waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:38:29.299+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : a6ccc01b-0560-4f6b-a3cf-442e405743eb got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:39:13.713+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : 6678cfd7-5636-47f3-8466-28b9c8c0f0e0 got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:39:13.738+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"fe2acf5f-fe11-4f3b-be6a-9079068be15d"}
+
+2024-05-04T20:39:13.738+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=14, unprocessed=0, running=0, warned=0, failed=0, finished=14, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition found a proof..., position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=verit found a proof..., position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=verit: Try this: apply (metis (no_types, lifting) Suc_1 Suc_eq_plus1 add_lessD1 add_less_mono add_mono_thms_linordered_field(1) nat_arith.suc1 size_binary_const size_binary_rhs size_non_add) (429 ms), position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=zipperposition: Try this: apply (metis (no_types, opaque_lifting) add_2_eq_Suc' add_Suc_right add_less_mono lessI size_binary_const size_binary_rhs size_non_add trans_less_add2) (2.0 s), position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Done, position=TaskMessage.Position(id=null, line=31, offset=942, endOffset=954, file=/tmp/isabelle-achmadafriza/server_session15211506311348277944/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:39:13.739+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Sledgehammer for ID = XorIsEqual_64_1_1
+2024-05-04T20:39:13.739+10:00 DEBUG 48744 --- [veritest] [onPool-worker-3] c.v.v.s.IsabelleService                  : Sledgehammer for ID = XorIsEqual_64_1_1
+2024-05-04T20:39:13.739+10:00 DEBUG 48744 --- [veritest] [onPool-worker-5] c.v.v.s.IsabelleService                  : Sledgehammer Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+apply (metis (no_types, lifting) Suc_1 Suc_eq_plus1 add_lessD1 add_less_mono add_mono_thms_linordered_field(1) nat_arith.suc1 size_binary_const size_binary_rhs size_non_add)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-05-04T20:39:13.740+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 0c035e08-3d13-4be9-adeb-d5c1469e0118 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:39:13.740+10:00 DEBUG 48744 --- [veritest] [onPool-worker-7] c.v.v.s.IsabelleService                  : Sledgehammer Theory for XorIsEqual_64_1_1:
+theory AutomatedTest
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+    Canonicalizations.AbsPhase
+Canonicalizations.AddPhase
+Canonicalizations.AndPhase
+Canonicalizations.BinaryNode
+Canonicalizations.ConditionalPhase
+Canonicalizations.MulPhase
+Canonicalizations.NewAnd
+Canonicalizations.NotPhase
+Canonicalizations.OrPhase
+Canonicalizations.ShiftPhase
+Canonicalizations.SignedDivPhase
+Canonicalizations.SignedRemPhase
+Canonicalizations.SubPhase
+Canonicalizations.XorPhase
+
+begin
+
+phase TemporaryNode
+  terminating size
+begin
+
+optimization TemporaryTheory: "exp[BinaryExpr BinIntegerEquals (x \<oplus> y) (x \<oplus> z)] \<longmapsto>
+                             exp[BinaryExpr BinIntegerEquals y z]
+                        when (stamp_expr x = IntegerStamp 64 xl xh \<and> wf_stamp x) \<and>
+                             (stamp_expr y = IntegerStamp 64 yl yh \<and> wf_stamp y) \<and>
+                             (stamp_expr z = IntegerStamp 64 zl zh \<and> wf_stamp z)"
+apply (metis (no_types, opaque_lifting) add_2_eq_Suc' add_Suc_right add_less_mono lessI size_binary_const size_binary_rhs size_non_add trans_less_add2)
+sledgehammer
+sorry
+
+
+end
+
+end
+
+2024-05-04T20:39:13.740+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.i.IsabelleProcess                  : 0c035e08-3d13-4be9-adeb-d5c1469e0118 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:39:14.079+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : 0c035e08-3d13-4be9-adeb-d5c1469e0118 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:39:15.241+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:39:15.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 2b865c81-4382-4be4-9923-cda6cad8068c waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:39:15.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 2b865c81-4382-4be4-9923-cda6cad8068c waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:39:18.241+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcessFacade            : Submit request: session_start {"session":"Canonicalizations","options":["document=false","show_question_marks=false","quick_and_dirty"],"dirs":["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"],"verbose":true,"include_sessions":["OptimizationDSL"]}
+
+2024-05-04T20:39:18.242+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcess                  : 55be549c-d103-41b4-90ca-adf0e929b8aa waiting for class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:39:18.243+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcess                  : 55be549c-d103-41b4-90ca-adf0e929b8aa waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:39:28.609+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : 2b865c81-4382-4be4-9923-cda6cad8068c got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:39:28.624+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"016584ee-e08f-40ef-85a9-034f5bf65552"}
+
+2024-05-04T20:39:28.625+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcess                  : 6a3e3e29-d195-44d9-a7d5-b8dc6485f53a waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:39:28.626+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.i.IsabelleProcess                  : 6a3e3e29-d195-44d9-a7d5-b8dc6485f53a waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:39:31.614+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : 55be549c-d103-41b4-90ca-adf0e929b8aa got class com.veriopt.veritest.isabelle.response.SessionStartResponse
+2024-05-04T20:39:31.618+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: use_theories {"theories":["AutomatedTest"],"session_id":"70666060-7d3d-4b95-b663-d853d2ccc0fc"}
+
+2024-05-04T20:39:31.619+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 84d94542-77fa-4402-8824-6237bd7415eb waiting for class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:39:31.619+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 84d94542-77fa-4402-8824-6237bd7415eb waiting for class com.veriopt.veritest.isabelle.response.IsabelleGenericError
+2024-05-04T20:40:18.236+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : 6a3e3e29-d195-44d9-a7d5-b8dc6485f53a got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:40:18.255+10:00 DEBUG 48744 --- [veritest] [onPool-worker-6] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session4022303119842405770/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session4022303119842405770/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=32, offset=1116, endOffset=1128, file=/tmp/isabelle-achmadafriza/server_session4022303119842405770/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=32, offset=1116, endOffset=1128, file=/tmp/isabelle-achmadafriza/server_session4022303119842405770/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:40:18.256+10:00 DEBUG 48744 --- [veritest] [onPool-worker-8] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"016584ee-e08f-40ef-85a9-034f5bf65552"}
+
+2024-05-04T20:40:18.257+10:00 DEBUG 48744 --- [veritest] [onPool-worker-8] c.v.v.i.IsabelleProcess                  : 4b5eb9ef-54fc-44e1-872f-3ad62f307e7b waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:40:18.257+10:00 DEBUG 48744 --- [veritest] [onPool-worker-8] c.v.v.i.IsabelleProcess                  : 4b5eb9ef-54fc-44e1-872f-3ad62f307e7b waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:40:18.495+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-8] c.v.v.i.IsabelleProcess                  : 4b5eb9ef-54fc-44e1-872f-3ad62f307e7b got class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:40:22.100+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : 84d94542-77fa-4402-8824-6237bd7415eb got class com.veriopt.veritest.isabelle.response.TheoryResponse
+2024-05-04T20:40:22.105+10:00 DEBUG 48744 --- [veritest] [onPool-worker-1] c.v.v.s.IsabelleService                  : Get Response for Sledgehammer: TheoryResponse(ok=true, errors=[], nodes=[TheoryNode(name=/tmp/isabelle-achmadafriza/server_session855972891737275182/AutomatedTest.thy, theoryName=Draft.AutomatedTest, status=TheoryNode.Status(ok=true, total=16, unprocessed=0, running=0, warned=0, failed=0, finished=16, canceled=false, consolidated=true, percentage=100), messages=[TaskMessage(kind=writeln, message=phase: TemporaryNode
+  trm: Canonicalization.size
+  rules:, position=TaskMessage.Position(id=null, line=22, offset=497, endOffset=502, file=/tmp/isabelle-achmadafriza/server_session855972891737275182/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=Sledgehammering..., position=TaskMessage.Position(id=null, line=32, offset=1094, endOffset=1106, file=/tmp/isabelle-achmadafriza/server_session855972891737275182/AutomatedTest.thy), theory=null, session=null, percentage=null), TaskMessage(kind=writeln, message=No proof found, position=TaskMessage.Position(id=null, line=32, offset=1094, endOffset=1106, file=/tmp/isabelle-achmadafriza/server_session855972891737275182/AutomatedTest.thy), theory=null, session=null, percentage=null)], exports=[])])
+2024-05-04T20:40:22.105+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcessFacade            : Submit request: session_stop {"session_id":"70666060-7d3d-4b95-b663-d853d2ccc0fc"}
+
+2024-05-04T20:40:22.106+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 5b0c83bf-3f11-4a3f-9cba-5f220b773991 waiting for class com.veriopt.veritest.isabelle.response.SessionStopResponse
+2024-05-04T20:40:22.106+10:00 DEBUG 48744 --- [veritest] [onPool-worker-4] c.v.v.i.IsabelleProcess                  : 5b0c83bf-3f11-4a3f-9cba-5f220b773991 waiting for class com.veriopt.veritest.isabelle.response.SessionStopError
+2024-05-04T20:40:22.106+10:00  INFO 48744 --- [veritest] [nio-8080-exec-1] c.v.v.s.IsabelleService                  : Result for XorIsEqual_64_1_1: IsabelleResult(requestID=XorIsEqual_64_1_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. stamp_expr x = IntegerStamp (64::nat) xl xh \<Longrightarrow>
+    wf_stamp x \<Longrightarrow>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<Longrightarrow>
+    wf_stamp y \<Longrightarrow>
+    stamp_expr z = IntegerStamp (64::nat) zl zh \<Longrightarrow>
+    wf_stamp z \<Longrightarrow>
+    Canonicalization.size (BinaryExpr BinIntegerEquals y z)
+    < Suc (Suc (Canonicalization.size (BinaryExpr BinXor x y) +
+                Canonicalization.size (BinaryExpr BinXor x z)))
+ 2. stamp_expr x = IntegerStamp (64::nat) xl xh \<and>
+    wf_stamp x \<and>
+    stamp_expr y = IntegerStamp (64::nat) yl yh \<and>
+    wf_stamp y \<and> stamp_expr z = IntegerStamp (64::nat) zl zh \<and> wf_stamp z \<longrightarrow>
+    BinaryExpr BinIntegerEquals (BinaryExpr BinXor x y)
+     (BinaryExpr BinXor x z) \<sqsupseteq>
+    BinaryExpr BinIntegerEquals y z
+variables:
+    xh, xl, yh, yl, zh, zl :: int
+    x, y, z :: IRExpr], stackTrace=null)
+2024-05-04T20:40:22.345+10:00 DEBUG 48744 --- [veritest] [pool-2-thread-4] c.v.v.i.IsabelleProcess                  : 5b0c83bf-3f11-4a3f-9cba-5f220b773991 got class com.veriopt.veritest.isabelle.response.SessionStopResponse
