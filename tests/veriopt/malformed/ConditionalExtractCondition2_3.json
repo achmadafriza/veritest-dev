@@ -1,0 +1,1 @@
+{"theory":"exp[(c ? false : true)] \\<longmapsto> ~c\n                                          when isBoolean c","request_id":"ConditionalExtractCondition2_3"}

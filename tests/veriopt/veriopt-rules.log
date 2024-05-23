@@ -6,15 +6,6 @@
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy:226:optimization RedundantAddSub: "(b + a) - b \<longmapsto> a"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy:229:optimization AddRightNegateToSub: "x + -e \<longmapsto> x - e"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy:234:optimization AddLeftNegateToSub: "-e + y \<longmapsto> y - e"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:18:optimization AddShiftConstantRight: "((const v) + y) \<longmapsto> y + (const v) when \<not>(is_ConstantExpr y)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:22:optimization AddShiftConstantRight2: "((const v) + y) \<longmapsto> y + (const v) when \<not>(is_ConstantExpr y)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:63:optimization AddNeutral: "(e + (const (IntVal 32 0))) \<longmapsto> e"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:97:optimization RedundantSubAdd: "((e\<^sub>1 - e\<^sub>2) + e\<^sub>2) \<longmapsto> e\<^sub>1"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:110:optimization RedundantSubAdd2: "e\<^sub>2 + (e\<^sub>1 - e\<^sub>2) \<longmapsto> e\<^sub>1"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:226:optimization RedundantAddSub: "(b + a) - b \<longmapsto> a"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:229:optimization WrongAddSub: "(b + a) - b \<longmapsto> b"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:233:optimization AddRightNegateToSub: "x + -e \<longmapsto> x - e"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AddPhase.thy~:238:optimization AddLeftNegateToSub: "-e + y \<longmapsto> y - e"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy:215:optimization AndEqual: "x & x \<longmapsto> x"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy:218:optimization AndShiftConstantRight: "((const x) & y) \<longmapsto> y & (const x) 
                                          when \<not>(is_ConstantExpr y)"
@@ -28,20 +19,6 @@
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy:237:optimization AndRightFallThrough: "(x & y) \<longmapsto> y
                                 when (((and (not (IRExpr_down x)) (IRExpr_up y)) = 0))"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy:241:optimization AndLeftFallThrough: "(x & y) \<longmapsto> x
-                                when (((and (not (IRExpr_down y)) (IRExpr_up x)) = 0))"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:215:optimization AndEqual: "x & x \<longmapsto> x"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:218:optimization AndShiftConstantRight: "((const x) & y) \<longmapsto> y & (const x) 
-                                         when \<not>(is_ConstantExpr y)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:222:optimization AndNots: "(~x) & (~y) \<longmapsto> ~(x | y)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:227:optimization AndSignExtend: "BinaryExpr BinAnd (UnaryExpr (UnarySignExtend In Out) (x)) 
-                                               (const (new_int b e))
-                              \<longmapsto> (UnaryExpr (UnaryZeroExtend In Out) (x))
-                                  when (e = (1 << In) - 1)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:233:optimization AndNeutral: "(x & ~(const (IntVal b 0))) \<longmapsto> x 
-   when (wf_stamp x \<and> stamp_expr x = IntegerStamp b lo hi)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:237:optimization AndRightFallThrough: "(x & y) \<longmapsto> y
-                                when (((and (not (IRExpr_down x)) (IRExpr_up y)) = 0))"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/AndPhase.thy~:241:optimization AndLeftFallThrough: "(x & y) \<longmapsto> x
                                 when (((and (not (IRExpr_down y)) (IRExpr_up x)) = 0))"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/BinaryNode.thy:12:optimization BinaryFoldConstant: "BinaryExpr op (const v1) (const v2) \<longmapsto> ConstantExpr (bin_eval op v1 v2)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/ConditionalPhase.thy:33:optimization NegateConditionFlipBranches: "((!e) ? x : y) \<longmapsto> (e ? y : x)"
@@ -130,7 +107,6 @@
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/NewAnd.thy:822:optimization redundant_lhs_add: "((x + y) & z) \<longmapsto> x & z
                                when ((and (IRExpr_up y) (IRExpr_down z)) = 0)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/NotPhase.thy:42:optimization NotCancel: "exp[~(~a)] \<longmapsto> a"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/NotPhase.thy~:42:optimization NotCancel: "exp[~(~a)] \<longmapsto> a"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/OrPhase.thy:172:optimization OrEqual: "x | x \<longmapsto> x"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/OrPhase.thy:175:optimization OrShiftConstantRight: "((const x) | y) \<longmapsto> y | (const x) when \<not>(is_ConstantExpr y)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/OrPhase.thy:178:optimization EliminateRedundantFalse: "x | false \<longmapsto> x"
@@ -233,23 +209,23 @@
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:396:optimization AbsIdempotence: "abs(abs(Rep_int32 e)) \<mapsto> abs(Rep_int32 e)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:401:optimization AbsNegate: "abs(-e) \<mapsto> abs(e) when is_IntegerStamp (stamp_expr e)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:437:optimization UnaryConstantFold: "UnaryExpr op c \<mapsto> ConstantExpr (unary_eval op val_c) when is_int_val val_c"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:442:optimization AndEqual: "((x::intexp) & x) \<longmapsto> x"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:447:optimization AndShiftConstantRight: "((const x) + y) \<longmapsto> y + (const x) when ~(is_ConstantExpr y)"
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:442:optimization AndEqual: "((x::intexp) & x) \<longmapsto> x" // duplicate
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:447:optimization AndShiftConstantRight: "((const x) + y) \<longmapsto> y + (const x) when ~(is_ConstantExpr y)" // duplicate
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:453:optimization AndRightFallthrough: "x & y \<mapsto> y when (canBeZero x.stamp & canBeOne y.stamp) = 0" sorry
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:454:optimization AndLeftFallthrough: "x & y \<mapsto> x when (canBeZero y.stamp & canBeOne x.stamp) = 0" sorry
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:466:optimization AndNeutral: "((x::i32exp) & (const (IntVal 32 (neg_one 32)))) \<longmapsto> x"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:473:optimization ConditionalEqualBranches: "(b ? v : v) \<longmapsto> v" .
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:466:optimization AndNeutral: "((x::i32exp) & (const (IntVal 32 (neg_one 32)))) \<longmapsto> x" // duplicate
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:473:optimization ConditionalEqualBranches: "(b ? v : v) \<longmapsto> v" . // duplicate
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:475:optimization ConditionalEqualIsRHS: "((x eq y) ? x : y) \<longmapsto> y when (type x = Integer \<and> type_safe x y)"
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:500:optimization ConditionalEliminateKnownLess: "(x < y ? x : y) \<mapsto> x when (x.stamp.upper <= y.stamp.lower)" sorry
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:501:optimization ConditionalEliminateKnownLess: "(x < y ? y : x) \<mapsto> y when (x.stamp.upper <= y.stamp.lower)" sorry
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:536:optimization BinaryFoldConstant: "BinaryExpr op (const e1) (const e2) \<longmapsto>
                                   ConstantExpr (bin_eval op e1 e2) when int_and_equal_bits e1 e2"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:541:optimization AddShiftConstantRight: "((const c) + y) \<longmapsto> y + (const c) when ~(is_ConstantExpr y)"
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:541:optimization AddShiftConstantRight: "((const c) + y) \<longmapsto> y + (const c) when ~(is_ConstantExpr y)" // duplicate
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:546:optimization RedundantSubAdd: "isAssociative + => (a - b) + b \<mapsto> a" sorry
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:547:optimization RedundantAddSub: "isAssociative + => (b + a) - b \<mapsto> a" sorry
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:561:optimization AddNeutral: "(e + (const (IntVal 32 0))) \<longmapsto> e when (stamp_expr e = IntegerStamp 32 l u)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:595:optimization AddLeftNegateToSub: "-e + y \<longmapsto> y - e"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:599:optimization AddRightNegateToSub: "x + -e \<longmapsto> x - e"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:603:optimization MulEliminator: "((x::i32exp) * const(IntVal 32 0)) \<longmapsto> const(IntVal 32 0)"
-/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:613:optimization MulNeutral: "(x * const(IntVal 32 1)) \<longmapsto> x"
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:595:optimization AddLeftNegateToSub: "-e + y \<longmapsto> y - e" // duplicate
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:599:optimization AddRightNegateToSub: "x + -e \<longmapsto> x - e" // duplicate
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:603:optimization MulEliminator: "((x::i32exp) * const(IntVal 32 0)) \<longmapsto> const(IntVal 32 0)" // duplicate
+/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:613:optimization MulNeutral: "(x * const(IntVal 32 1)) \<longmapsto> x" // duplicate
 /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/CanonicalizationSyntax.thy:617:optimization MulNegate: "(x * const (-1) ) \<mapsto> -x when (stamp_expr x = IntegerStamp 32 l u)"

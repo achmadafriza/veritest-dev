@@ -1,9 +1,9 @@
 # Please adjust the directories
-pcregrep -r -nH -M 'optimization.*: "[^"]*"' /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations > \
+pcregrep -r -nH -M 'optimization.*: "[^"]*"' /mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations > \
   ../../tests/veriopt/veriopt-rules.log
 
 # Convert the grepped rules into json files for test suite
-perl parse_optimization.pl ../../tests/veriopt/veriopt-rules.log ../../tests/veriopt/original/
+perl parse_optimization.pl ../../tests/veriopt/veriopt-rules.log ../../tests/veriopt/edited/
 
 grep -r 'veriopt:' /mnt/c/Programming/Thesis/graal/compiler/**/*.java | \
   # Convert veriopt comments from graal compiler and removing TODOs
@@ -22,3 +22,5 @@ grep -r 'veriopt:' /mnt/c/Programming/Thesis/graal/compiler/**/*.java | \
   ../../tests/graal/veriopt-rules.log
 
 perl parse_optimization.pl ../../tests/graal/veriopt-rules.log ../../tests/graal/original/
+
+perl parse_optimization.pl ../../tests/veriopt/veriopt-rules-malformed.log ../../tests/veriopt/malformed/

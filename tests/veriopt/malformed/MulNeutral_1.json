@@ -1,0 +1,1 @@
+{"request_id":"MulNeutral_1","theory":"x * const (IntVal b 1) \\<longmapsto> x"}

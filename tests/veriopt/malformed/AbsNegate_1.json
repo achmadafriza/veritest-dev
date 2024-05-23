@@ -1,0 +1,1 @@
+{"theory":"abs(-e) \\<longmapsto> abs(e) when is_IntegerStamp (stamp_expr e)","request_id":"AbsNegate_1"}

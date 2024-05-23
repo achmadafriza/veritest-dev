@@ -1,0 +1,1 @@
+{"theory":"BinaryExpr op (const v1) (const v2) \\<longmapsto> ConstantExpr (bin_eval op v1 v2)","request_id":"BinaryFoldConstant_1"}

@@ -1,0 +1,1 @@
+{"request_id":"ConditionalExtractCondition2_2","theory":"(c ? false : true) \\<longmapsto> !c\n                                          when isBoolean c"}

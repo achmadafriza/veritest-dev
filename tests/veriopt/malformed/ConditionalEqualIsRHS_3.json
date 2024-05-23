@@ -1,0 +1,1 @@
+{"request_id":"ConditionalEqualIsRHS_3","theory":"((x eq x) ? x : y) \\<longmapsto> y"}

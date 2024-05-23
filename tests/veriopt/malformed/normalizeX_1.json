@@ -1,0 +1,1 @@
+{"request_id":"normalizeX_1","theory":"((x eq const (IntVal 32 1)) ? \n                                (const (IntVal 32 0)) : (const (IntVal 32 1))) \\<longmapsto> x\n                                when stamp_expr x = IntegerStamp 32 0 1 \\<and> wf_stamp x \\<and>\n                                     isBoolean x"}

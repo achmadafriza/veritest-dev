@@ -1,0 +1,1 @@
+{"theory":"((x \\<ge> y) ? x : y) \\<longmapsto> x \n                                 when (stamp_under (stamp_expr x) (stamp_expr y)\n                                      \\<and> wf_stamp x \\<and> wf_stamp y)","request_id":"ConditionalEliminateKnownLess_2"}

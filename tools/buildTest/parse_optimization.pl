@@ -74,9 +74,9 @@ sub save_to_file {
     $written_theories{$theory_hash} = 1;
 
     # Increment the count for the current request_id or initialize it
-    $request_id_count{$request_id}++;
+    $request_id_count{lc($request_id)}++;
     # Prepend the count to the request_id for the filename
-    my $unique_request_id = $request_id . "_" . $request_id_count{$request_id};
+    my $unique_request_id = $request_id . "_" . $request_id_count{lc($request_id)};
     my $output_file = $output_directory . $unique_request_id . ".json";
     $output_file =~ s/\s+/_/g; # Replace spaces with underscores for filenames
 
