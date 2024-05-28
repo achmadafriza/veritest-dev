@@ -11,10 +11,7 @@ import com.veriopt.veritest.isabelle.command.TheoryFileTemplate;
 import com.veriopt.veritest.isabelle.request.SessionStartRequest;
 import com.veriopt.veritest.isabelle.request.SessionStopRequest;
 import com.veriopt.veritest.isabelle.request.UseTheoryRequest;
-import com.veriopt.veritest.isabelle.response.IsabelleGenericError;
-import com.veriopt.veritest.isabelle.response.SessionStartResponse;
-import com.veriopt.veritest.isabelle.response.TaskMessage;
-import com.veriopt.veritest.isabelle.response.TheoryResponse;
+import com.veriopt.veritest.isabelle.response.*;
 import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +43,8 @@ public class IsabelleService {
     private static final String SLEDGEHAMMER_FOUND_STRING = "Try this:";
     private static final String SLEDGEHAMMER_DONE = "No proof state";
     public static final String NO_SUBGOAL_ON_PROOFING = "No subgoal!";
+
+    public static final String SKIPPED_PROOF = "skip_proof";
 
     private final @NonNull IsabelleClient client;
     private final @NonNull SessionConfig sessionConfig;
@@ -358,12 +357,16 @@ public class IsabelleService {
     }
 
     private IsabelleResult recursiveSledgehammer(TheoryRequest request, TheoryResponse theoryResponse) {
-        List<TaskMessage> messages = theoryResponse.getNodes().getFirst().getMessages();
+        List<String> messages = theoryResponse.getNodes().stream()
+                .parallel()
+                .map(TheoryNode::getMessages)
+                .flatMap(Collection::stream)
+                .map(TaskMessage::getMessage)
+                .toList();
 
         /* Don't check if not theoryResponse.getOk() early as theory is going to be malformed with sorry at the end */
         boolean error = messages.stream()
                 .parallel()
-                .map(TaskMessage::getMessage)
                 .anyMatch(message -> message.contains(MALFORMED_STRING)
                         || message.contains(TYPE_UNIFICATION_ERROR_STRING)
                         || message.contains(UNDEFINED_TYPE_ERROR_STRING)
@@ -378,9 +381,21 @@ public class IsabelleService {
                     .build();
         }
 
+        boolean skippedProof = messages.stream()
+                .parallel()
+                .anyMatch(message -> message.contains(SKIPPED_PROOF));
+
+        if (skippedProof) {
+            return IsabelleResult.builder()
+                    .requestID(request.getRequestId())
+                    .status(Status.SKIPPED_PROOF)
+                    .message("Tried to use incomplete proof")
+                    .proofs(request.getProofs())
+                    .build();
+        }
+
         long done = messages.stream()
                 .parallel()
-                .map(TaskMessage::getMessage)
                 .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL_ON_PROOFING))
                 .count();
 
@@ -395,7 +410,6 @@ public class IsabelleService {
 
         List<String> proofs = messages.stream()
                 .parallel()
-                .map(TaskMessage::getMessage)
                 .filter(message -> message.contains(SLEDGEHAMMER_FOUND_STRING))
                 .map(message -> {
                     /* Parse substring of: "Try this: {substring} (Elapsed Time: ...ms)" */
@@ -448,7 +462,8 @@ public class IsabelleService {
                 .parallel()
                 .filter(future -> Future.State.SUCCESS.equals(future.state()))
                 .map(CompletableFuture::resultNow)
-                .filter(isabelleResult -> Status.FOUND_PROOF.equals(isabelleResult.getStatus()))
+                .filter(isabelleResult -> Status.FOUND_PROOF.equals(isabelleResult.getStatus())
+                        || Status.SKIPPED_PROOF.equals(isabelleResult.getStatus()))
                 .toList();
 
         if (results.isEmpty()) {

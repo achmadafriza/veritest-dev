@@ -1,1 +1,1 @@
-{"theory":"isAssociative + => (a - b) + b \\<mapsto> a","request_id":"RedundantSubAdd_2"}
+{"request_id":"RedundantSubAdd_2","theory":"isAssociative + => (a - b) + b \\<mapsto> a"}

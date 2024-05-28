@@ -1,0 +1,1 @@
+{"theory":"x & y \\<mapsto> x when (canBeZero y.stamp & canBeOne x.stamp) = 0","request_id":"AndLeftFallthrough_2"}

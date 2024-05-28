@@ -57,7 +57,7 @@ public class IsabelleProcess extends AbstractIsabelleClient {
     }
 
     @Override
-    protected <T extends Task> CompletableFuture<T> getElement(String taskID, Class<T> type) {
+    protected <T extends Task> CompletableFuture<T> getResult(String taskID, Class<T> type) {
         log.debug("{} waiting for {}", taskID, type);
 
         // Source: https://stackoverflow.com/questions/23184964/jdk8-completablefuture-supplyasync-how-to-deal-with-interruptedexception

@@ -47,6 +47,8 @@ public class TheoryFileTemplate {
                 
         optimization TemporaryTheory: "%s"%s
         %s
+        
+        thm_oracles TemporaryTheory
                 
         end
                 

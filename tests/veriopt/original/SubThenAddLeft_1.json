@@ -1,1 +1,1 @@
-{"theory":"(x - (x + y)) \\<longmapsto> -y","request_id":"SubThenAddLeft_1"}
+{"request_id":"SubThenAddLeft_1","theory":"(x - (x + y)) \\<longmapsto> -y"}

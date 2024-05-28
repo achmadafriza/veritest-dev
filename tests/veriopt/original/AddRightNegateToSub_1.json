@@ -1,1 +1,1 @@
-{"request_id":"AddRightNegateToSub_1","theory":"x + -e \\<longmapsto> x - e"}
+{"theory":"x + -e \\<longmapsto> x - e","request_id":"AddRightNegateToSub_1"}

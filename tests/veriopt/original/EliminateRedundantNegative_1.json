@@ -1,1 +1,1 @@
-{"theory":"-x * -y \\<longmapsto> x * y","request_id":"EliminateRedundantNegative_1"}
+{"request_id":"EliminateRedundantNegative_1","theory":"-x * -y \\<longmapsto> x * y"}

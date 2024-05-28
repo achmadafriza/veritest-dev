@@ -1,1 +1,1 @@
-{"theory":"exp[(~n) \\<oplus> n] \\<longmapsto> (const (new_int 32 (not 0)))\n                        when (stamp_expr n = IntegerStamp 32 l h \\<and> wf_stamp n)","request_id":"XorInverse2_1"}
+{"request_id":"XorInverse2_1","theory":"exp[(~n) \\<oplus> n] \\<longmapsto> (const (new_int 32 (not 0)))\n                        when (stamp_expr n = IntegerStamp 32 l h \\<and> wf_stamp n)"}

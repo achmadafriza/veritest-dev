@@ -26,7 +26,7 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
     @Setter(AccessLevel.PROTECTED)
     private BlockingQueue<Task> queue;
 
-    protected abstract <T extends Task> CompletableFuture<T> getElement(String taskID, Class<T> type);
+    protected abstract <T extends Task> CompletableFuture<T> getResult(String taskID, Class<T> type);
 
     protected CompletableFuture<Object> anyOfCancelOthers(CompletableFuture<?>... futures) {
         final CompletableFuture<Object> futureResult = CompletableFuture.anyOf(futures);
@@ -54,8 +54,8 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         });
 
         return future.thenCompose(taskId -> anyOfCancelOthers(
-                getElement(taskId, SessionStartResponse.class),
-                getElement(taskId, IsabelleGenericError.class)
+                getResult(taskId, SessionStartResponse.class),
+                getResult(taskId, IsabelleGenericError.class)
         )).thenApplyAsync(result -> switch (result) {
             case SessionStartResponse response -> response;
             case IsabelleGenericError error -> {
@@ -79,8 +79,8 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         });
 
         return future.thenCompose(taskId -> anyOfCancelOthers(
-                getElement(taskId, SessionStopResponse.class),
-                getElement(taskId, SessionStopError.class)
+                getResult(taskId, SessionStopResponse.class),
+                getResult(taskId, SessionStopError.class)
         )).thenApplyAsync(result -> switch (result) {
             case SessionStopResponse response -> response;
             case SessionStopError error -> {
@@ -104,8 +104,8 @@ public abstract class AbstractIsabelleClient implements IsabelleClient {
         });
 
         return future.thenCompose(taskId -> anyOfCancelOthers(
-                getElement(taskId, TheoryResponse.class),
-                getElement(taskId, IsabelleGenericError.class)
+                getResult(taskId, TheoryResponse.class),
+                getResult(taskId, IsabelleGenericError.class)
         )).thenApplyAsync(result -> switch (result) {
             case TheoryResponse response -> response;
             case IsabelleGenericError error -> {

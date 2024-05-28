@@ -3,7 +3,7 @@ pcregrep -r -nH -M 'optimization.*: "[^"]*"' /mnt/c/Programming/Thesis/veriopt-d
   ../../tests/veriopt/veriopt-rules.log
 
 # Convert the grepped rules into json files for test suite
-perl parse_optimization.pl ../../tests/veriopt/veriopt-rules.log ../../tests/veriopt/edited/
+perl parse_optimization.pl ../../tests/veriopt/veriopt-rules.log ../../tests/veriopt/original/
 
 grep -r 'veriopt:' /mnt/c/Programming/Thesis/graal/compiler/**/*.java | \
   # Convert veriopt comments from graal compiler and removing TODOs

@@ -1,1 +1,1 @@
-{"theory":"(e ? x : x) \\<longmapsto> x","request_id":"ConditionalEqualBranches_1"}
+{"request_id":"ConditionalEqualBranches_1","theory":"(e ? x : x) \\<longmapsto> x"}

@@ -1,1 +1,1 @@
-{"request_id":"AbsNegate_1","theory":"abs(-e) \\<mapsto> abs(e) when is_IntegerStamp (stamp_expr e)"}
+{"theory":"abs(-e) \\<mapsto> abs(e) when is_IntegerStamp (stamp_expr e)","request_id":"AbsNegate_1"}

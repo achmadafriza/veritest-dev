@@ -1,1 +1,1 @@
-{"theory":"x & y \\<mapsto> x when (canBeZero y.stamp & canBeOne x.stamp) = 0","request_id":"AndLeftFallthrough_1"}
+{"theory":"(x & y) \\<longmapsto> x\n                                when (((and (not (IRExpr_down y)) (IRExpr_up x)) = 0))","request_id":"AndLeftFallThrough_1"}
