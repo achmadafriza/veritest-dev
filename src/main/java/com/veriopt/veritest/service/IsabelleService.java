@@ -381,19 +381,6 @@ public class IsabelleService {
                     .build();
         }
 
-        boolean skippedProof = messages.stream()
-                .parallel()
-                .anyMatch(message -> message.contains(SKIPPED_PROOF));
-
-        if (skippedProof) {
-            return IsabelleResult.builder()
-                    .requestID(request.getRequestId())
-                    .status(Status.SKIPPED_PROOF)
-                    .message("Tried to use incomplete proof")
-                    .proofs(request.getProofs())
-                    .build();
-        }
-
         long done = messages.stream()
                 .parallel()
                 .filter(message -> message.contains(SLEDGEHAMMER_DONE) || message.contains(NO_SUBGOAL_ON_PROOFING))
@@ -401,6 +388,19 @@ public class IsabelleService {
 
         /* Base Case: Found Proof */
         if (done > 0) {
+//            boolean skippedProof = messages.stream()
+//                    .parallel()
+//                    .anyMatch(message -> message.contains(SKIPPED_PROOF));
+//
+//            if (skippedProof) {
+//                return IsabelleResult.builder()
+//                        .requestID(request.getRequestId())
+//                        .status(Status.SKIPPED_PROOF)
+//                        .message("Tried to use incomplete proof")
+//                        .proofs(request.getProofs())
+//                        .build();
+//            }
+
             return IsabelleResult.builder()
                     .requestID(request.getRequestId())
                     .status(Status.FOUND_PROOF)

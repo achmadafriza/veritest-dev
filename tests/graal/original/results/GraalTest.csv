@@ -1,0 +1,2178 @@
+REQUEST_ID,ELAPSED_TIME,RESULT_STATUS,RESULT
+AbsIdempotence_1-1,34603,TYPE_ERROR,"IsabelleResult(requestID=AbsIdempotence_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""_ word"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  Transform :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr Rewrite
+Operand:   AbsPhase.abs (AbsPhase.abs (e::?'a word)) :: ?'a word
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""word"" and ""IRExpr"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AbsNegate_1-1,29849,TYPE_ERROR,"IsabelleResult(requestID=AbsNegate_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""IRExpr"" and ""_ word""
+
+Type error in application: incompatible operand type
+
+Operator:  AbsPhase.abs :: ?'a word \<Rightarrow> ?'a word
+Operand:   UnaryExpr UnaryNeg (e::IRExpr) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""IRExpr"" and ""word"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AddLeftNegateToSub_1-1,107067,FOUND_PROOF,"IsabelleResult(requestID=AddLeftNegateToSub_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using AddLeftNegateToSub(2) apply auto[1], using exp_add_left_negate_to_sub by blast], isabelleMessages=null, stackTrace=null)"
+AddNeutral_1-1,33928,TYPE_ERROR,"IsabelleResult(requestID=AddNeutral_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity Value :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  ConstantExpr :: Value \<Rightarrow> IRExpr
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity Value :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  Value   from function application  ConstantExpr (0::?'a), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AddRightNegateToSub_1-1,82423,FAILED,"IsabelleResult(requestID=AddRightNegateToSub_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinSub x e)
+    < Suc (Suc (Suc (Suc (Canonicalization.size x +
+                          Canonicalization.size e))))
+ 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \<sqsupseteq> BinaryExpr BinSub x e
+variables:
+    e, x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AndEqual_1-1,61571,FOUND_PROOF,"IsabelleResult(requestID=AndEqual_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using exp_and_equal by blast], isabelleMessages=null, stackTrace=null)"
+AndNeutral_1-1,75780,FAILED,"IsabelleResult(requestID=AndNeutral_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinAnd x (ConstantExpr (NOT (0::'a))) \<sqsupseteq> x
+variables:
+    NOT :: 'a \<Rightarrow> Value
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualBranches_1-1,29224,FOUND_AUTO_PROOF,"IsabelleResult(requestID=ConditionalEqualBranches_1, status=FOUND_AUTO_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+ConditionalEqualIsRHS_1-1,39007,TYPE_ERROR,"IsabelleResult(requestID=ConditionalEqualIsRHS_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""prop"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalExpr :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   x::?'a \<equiv> y::?'a :: prop
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""prop"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""prop"" is not a subtype of ""IRExpr""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConvertTernaryIntoShift_1-1,38986,MALFORMED,"IsabelleResult(requestID=ConvertTernaryIntoShift_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error: unexpected end of input\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DefaultFalseBranch_1-1,39000,TYPE_ERROR,"IsabelleResult(requestID=DefaultFalseBranch_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+    (""\<^const>Markup.ExtraNotation.FalseNotation"") (""_position"" c_1)
+    (""\<^const>Markup.Rewrite.Transform"" (""_position"" c_2)
+      (""_position"" c_2)))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Markup.ExtraNotation.FalseNotation"") (""_position"" c_1)
+      (""_position"" c_2))
+    (""_position"" c_2)), Type unification failed: Clash of types ""_ Rewrite"" and ""_ ExtraNotation""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation false (c_1::?'a ExtraNotation) ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation
+Operand:   c_2::?'b \<longmapsto> c_2 :: ?'b Rewrite
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""Rewrite"" and ""ExtraNotation"", Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:
+  Transform (false ? c_1::?'a ExtraNotation : c_2::?'a ExtraNotation) ::
+  ?'a ExtraNotation ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation Rewrite
+Operand:   c_2::?'a ExtraNotation :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DefaultTrueBranch_1-1,38994,TYPE_ERROR,"IsabelleResult(requestID=DefaultTrueBranch_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+    (""\<^const>Markup.ExtraNotation.TrueNotation"") (""_position"" c_1)
+    (""\<^const>Markup.Rewrite.Transform"" (""_position"" c_2)
+      (""_position"" c_1)))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Markup.ExtraNotation.TrueNotation"") (""_position"" c_1)
+      (""_position"" c_2))
+    (""_position"" c_1)), Type unification failed: Clash of types ""_ Rewrite"" and ""_ ExtraNotation""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation true (c_1::?'a ExtraNotation) ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation
+Operand:   c_2::?'a ExtraNotation \<longmapsto> c_1::?'a ExtraNotation ::
+  ?'a ExtraNotation Rewrite
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""Rewrite"" and ""ExtraNotation"", Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:
+  Transform (true ? c_1::?'a ExtraNotation : c_2::?'a ExtraNotation) ::
+  ?'a ExtraNotation ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation Rewrite
+Operand:   c_1::?'a ExtraNotation :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DistributeSubtraction_1-1,38997,MALFORMED,"IsabelleResult(requestID=DistributeSubtraction_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error: unexpected end of input\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DivisionByNegativeOneIsNegativeSelf_1-1,39007,TYPE_ERROR,"IsabelleResult(requestID=DivisionByNegativeOneIsNegativeSelf_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" a)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.uminus_class.uminus"" (""_position"" a)))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" a)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>Groups.uminus_class.uminus"" (""_position"" a))), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (/) (a::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const - (1::?'a) \<longmapsto> - (a::?'a) :: ?'a Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, No type arity ExtraNotation :: inverse, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DivisionByOneIsSelf_1-1,38989,TYPE_ERROR,"IsabelleResult(requestID=DivisionByOneIsSelf_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" a)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform"" (""\<^const>Groups.one_class.one"")
+        (""_position"" a))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" a)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.one_class.one"")))
+    (""_position"" a)), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (/) (a::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const 1::?'a \<longmapsto> a::?'a :: ?'a Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, No type arity ExtraNotation :: inverse, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DivisionByOneIsSelf_2-1,38995,MALFORMED,"IsabelleResult(requestID=DivisionByOneIsSelf_2, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DivisionByPower2_1-1,47996,MALFORMED,"IsabelleResult(requestID=DivisionByPower2_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateConstantRHS_1-1,72525,FAILED,"IsabelleResult(requestID=EliminateConstantRHS_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinRightShift x (ConstantExpr y) \<sqsupseteq> x
+variables:
+    y :: Value
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateOtherLeftShift_1-1,29459,TYPE_ERROR,"IsabelleResult(requestID=EliminateOtherLeftShift_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""_ \<Rightarrow> _"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinLeftShift (a::IRExpr) :: IRExpr \<Rightarrow> IRExpr
+Operand:   total :: (?'a \<times> ?'a) set \<Rightarrow> bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""fun"" and ""IRExpr"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRHS_1-1,68257,FAILED,"IsabelleResult(requestID=EliminateRHS_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinLeftShift x (ConstantExpr y) \<sqsupseteq> x
+variables:
+    y :: Value
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRHS_2-1,72274,FAILED,"IsabelleResult(requestID=EliminateRHS_2, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinRightShift x y \<sqsupseteq> x
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantFalse_1-1,77158,FOUND_PROOF,"IsabelleResult(requestID=EliminateRedundantFalse_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using exp_elim_redundant_false by presburger], isabelleMessages=null, stackTrace=null)"
+EliminateRedundantFalse_2-1,30836,TYPE_ERROR,"IsabelleResult(requestID=EliminateRedundantFalse_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""IRExpr"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (^) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   ConstantExpr (IntVal (32::nat) (0::64 word)) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""IRExpr"" is not a subtype of ""nat""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantMod_1-1,47998,TYPE_ERROR,"IsabelleResult(requestID=EliminateRedundantMod_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 3 parse trees:
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Fields.inverse_class.inverse_divide""
+      (""_applC"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.Remainder""
+          (""\<^const>Groups.uminus_class.uminus"" (""_position"" x))
+          (""_position"" y)))
+      (""_position"" y))
+    (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" x)
+      (""_position"" y)))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Fields.inverse_class.inverse_divide""
+      (""\<^const>Groups.minus_class.minus"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+          (""_position"" y)))
+      (""_position"" y))
+    (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" x)
+      (""_position"" y)))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Fields.inverse_class.inverse_divide""
+      (""\<^const>Markup.ExtraNotation.Remainder""
+        (""\<^const>Groups.minus_class.minus"" (""_position"" x)
+          (""_position"" x))
+        (""_position"" y))
+      (""_position"" y))
+    (""\<^const>Fields.inverse_class.inverse_divide"" (""_position"" x)
+      (""_position"" y))), Type unification failed: Occurs check!
+
+Type error in application: operator not of function type
+
+Operator:  x::?'a :: ?'a
+Operand:   - (x::?'a) % y::?'a :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (-) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   x::?'a % y::?'a :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Type unification failed: No type arity ExtraNotation :: inverse
+
+Type error in application: incompatible operand type
+
+Operator:  (/) :: ?'a \<Rightarrow> ?'a \<Rightarrow> ?'a
+Operand:   (x::?'b) - x % y::?'b :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: inverse
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantNegative_1-1,73341,FAILED,"IsabelleResult(requestID=EliminateRedundantNegative_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinMul x y)
+    < Suc (Suc (Suc (Suc (Suc (Suc (Canonicalization.size x +
+                                    Canonicalization.size y))))))
+ 2. BinaryExpr BinMul (UnaryExpr UnaryNeg x) (UnaryExpr UnaryNeg y) \<sqsupseteq>
+    BinaryExpr BinMul x y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FalseCGeqZero_1-1,35116,FOUND_COUNTEREXAMPLE,"IsabelleResult(requestID=FalseCGeqZero_1, status=FOUND_COUNTEREXAMPLE, message=null, counterexample=Nitpick found a counterexample:
+  Free variables:
+    c::IRExpr = ConstantExpr V\<^sub>1
+    x::IRExpr = ConstantExpr V\<^sub>1, proofs=null, isabelleMessages=null, stackTrace=null)"
+FalseCLessZero_1-1,42281,FOUND_COUNTEREXAMPLE,"IsabelleResult(requestID=FalseCLessZero_1, status=FOUND_COUNTEREXAMPLE, message=null, counterexample=Nitpick found a counterexample:
+  Free variables:
+    c::IRExpr = ConstantExpr V\<^sub>1
+    x::IRExpr = ConstantExpr V\<^sub>2, proofs=null, isabelleMessages=null, stackTrace=null)"
+FloatDivByOneIsSelf_1-1,39007,TYPE_ERROR,"IsabelleResult(requestID=FloatDivByOneIsSelf_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: numeral
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinDiv :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   10::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: numeral
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  IRExpr   from function application  BinaryExpr BinDiv (10::?'a)
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinDiv (10::?'b) (10::?'a)
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinDiv (x::IRExpr) (BinaryExpr BinDiv (10::?'a) (10::?'b))
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinDiv (x::IRExpr)
+     (BinaryExpr BinDiv (10::?'b) (10::?'c)) \<longmapsto> x
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinDiv (x::IRExpr), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatDoubleLHSMaxNaNIsNaN_1-1,38996,MALFORMED,"IsabelleResult(requestID=FloatDoubleLHSMaxNaNIsNaN_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatDoubleLHSMinNaNIsNaN_1-1,38999,MALFORMED,"IsabelleResult(requestID=FloatDoubleLHSMinNaNIsNaN_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatDoubleRHSMaxNaNIsNaN_1-1,38998,MALFORMED,"IsabelleResult(requestID=FloatDoubleRHSMaxNaNIsNaN_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatDoubleRHSMinNaNIsNaN_1-1,38997,MALFORMED,"IsabelleResult(requestID=FloatDoubleRHSMinNaNIsNaN_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatLHSMaxOfNegInfinity_1-1,47997,FOUND_PROOF,"IsabelleResult(requestID=FloatLHSMaxOfNegInfinity_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+FloatLHSMinOfPosInfinity_1-1,38998,FOUND_PROOF,"IsabelleResult(requestID=FloatLHSMinOfPosInfinity_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+FloatRHSMaxOfNegInfinity_1-1,36006,FOUND_PROOF,"IsabelleResult(requestID=FloatRHSMaxOfNegInfinity_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+FloatRHSMinOfPosInfinity_1-1,41998,FOUND_PROOF,"IsabelleResult(requestID=FloatRHSMinOfPosInfinity_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+FloatTruncateTernary1_1-1,29991,TYPE_ERROR,"IsabelleResult(requestID=FloatTruncateTernary1_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+    (""\<^const>Orderings.ord_class.less"" (""_position"" x)
+      (""_Float"" (""_constify"" (""_position"" 0.0))))
+    (""_applC"" (""_position"" ceil) (""_position"" x))
+    (""\<^const>Markup.Rewrite.Transform""
+      (""_applC"" (""_position"" floor) (""_position"" x))
+      (""_applC"" (""_position"" RoundNode)
+        (""_tuple"" (""_position"" x) (""_tuple_arg"" (""_position"" TRUNCATE))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Orderings.ord_class.less"" (""_position"" x)
+        (""_Float"" (""_constify"" (""_position"" 0.0))))
+      (""_applC"" (""_position"" ceil) (""_position"" x))
+      (""_applC"" (""_position"" floor) (""_position"" x)))
+    (""_applC"" (""_position"" RoundNode)
+      (""_tuple"" (""_position"" x) (""_tuple_arg"" (""_position"" TRUNCATE))))), Type unification failed: Clash of types ""_ Rewrite"" and ""bool""
+
+Type error in application: incompatible operand type
+
+Operator:
+  ConditionalNotation ((x::?'a) < (0::?'a) / (10::?'a))
+   ((ceil::?'a \<Rightarrow> bool) x) ::
+  bool \<Rightarrow> bool ExtraNotation
+Operand:   \<lfloor>x::?'a\<rfloor> \<longmapsto> (RoundNode::?'a \<times> ?'b \<Rightarrow> int) (x, TRUNCATE::?'b) ::
+  int Rewrite
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""Rewrite"" and ""bool"", Type unification failed: Clash of types ""int"" and ""bool""
+
+Type error in application: incompatible operand type
+
+Operator:
+  ConditionalNotation ((x::?'a) < (0::?'a) / (10::?'a))
+   ((ceil::?'a \<Rightarrow> bool) x) ::
+  bool \<Rightarrow> bool ExtraNotation
+Operand:   \<lfloor>x::?'a\<rfloor> :: int
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""int"" is not a subtype of ""bool""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no supremum
+
+Cannot fulfil subtype constraints:
+  bool  <:  ?'a   from function application
+    ConditionalNotation ((x::?'d) < (0::?'g) / (10::?'h))
+  ?'a \<Rightarrow> int  <:  ?'b \<Rightarrow> int   from function application  floor::?'b \<Rightarrow> int
+  int  <:  ?'a   from function application
+    (x::?'d) < (0::?'g) / (10::?'h) ? (ceil::?'k \<Rightarrow> ?'l) x : \<lfloor>x\<rfloor>
+  ?'a \<Rightarrow> ?'b  <:  ?'c \<Rightarrow> ?'d   from function application
+    (ceil::?'a \<Rightarrow> ?'b)::?'c \<Rightarrow> ?'d
+  ?'a  <:  ?'b   from function application
+    ConditionalNotation ((x::?'e) < (0::?'h) / (10::?'i))
+     ((ceil::?'k \<Rightarrow> ?'l) x), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+FloatTruncateTernary2_1-1,38995,TYPE_ERROR,"IsabelleResult(requestID=FloatTruncateTernary2_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+    (""\<^const>Orderings.ord_class.less""
+      (""_Float"" (""_constify"" (""_position"" 0.0))) (""_position"" x))
+    (""_applC"" (""_position"" floor) (""_position"" x))
+    (""\<^const>Markup.Rewrite.Transform""
+      (""_applC"" (""_position"" ceil) (""_position"" x))
+      (""_applC"" (""_position"" RoundNode)
+        (""_tuple"" (""_position"" x) (""_tuple_arg"" (""_position"" TRUNCATE))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Orderings.ord_class.less""
+        (""_Float"" (""_constify"" (""_position"" 0.0))) (""_position"" x))
+      (""_applC"" (""_position"" floor) (""_position"" x))
+      (""_applC"" (""_position"" ceil) (""_position"" x)))
+    (""_applC"" (""_position"" RoundNode)
+      (""_tuple"" (""_position"" x) (""_tuple_arg"" (""_position"" TRUNCATE))))), Type unification failed: Clash of types ""int"" and ""bool""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation ((0::?'a) / (10::?'a) < (x::?'a)) ::
+  bool \<Rightarrow> bool \<Rightarrow> bool ExtraNotation
+Operand:   \<lfloor>x::?'a\<rfloor> :: int
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""int"" is not a subtype of ""bool""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""int"" and ""_ Rewrite""
+, Type unification failed: Clash of types ""int"" and ""bool""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation ((0::?'a) / (10::?'a) < (x::?'a)) ::
+  bool \<Rightarrow> bool \<Rightarrow> bool ExtraNotation
+Operand:   \<lfloor>x::?'a\<rfloor> :: int
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""int"" is not a subtype of ""bool""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no supremum
+
+Cannot fulfil subtype constraints:
+  bool  <:  ?'a   from function application
+    ConditionalNotation ((0::?'e) / (10::?'f) < (x::?'h))
+  ?'a \<Rightarrow> ?'b  <:  ?'c \<Rightarrow> ?'d   from function application
+    (ceil::?'a \<Rightarrow> ?'b)::?'c \<Rightarrow> ?'d
+  ?'a  <:  ?'b   from function application
+    (0::?'f) / (10::?'g) < (x::?'i) ? \<lfloor>x\<rfloor> : (ceil::?'n \<Rightarrow> ?'o) x
+  ?'a \<Rightarrow> int  <:  ?'b \<Rightarrow> int   from function application  floor::?'b \<Rightarrow> int
+  int  <:  ?'a   from function application
+    ConditionalNotation ((0::?'e) / (10::?'f) < (x::?'h)) \<lfloor>x\<rfloor>, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+LeftShiftBecomesZero_1-1,41988,TYPE_ERROR,"IsabelleResult(requestID=LeftShiftBecomesZero_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: zero
+
+Type error in application: incompatible operand type
+
+Operator:
+  Transform
+   (BinaryExpr BinLeftShift
+     (BinaryExpr BinLeftShift (a::IRExpr) (ConstantExpr (b::Value)))
+     (ConstantExpr (y::Value))) ::
+  IRExpr \<Rightarrow> IRExpr Rewrite
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinLeftShift (a::IRExpr)
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinLeftShift
+     (BinaryExpr BinLeftShift (a::IRExpr) (ConstantExpr (b::Value)))
+     (ConstantExpr (y::Value)) \<longmapsto> 0::?'a, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MaskOutRHS_1-1,42006,TYPE_ERROR,"IsabelleResult(requestID=MaskOutRHS_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""IRExpr"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (^) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   ConstantExpr (y::Value) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""IRExpr"" is not a subtype of ""nat""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulEliminator_1-1,41988,FOUND_PROOF,"IsabelleResult(requestID=MulEliminator_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+MulNegate_1-1,30008,TYPE_ERROR,"IsabelleResult(requestID=MulNegate_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.uminus_class.uminus"" (""_position"" x)))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>Groups.uminus_class.uminus"" (""_position"" x))), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const - (1::?'a) \<longmapsto> - (x::?'a) :: ?'a Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, No type arity ExtraNotation :: times, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNegativeConstShift_1-1,38998,TYPE_ERROR,"IsabelleResult(requestID=MulNegativeConstShift_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j)))
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j)))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.uminus_class.uminus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j)))))
+    (""\<^const>Groups.uminus_class.uminus""
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_position"" j))))), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const - ((2::?'b) ^ (j::nat)) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNeutral2_1-1,38986,TYPE_ERROR,"IsabelleResult(requestID=MulNeutral2_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform"" (""\<^const>Groups.one_class.one"")
+        (""_position"" x))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.one_class.one"")))
+    (""_position"" x)), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const 1::?'a \<longmapsto> x::?'a :: ?'a Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, No type arity ExtraNotation :: times, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulPower2Add1_1-1,39011,TYPE_ERROR,"IsabelleResult(requestID=MulPower2Add1_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 7 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>JavaWords.shiftl"" (""_position"" x)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+              (""_position"" x)))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""_position"" x)))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j)))
+          (""_position"" x)))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>Groups.plus_class.plus""
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j)))
+      (""_position"" x)))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j))))))
+    (""_position"" x))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>JavaWords.shiftl""
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Markup.Rewrite.Transform""
+            (""\<^const>Groups.plus_class.plus""
+              (""\<^const>Power.power_class.power""
+                (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+              (""\<^const>Groups.one_class.one""))
+            (""_position"" x)))
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j))))
+    (""_position"" x)), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::nat) :: nat \<Rightarrow> nat
+Operand:   const (j::nat) + (x::nat) :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulPower2Add1_2-1,38997,TYPE_ERROR,"IsabelleResult(requestID=MulPower2Add1_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 7 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>JavaWords.shiftl"" (""_position"" x)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+              (""_position"" x)))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""_position"" x)))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j)))
+          (""_position"" x)))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>Groups.plus_class.plus""
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j)))
+      (""_position"" x)))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j))))))
+    (""_position"" x))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>JavaWords.shiftl""
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Markup.Rewrite.Transform""
+            (""\<^const>Groups.plus_class.plus""
+              (""\<^const>Power.power_class.power""
+                (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+              (""\<^const>Groups.one_class.one""))
+            (""_position"" x)))
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j))))
+    (""_position"" x)), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::nat) :: nat \<Rightarrow> nat
+Operand:   const (j::nat) + (x::nat) :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulPower2AddPower2_1-1,38998,TYPE_ERROR,"IsabelleResult(requestID=MulPower2AddPower2_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 9 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+        (""\<^const>JavaWords.shiftl"" (""_position"" x)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+              (""\<^const>JavaWords.shiftl"" (""_position"" x)
+                (""\<^const>Markup.ExtraNotation.ConstantNotation""
+                  (""_position"" k)))))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" k)))))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+          (""_position"" x)))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" k)))))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j)))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" k)))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.plus_class.plus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))))
+    (""\<^const>Groups.plus_class.plus""
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j)))
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_position"" k)))))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j))))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" k))))
+  (""\<^const>Groups.plus_class.plus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>JavaWords.shiftl""
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Markup.Rewrite.Transform""
+            (""\<^const>Groups.plus_class.plus""
+              (""\<^const>Power.power_class.power""
+                (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+              (""\<^const>Power.power_class.power""
+                (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+            (""_position"" x)))
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" k))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""\<^const>Groups.plus_class.plus"" (""_position"" j)
+                (""_position"" x))))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" k))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" k)))
+          (""\<^const>Groups.plus_class.plus""
+            (""\<^const>JavaWords.shiftl"" (""_position"" x)
+              (""\<^const>Markup.ExtraNotation.ConstantNotation""
+                (""_position"" j)))
+            (""_position"" x))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" k)))), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const k::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (2::?'b) ^ (k::nat) ::
+  ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (2::?'b) ^ (k::nat) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (2::?'b) ^ (k::nat) ::
+  ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) + (2::?'b) ^ (k::nat) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::nat) :: nat \<Rightarrow> nat
+Operand:   const (j::nat) + (x::nat) :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulPower2Sub1_1-1,38997,TYPE_ERROR,"IsabelleResult(requestID=MulPower2Sub1_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 7 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.minus_class.minus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>JavaWords.shiftl"" (""_position"" x)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""\<^const>Groups.minus_class.minus"" (""_position"" j)
+              (""_position"" x)))))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.minus_class.minus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.minus_class.minus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>JavaWords.shiftl""
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.minus_class.minus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""_position"" x)))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.minus_class.minus"" (""_position"" j)
+          (""_position"" x)))))
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform""
+        (""\<^const>Groups.minus_class.minus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.minus_class.minus""
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j)))
+          (""_position"" x)))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.minus_class.minus""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+          (""\<^const>Groups.one_class.one""))))
+    (""\<^const>Groups.minus_class.minus""
+      (""\<^const>JavaWords.shiftl"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j)))
+      (""_position"" x)))
+  (""\<^const>Groups.minus_class.minus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Markup.Rewrite.Transform""
+          (""\<^const>Groups.minus_class.minus""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+            (""\<^const>Groups.one_class.one""))
+          (""\<^const>JavaWords.shiftl"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_position"" j))))))
+    (""_position"" x))
+  (""\<^const>Groups.minus_class.minus""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>JavaWords.shiftl""
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Markup.Rewrite.Transform""
+            (""\<^const>Groups.minus_class.minus""
+              (""\<^const>Power.power_class.power""
+                (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+              (""\<^const>Groups.one_class.one""))
+            (""_position"" x)))
+        (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j))))
+    (""_position"" x)), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::nat) :: nat \<Rightarrow> nat
+Operand:   const (j::nat) - (x::nat) :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) - (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) - (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) - (1::?'b) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation ::
+   semiring_bit_operations
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) - (1::?'b) \<longmapsto> x::?'b ::
+  ?'b Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: semiring_bit_operations
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulPower2_1-1,38994,TYPE_ERROR,"IsabelleResult(requestID=MulPower2_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Conditional""
+        (""\<^const>Power.power_class.power""
+          (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))
+        (""\<^const>JavaWords.shiftl"" (""_position"" x)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""_position"" j)))
+        (""\<^const>Orderings.ord_class.greater_eq"" (""_position"" j)
+          (""\<^const>Groups.zero_class.zero"")))))
+  (""\<^const>Markup.Rewrite.Conditional""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Power.power_class.power""
+          (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))))
+    (""\<^const>JavaWords.shiftl"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation"" (""_position"" j)))
+    (""\<^const>Orderings.ord_class.greater_eq"" (""_position"" j)
+      (""\<^const>Groups.zero_class.zero""))), Type unification failed: Clash of types ""_ ExtraNotation"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (<<) (x::?'a) :: nat \<Rightarrow> ?'a
+Operand:   const j::nat :: nat ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""nat"", Type unification failed: No type arity ExtraNotation :: times
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const (2::?'b) ^ (j::nat) :: ?'b ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: times
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NegateCancel_1-1,81256,FAILED,"IsabelleResult(requestID=NegateCancel_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. UnaryExpr UnaryNeg (UnaryExpr UnaryNeg e) \<sqsupseteq> e
+variables:
+    e :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NegateConditionFlipBranches_1-1,66496,FAILED,"IsabelleResult(requestID=NegateConditionFlipBranches_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. ConditionalExpr (UnaryExpr UnaryNot c) c_1 c_2 \<sqsupseteq>
+    ConditionalExpr c c_2 c_1
+variables:
+    c, c_1, c_2 :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NegativeShift_1-1,29231,MALFORMED,"IsabelleResult(requestID=NegativeShift_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NotCancel_1-1,74196,FOUND_PROOF,"IsabelleResult(requestID=NotCancel_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using exp_not_cancel by blast], isabelleMessages=null, stackTrace=null)"
+OptimiseIntegerTest_1-1,30817,TYPE_ERROR,"IsabelleResult(requestID=OptimiseIntegerTest_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 5 parse trees:
+  (""\<^const>Pure.eq""
+    (""\<^const>HOL.conj"" (""_position"" x) (""\<^const>Groups.one_class.one""))
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Groups.zero_class.zero"")
+      (""\<^const>Groups.zero_class.zero"")
+      (""\<^const>Markup.Rewrite.Transform"" (""\<^const>Groups.one_class.one"")
+        (""\<^const>HOL.conj"" (""_position"" x)
+          (""\<^const>Groups.one_class.one"")))))
+  (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+    (""\<^const>Pure.eq""
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.one_class.one""))
+      (""\<^const>Groups.zero_class.zero""))
+    (""\<^const>Groups.zero_class.zero"")
+    (""\<^const>Markup.Rewrite.Transform"" (""\<^const>Groups.one_class.one"")
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.one_class.one""))))
+  (""\<^const>Pure.eq""
+    (""\<^const>HOL.conj"" (""_position"" x) (""\<^const>Groups.one_class.one""))
+    (""\<^const>Markup.Rewrite.Transform""
+      (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+        (""\<^const>Groups.zero_class.zero"")
+        (""\<^const>Groups.zero_class.zero"")
+        (""\<^const>Groups.one_class.one""))
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.one_class.one""))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Pure.eq""
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.one_class.one""))
+      (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+        (""\<^const>Groups.zero_class.zero"")
+        (""\<^const>Groups.zero_class.zero"")
+        (""\<^const>Groups.one_class.one"")))
+    (""\<^const>HOL.conj"" (""_position"" x) (""\<^const>Groups.one_class.one"")))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Pure.eq""
+        (""\<^const>HOL.conj"" (""_position"" x)
+          (""\<^const>Groups.one_class.one""))
+        (""\<^const>Groups.zero_class.zero""))
+      (""\<^const>Groups.zero_class.zero"") (""\<^const>Groups.one_class.one""))
+    (""\<^const>HOL.conj"" (""_position"" x) (""\<^const>Groups.one_class.one""))), Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""bool"" and ""_ ExtraNotation""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""prop"" and ""_ Rewrite""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""bool"" and ""_ ExtraNotation""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+OrEqual_1-1,77248,FOUND_PROOF,"IsabelleResult(requestID=OrEqual_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[by (meson exp_or_equal)], isabelleMessages=null, stackTrace=null)"
+OrLeftFallthrough_1-1,36747,FOUND_PROOF,"IsabelleResult(requestID=OrLeftFallthrough_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+OrNotOperands_1-1,73534,FAILED,"IsabelleResult(requestID=OrNotOperands_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinAnd x y)
+    < Suc (Suc (Suc (Suc (Canonicalization.size x +
+                          Canonicalization.size y))))
+ 2. BinaryExpr BinOr (UnaryExpr UnaryNot x) (UnaryExpr UnaryNot y) \<sqsupseteq>
+    UnaryExpr UnaryNot (BinaryExpr BinAnd x y)
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+OrRightFallthrough_1-1,34451,FOUND_PROOF,"IsabelleResult(requestID=OrRightFallthrough_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+OrShiftConstantRight_1-1,76407,FAILED,"IsabelleResult(requestID=OrShiftConstantRight_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. \<not> is_ConstantExpr y \<Longrightarrow>
+    Suc (Suc (Canonicalization.size y))
+    < Canonicalization.size (BinaryExpr BinOr (ConstantExpr x) y)
+ 2. \<not> is_ConstantExpr y \<longrightarrow>
+    BinaryExpr BinOr (ConstantExpr x) y \<sqsupseteq>
+    BinaryExpr BinOr y (ConstantExpr x)
+variables:
+    x :: Value
+    y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RedundantAddSub_1-1,28577,MALFORMED,"IsabelleResult(requestID=RedundantAddSub_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error: unexpected end of input\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RedundantSubAdd_1-1,42008,MALFORMED,"IsabelleResult(requestID=RedundantSubAdd_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error: unexpected end of input\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RemainderCompareZeroEquivalent_1-1,35989,TYPE_ERROR,"IsabelleResult(requestID=RemainderCompareZeroEquivalent_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 5 parse trees:
+  (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+    (""\<^const>Markup.Rewrite.Conditional""
+      (""\<^const>Pure.eq"" (""_position"" y)
+        (""\<^const>Groups.zero_class.zero""))
+      (""\<^const>Pure.eq""
+        (""\<^const>HOL.conj"" (""_position"" x)
+          (""\<^const>Groups.minus_class.minus"" (""_position"" y)
+            (""\<^const>Groups.one_class.one"")))
+        (""\<^const>Groups.zero_class.zero""))
+      (""\<^const>HOL.eq"" (""_position"" y)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))))))
+  (""\<^const>Markup.Rewrite.Conditional""
+    (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+      (""\<^const>Pure.eq"" (""_position"" y)
+        (""\<^const>Groups.zero_class.zero"")))
+    (""\<^const>Pure.eq""
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.minus_class.minus"" (""_position"" y)
+          (""\<^const>Groups.one_class.one"")))
+      (""\<^const>Groups.zero_class.zero""))
+    (""\<^const>HOL.eq"" (""_position"" y)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Power.power_class.power""
+          (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j)))))
+  (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+    (""\<^const>Pure.eq"" (""_position"" y)
+      (""\<^const>Markup.Rewrite.Conditional""
+        (""\<^const>Groups.zero_class.zero"")
+        (""\<^const>Pure.eq""
+          (""\<^const>HOL.conj"" (""_position"" x)
+            (""\<^const>Groups.minus_class.minus"" (""_position"" y)
+              (""\<^const>Groups.one_class.one"")))
+          (""\<^const>Groups.zero_class.zero""))
+        (""\<^const>HOL.eq"" (""_position"" y)
+          (""\<^const>Markup.ExtraNotation.ConstantNotation""
+            (""\<^const>Power.power_class.power""
+              (""_Numeral"" (""_constify"" (""_position"" 2)))
+              (""_position"" j)))))))
+  (""\<^const>Pure.eq""
+    (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+      (""_position"" y))
+    (""\<^const>Markup.Rewrite.Conditional""
+      (""\<^const>Groups.zero_class.zero"")
+      (""\<^const>Pure.eq""
+        (""\<^const>HOL.conj"" (""_position"" x)
+          (""\<^const>Groups.minus_class.minus"" (""_position"" y)
+            (""\<^const>Groups.one_class.one"")))
+        (""\<^const>Groups.zero_class.zero""))
+      (""\<^const>HOL.eq"" (""_position"" y)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""\<^const>Power.power_class.power""
+            (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))))))
+  (""\<^const>Markup.Rewrite.Conditional""
+    (""\<^const>Pure.eq""
+      (""\<^const>Markup.ExtraNotation.Remainder"" (""_position"" x)
+        (""_position"" y))
+      (""\<^const>Groups.zero_class.zero""))
+    (""\<^const>Pure.eq""
+      (""\<^const>HOL.conj"" (""_position"" x)
+        (""\<^const>Groups.minus_class.minus"" (""_position"" y)
+          (""\<^const>Groups.one_class.one"")))
+      (""\<^const>Groups.zero_class.zero""))
+    (""\<^const>HOL.eq"" (""_position"" y)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Power.power_class.power""
+          (""_Numeral"" (""_constify"" (""_position"" 2))) (""_position"" j))))), Type unification failed: No type arity prop :: type
+
+Type error in application: incompatible operand type
+
+Operator:  Conditional :: ?'a \<Rightarrow> ?'a \<Rightarrow> bool \<Rightarrow> ?'a Rewrite
+Operand:   y::?'b \<equiv> 0::?'b :: prop
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity prop :: type
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: No type arity prop :: type
+
+Type error in application: incompatible operand type
+
+Operator:  Remainder (x::?'a) :: ?'a \<Rightarrow> ?'a ExtraNotation
+Operand:   y::?'b \<equiv> 0::?'b :: prop
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity prop :: type
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (\<and>) (x::bool) :: bool \<Rightarrow> bool
+Operand:   (y::?'a) - (1::?'a) :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: No type arity bool :: one
+
+Type error in application: incompatible operand type
+
+Operator:  (-) (y::bool) :: bool \<Rightarrow> bool
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity bool :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: No type arity ExtraNotation :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  (\<equiv>) x::?'a % y::?'a :: ?'a ExtraNotation \<Rightarrow> prop
+Operand:   0::?'b :: ?'b
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity ExtraNotation :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RemainderWhenXNegative_1-1,45007,MALFORMED,"IsabelleResult(requestID=RemainderWhenXNegative_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RemainderWhenXPositive_1-1,32987,MALFORMED,"IsabelleResult(requestID=RemainderWhenXPositive_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ReturnXOnZeroShift_1-1,39007,TYPE_ERROR,"IsabelleResult(requestID=ReturnXOnZeroShift_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity Value :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  ConstantExpr :: Value \<Rightarrow> IRExpr
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity Value :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  Value   from function application  ConstantExpr (0::?'a), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RightShiftsBecomeNegativeOne_1-1,38987,TYPE_ERROR,"IsabelleResult(requestID=RightShiftsBecomeNegativeOne_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: one
+
+Type error in application: incompatible operand type
+
+Operator:  UnaryExpr UnaryNeg :: IRExpr \<Rightarrow> IRExpr
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""Value""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RightShiftsBecomeZero_1-1,39009,TYPE_ERROR,"IsabelleResult(requestID=RightShiftsBecomeZero_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity Value :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  ConstantExpr :: Value \<Rightarrow> IRExpr
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity Value :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  Value  <:  Value   from function application  ConstantExpr (y::Value)
+  ?'a  <:  Value   from function application  ConstantExpr (0::?'a)
+  Value  <:  Value   from function application  ConstantExpr (b::Value), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RightShiftsMerge1_1-1,41998,TYPE_ERROR,"IsabelleResult(requestID=RightShiftsMerge1_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""Value"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinRightShift (x::IRExpr) :: IRExpr \<Rightarrow> IRExpr
+Operand:   y::Value :: Value
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""Value"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+assigned base type ""IRExpr"" clashes with the upper bound of variable ?'a97
+
+Cannot fulfil subtype constraints:
+  nat \<Rightarrow> ?'a  <:  ?'b \<Rightarrow> ?'c   from function application  mask::?'b \<Rightarrow> ?'c
+  IRExpr  <:  ?'a   from function application
+    mask (BinaryExpr BinRightShift (x::?'e) (y::?'g)), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RightShiftsMerge2_1-1,38985,TYPE_ERROR,"IsabelleResult(requestID=RightShiftsMerge2_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""_ \<Rightarrow> _"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinRightShift (a::IRExpr) :: IRExpr \<Rightarrow> IRExpr
+Operand:   total :: (?'a \<times> ?'a) set \<Rightarrow> bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""fun"" and ""IRExpr"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ShiftLeftByConstantAnd_1-1,35997,TYPE_ERROR,"IsabelleResult(requestID=ShiftLeftByConstantAnd_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""Value"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinAnd :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   y::Value :: Value
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""Value"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""Value""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ShiftRightByConstantAnd_1-1,39006,TYPE_ERROR,"IsabelleResult(requestID=ShiftRightByConstantAnd_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""Value"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinAnd :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   y::Value :: Value
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""Value"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""Value""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubAfterAddLeft_1-1,76999,FOUND_PROOF,"IsabelleResult(requestID=SubAfterAddLeft_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using RedundantAddSub_Exp by blast], isabelleMessages=null, stackTrace=null)"
+SubAfterAddRight_1-1,72213,FOUND_PROOF,"IsabelleResult(requestID=SubAfterAddRight_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using exp_sub_after_right_add by blast], isabelleMessages=null, stackTrace=null)"
+SubAfterSubLeft_1-1,71362,FAILED,"IsabelleResult(requestID=SubAfterSubLeft_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Suc (Suc (Canonicalization.size y))
+    < Canonicalization.size (BinaryExpr BinSub (BinaryExpr BinSub x y) x)
+ 2. BinaryExpr BinSub (BinaryExpr BinSub x y) x \<sqsupseteq> UnaryExpr UnaryNeg y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubNegativeValue_1-1,71675,FAILED,"IsabelleResult(requestID=SubNegativeValue_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Canonicalization.size (BinaryExpr BinAdd x y)
+    < Suc (Suc (Suc (Suc (Canonicalization.size x +
+                          Canonicalization.size y))))
+ 2. BinaryExpr BinSub x (UnaryExpr UnaryNeg y) \<sqsupseteq> BinaryExpr BinAdd x y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubSelfIsZero_1-1,28739,TYPE_ERROR,"IsabelleResult(requestID=SubSelfIsZero_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  Transform (BinaryExpr BinSub (x::IRExpr) x) ::
+  IRExpr \<Rightarrow> IRExpr Rewrite
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr) x \<longmapsto> 0::?'a
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr) x
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubThenAddLeft_1-1,77988,FOUND_PROOF,"IsabelleResult(requestID=SubThenAddLeft_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using SubThenAddLeft(1) by auto], isabelleMessages=null, stackTrace=null)"
+SubThenAddRight_1-1,77297,FOUND_PROOF,"IsabelleResult(requestID=SubThenAddRight_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using SubThenAddRight(1) by auto], isabelleMessages=null, stackTrace=null)"
+SubThenSubLeft_1-1,120688,FOUND_PROOF,"IsabelleResult(requestID=SubThenSubLeft_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[apply (simp add: less_SucI size_binary_rhs trans_less_add2), using exp_sub_then_left_sub by presburger], isabelleMessages=null, stackTrace=null)"
+SubtractZero_1-1,60007,TYPE_ERROR,"IsabelleResult(requestID=SubtractZero_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinSub (x::IRExpr) :: IRExpr \<Rightarrow> IRExpr
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr) (0::?'b) \<longmapsto> x
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr) (0::?'a)
+  IRExpr  <:  IRExpr   from function application
+    BinaryExpr BinSub (x::IRExpr), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+TransformRightShiftIntoConstantShift_1-1,38999,TYPE_ERROR,"IsabelleResult(requestID=TransformRightShiftIntoConstantShift_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""Value"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinAnd :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   y::Value :: Value
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""Value"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""Value""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+TransformShiftIntoMul_1-1,39006,TYPE_ERROR,"IsabelleResult(requestID=TransformShiftIntoMul_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""IRExpr"" and ""nat""
+
+Type error in application: incompatible operand type
+
+Operator:  (^) (2::?'a) :: nat \<Rightarrow> ?'a
+Operand:   ConstantExpr (y::Value) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""IRExpr"" is not a subtype of ""nat""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+TransformToUnsignedOnPositiveX_1-1,44977,FOUND_COUNTEREXAMPLE,"IsabelleResult(requestID=TransformToUnsignedOnPositiveX_1, status=FOUND_COUNTEREXAMPLE, message=null, counterexample=Nitpick found a counterexample:
+  Free variables:
+    x::IRExpr = ConstantExpr V\<^sub>1
+    y::IRExpr = ConstantExpr V\<^sub>1, proofs=null, isabelleMessages=null, stackTrace=null)"
+TrueCGeqZero_1-1,40870,FOUND_PROOF,"IsabelleResult(requestID=TrueCGeqZero_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+TrueCLessZero_1-1,40124,FOUND_PROOF,"IsabelleResult(requestID=TrueCLessZero_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=null, isabelleMessages=null, stackTrace=null)"
+UnsignedMergeDivision_1-1,30008,MALFORMED,"IsabelleResult(requestID=UnsignedMergeDivision_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+UnsignedRemWhenYOne_1-1,38998,MALFORMED,"IsabelleResult(requestID=UnsignedRemWhenYOne_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+UnsignedRemWhenYPower2_1-1,38997,MALFORMED,"IsabelleResult(requestID=UnsignedRemWhenYPower2_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+UnsignedRemXYConst_1-1,44986,MALFORMED,"IsabelleResult(requestID=UnsignedRemXYConst_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+XorSelfIsFalse_1-1,35997,TYPE_ERROR,"IsabelleResult(requestID=XorSelfIsFalse_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""nat"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  Transform :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr Rewrite
+Operand:   (x::nat) ^ x :: nat
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""nat"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  nat   from function application  (x::?'d) ^ x
+  num \<Rightarrow> ?'a  <:  num \<Rightarrow> nat   from function application  numeral::num \<Rightarrow> nat
+  ?'a  <:  ?'b   from function application  (x::?'a)::?'b
+  ?'a  <:  IRExpr   from function application  Transform ((x::?'c) ^ x)
+  ?'a  <:  ?'b   from function application  (^) (x::?'c)
+  ?'a  <:  ?'b   from function application  (x::?'a)::?'b, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+XorShiftConstantRight_1-1,35998,TYPE_ERROR,"IsabelleResult(requestID=XorShiftConstantRight_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: power
+
+Type error in application: incompatible operand type
+
+Operator:  (^) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   ConstantExpr (x::Value) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: power
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+constraint cycle not unifiable
+No type arity IRExpr :: power
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  IRExpr   from function application
+    Conditional (ConstantExpr (x::?'e) ^ (y::?'g))
+  ?'a  <:  ?'b   from function application  (^) (ConstantExpr (x::?'e))
+  Value \<Rightarrow> IRExpr  <:  ?'a \<Rightarrow> ?'b   from function application
+    ConstantExpr::?'a \<Rightarrow> ?'b, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ZeroSubtractValue_1-1,39008,TYPE_ERROR,"IsabelleResult(requestID=ZeroSubtractValue_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: zero
+
+Type error in application: incompatible operand type
+
+Operator:  BinaryExpr BinSub :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   0::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: zero
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+no infimum
+
+Cannot fulfil subtype constraints:
+  ?'a  <:  IRExpr   from function application
+    UnaryExpr UnaryNeg (x::IRExpr)
+  ?'a  <:  IRExpr   from function application
+    BinaryExpr BinSub (0::?'b) (x::IRExpr)
+  ?'a  <:  IRExpr   from function application  BinaryExpr BinSub (0::?'a), Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+flipX2_1-1,30657,MALFORMED,"IsabelleResult(requestID=flipX2_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+flipX_1-1,38048,MALFORMED,"IsabelleResult(requestID=flipX_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+normalizeX2_1-1,39008,MALFORMED,"IsabelleResult(requestID=normalizeX2_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+normalizeX_1-1,38988,MALFORMED,"IsabelleResult(requestID=normalizeX_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
