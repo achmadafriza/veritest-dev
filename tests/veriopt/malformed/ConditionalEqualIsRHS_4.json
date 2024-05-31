@@ -1,1 +1,1 @@
-{"theory":"(!(x eq y) ? x : y) \\<longmapsto> y","request_id":"ConditionalEqualIsRHS_4"}
+{"theory":"(~(x eq y) ? x : y) \\<longmapsto> y","request_id":"ConditionalEqualIsRHS_4"}

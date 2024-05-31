@@ -1,1 +1,1 @@
-{"theory":"exp[!(!a)] \\<longmapsto> a","request_id":"NotCancel_2"}
+{"request_id":"NotCancel_2","theory":"!(!a) \\<longmapsto> a"}

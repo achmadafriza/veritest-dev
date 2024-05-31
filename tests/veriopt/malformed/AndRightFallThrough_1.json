@@ -1,1 +1,1 @@
-{"theory":"(x & y) \\<longmapsto> y\n                                when (((and (not (IRExpr_down x)) (IRExpr_up y)) = 0))","request_id":"AndRightFallThrough_1"}
+{"theory":"(x & y) \\<longmapsto> y\n                                when ~(((and (not (IRExpr_down x)) (IRExpr_up y)) = 0))","request_id":"AndRightFallThrough_1"}

@@ -1,1 +1,1 @@
-{"request_id":"AndNeutral_1","theory":"(x & ~(const (IntVal b 0))) \\<longmapsto> x \n   when (wf_stamp x \\<and> stamp_expr x = IntegerStamp b lo hi)"}
+{"theory":"(x & ~(const (IntVal 128 0))) \\<longmapsto> x \n   when (wf_stamp x \\<and> stamp_expr x = IntegerStamp 128 lo hi)","request_id":"AndNeutral_1"}

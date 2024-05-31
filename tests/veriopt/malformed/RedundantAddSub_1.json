@@ -1,1 +1,1 @@
-{"request_id":"RedundantAddSub_1","theory":"(b + a) + b \\<longmapsto> a"}
+{"theory":"(b + a) + b \\<longmapsto> a","request_id":"RedundantAddSub_1"}
