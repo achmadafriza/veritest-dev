@@ -37,3 +37,5 @@ docker tag veritest achmadafriza/veritest:latest
 docker push achmadafriza/veritest:latest
 
 poetry run python parse.py ./result-logs.txt
+
+pcregrep -r -nH -M 'lemma\b[\s\S]*?sorry' /mnt/c/Programming/Thesis/veriopt-dev/isabelle/

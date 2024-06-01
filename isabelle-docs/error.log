@@ -1,0 +1,100 @@
+NOTE {"kind":"writeln","message":"HOL-Library FAILED (see also \"isabelle build_log -H Error HOL-Library\")","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+377
+NOTE {"kind":"writeln","message":"*** Failed to load theory \"HOL-Library.Library\" (unresolved \"HOL-Library.Pattern_Aliases\")\n*** exception Fail raised (line 205 of \"~~/src/HOL/Library/Pattern_Aliases.thy\"): Assertion failed\n*** At command \"ML\" (line 197 of \"~~/src/HOL/Library/Pattern_Aliases.thy\")","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+116
+NOTE {"kind":"writeln","message":"Graph CANCELLED","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+120
+NOTE {"kind":"writeln","message":"Semantics CANCELLED","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+117
+NOTE {"kind":"writeln","message":"Proofs CANCELLED","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+126
+NOTE {"kind":"writeln","message":"OptimizationDSL CANCELLED","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+178
+NOTE {"kind":"writeln","message":"Unfinished session(s): Graph, HOL-Library, OptimizationDSL, Proofs, Semantics","verbose":"false","task":"22deb9e9-248f-4b32-853f-db3ba36ee989"}
+900
+FAILED {
+   "task":"22deb9e9-248f-4b32-853f-db3ba36ee989",
+   "sessions":[
+      {
+         "session":"Pure",
+         "ok":true,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":0
+      },
+      {
+         "session":"HOL",
+         "ok":true,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":0
+      },
+      {
+         "session":"HOL-Library",
+         "ok":false,
+         "timeout":false,
+         "timing":{
+            "elapsed":56.832,
+            "cpu":385.352,
+            "gc":0
+         },
+         "return_code":1
+      },
+      {
+         "session":"Graph",
+         "ok":false,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":1
+      },
+      {
+         "session":"Semantics",
+         "ok":false,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":1
+      },
+      {
+         "session":"Proofs",
+         "ok":false,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":1
+      },
+      {
+         "session":"OptimizationDSL",
+         "ok":false,
+         "timeout":false,
+         "timing":{
+            "elapsed":0,
+            "cpu":0,
+            "gc":0
+         },
+         "return_code":1
+      }
+   ],
+   "return_code":1,
+   "message":"Session build failed: return code 1 (ERROR)",
+   "ok":false,
+   "kind":"error"
+}

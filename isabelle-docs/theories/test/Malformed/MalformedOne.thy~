@@ -1,0 +1,17 @@
+theory MalformedOne
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase MalformedNode
+  terminating size
+begin
+
+(* An optimization that requires no further proof *)
+optimization Auto: "(true ? x then y) \<longmapsto> x"
+  .
+
+end
+
+end

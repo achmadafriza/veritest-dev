@@ -1,0 +1,18 @@
+Steps:
+1. Build from client-1
+2. start from client-1 and client-2
+
+From Server:
+
+*** Consumer thread failure: "Isabelle.export"
+*** [SQLITE_READONLY_DBMOVED] The database file has been moved since it was opened (attempt to write a readonly database)
+
+From Client:
+
+NOTE {"kind":"writeln","message":"Preparing Canonicalizations/document ...","verbose":"false","task":"4a4b30f4-e60f-4fa3-ab65-4f594fd9b10a"}
+159
+NOTE {"kind":"writeln","message":"Finished Canonicalizations/document (0:00:02 elapsed time)","verbose":"false","task":"4a4b30f4-e60f-4fa3-ab65-4f594fd9b10a"}
+215
+NOTE {"kind":"writeln","message":"Document at \"/mnt/c/Programming/Thesis/veriopt-dev/isabelle/Optimizations/Canonicalizations/output/document.pdf\"","verbose":"false","task":"4a4b30f4-e60f-4fa3-ab65-4f594fd9b10a"}
+226
+FAILED {"kind":"error","message":"[SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: isabelle_sources.session_name, isabelle_sources.name)","task":"4a4b30f4-e60f-4fa3-ab65-4f594fd9b10a"}

@@ -1,0 +1,12 @@
+NOTE {"kind":"writeln","message":"Timing HOL-Library (4 threads, 311.107s elapsed time, 1102.956s cpu time, 248.091s GC time, factor 3.55)","verbose":"true","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished HOL-Library (0:05:43 elapsed time, 0:19:23 cpu time, factor 3.39)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished Graph/document (0:00:12 elapsed time)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Timing Graph (4 threads, 111.839s elapsed time, 296.023s cpu time, 33.133s GC time, factor 2.65)","verbose":"true","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished Semantics/document (0:00:04 elapsed time)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Timing Semantics (4 threads, 607.014s elapsed time, 1081.136s cpu time, 90.158s GC time, factor 1.78)","verbose":"true","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished Semantics (0:11:02 elapsed time, 0:19:23 cpu time, factor 1.76)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Timing Proofs (4 threads, 17.899s elapsed time, 52.185s cpu time, 3.839s GC time, factor 2.92)","verbose":"true","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished Proofs (0:00:47 elapsed time, 0:01:28 cpu time, factor 1.88)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished OptimizationDSL/document (0:00:02 elapsed time)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Timing OptimizationDSL (4 threads, 6.910s elapsed time, 13.702s cpu time, 0.907s GC time, factor 1.98)","verbose":"true","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}
+NOTE {"kind":"writeln","message":"Finished OptimizationDSL (0:00:35 elapsed time, 0:00:49 cpu time, factor 1.37)","verbose":"false","task":"f3e3cd55-f9b4-47e5-b2f2-b3becd93dbed"}

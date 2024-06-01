@@ -26,9 +26,12 @@ my $current_request_id = '';
 my $collecting = 0;
 my $data = '';
 
+my optimizationRegex = qr/.*:\d+:optimization\s+([^:]+): "(.*)$/;
+my newOptimizationRegex = qr/^.*:\d+:optimization/;
+
 while (my $line = <$fh>) {
     chomp $line;
-    if ($line =~ /.*:\d+:optimization\s+([^:]+): "(.*)$/) {
+    if ($line =~ $newLineRegex) {
         if ($collecting) {
             # Save the previous record to its own file if it's unique
             save_to_file($current_request_id, $data);
@@ -40,7 +43,7 @@ while (my $line = <$fh>) {
         $collecting = 1;  # Start collecting lines
     } elsif ($collecting) {
         # Continue collecting lines if they do not start a new record
-        if ($line =~ /^.*:\d+:optimization/) {
+        if ($line =~ $newOptimization) {
             # If a new record starts, save the previous if unique and reset
             save_to_file($current_request_id, $data);
             $data = '';

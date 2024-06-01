@@ -1,0 +1,103 @@
+### No line editor: "rlwrap"
+server "isabelle" = 127.0.0.1:38939 (password "04b30a64-282e-4b75-b6bb-3f5d457a548a")
+OK {"isabelle_id":"b5f3d1051b13","isabelle_name":"Isabelle2023"}
+OK 1
+OK 1
+OK {"task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+117
+NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+118
+NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+122
+NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+137
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+117
+NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+118
+NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+122
+NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+137
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+399
+FINISHED {"ok":true,"return_code":0,"sessions":[{"session":"Pure","ok":true,"timeout":false,"timing":{"elapsed":0,"cpu":0,"gc":0},"return_code":0},{"session":"HOL","ok":true,"timeout":false,"timing":{"elapsed":0,"cpu":0,"gc":0},"return_code":0},{"session":"HOL-Library","ok":true,"timeout":false,"timing":{"elapsed":0,"cpu":0,"gc":0},"return_code":0}],"task":"5af5fb84-4131-4fb9-a92a-9ab0170e5987"}
+OK {"task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+117
+NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+115
+NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+118
+NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+122
+NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+137
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+121
+NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+143
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+151
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+138
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+123
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+125
+NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+124
+NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+122
+NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+131
+NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+133
+NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+117
+NOTE {"kind":"writeln","message":"Session Pure/Pure","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+115
+NOTE {"kind":"writeln","message":"Session FOL/FOL","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+118
+NOTE {"kind":"writeln","message":"Session Misc/Tools","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+122
+NOTE {"kind":"writeln","message":"Session HOL/HOL (main)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+137
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Library (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+121
+NOTE {"kind":"writeln","message":"Session veriopt/Graph","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+143
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Combinatorics (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+151
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Computational_Algebra (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+138
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Analysis (main timing)","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+123
+NOTE {"kind":"writeln","message":"Session HOL/HOL-Eisbach","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+125
+NOTE {"kind":"writeln","message":"Session veriopt/Semantics","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+124
+NOTE {"kind":"writeln","message":"Session veriopt/Snippets","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+122
+NOTE {"kind":"writeln","message":"Session veriopt/Proofs","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+131
+NOTE {"kind":"writeln","message":"Session veriopt/OptimizationDSL","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+133
+NOTE {"kind":"writeln","message":"Session veriopt/Canonicalizations","verbose":"true","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+139
+NOTE {"kind":"writeln","message":"Starting session Canonicalizations ...","verbose":"false","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+182
+FINISHED {"session_id":"a94cd5db-8be4-4c1b-8b50-aeb0b7202370","tmp_dir":"/tmp/isabelle-achmadafriza/server_session2909135338398421130","task":"4eaae530-1d1a-4dd2-a58a-d0370151779e"}
+OK 1
+OK 1
+OK {"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0"}
+161
+NOTE {"percentage":7,"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0","message":"theory Draft.AutoFail 7%","kind":"writeln","session":"","theory":"Draft.AutoFail"}
+163
+NOTE {"percentage":21,"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0","message":"theory Draft.AutoFail 21%","kind":"writeln","session":"","theory":"Draft.AutoFail"}
+163
+NOTE {"percentage":99,"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0","message":"theory Draft.AutoFail 99%","kind":"writeln","session":"","theory":"Draft.AutoFail"}
+165
+NOTE {"percentage":100,"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0","message":"theory Draft.AutoFail 100%","kind":"writeln","session":"","theory":"Draft.AutoFail"}
+1566
+FINISHED {"ok":false,"errors":[{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size (BinaryExpr BinSub x e)\n    < Suc (Suc (Suc (Suc (Canonicalization.size x +\n                          Canonicalization.size e))))\n 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \\<sqsupseteq> BinaryExpr BinSub x e\nvariables:\n    e, x :: IRExpr","pos":{"line":12,"offset":177,"end_offset":178,"file":"/tmp/isabelle-achmadafriza/server_session2909135338398421130/AutoFail.thy"}}],"nodes":[{"messages":[{"kind":"writeln","message":"phase: AutoFailNode\n  trm: Canonicalization.size\n  rules:","pos":{"line":7,"offset":88,"end_offset":93,"file":"/tmp/isabelle-achmadafriza/server_session2909135338398421130/AutoFail.thy"}},{"kind":"error","message":"Failed to finish proof:\ngoal (2 subgoals):\n 1. Canonicalization.size (BinaryExpr BinSub x e)\n    < Suc (Suc (Suc (Suc (Canonicalization.size x +\n                          Canonicalization.size e))))\n 2. BinaryExpr BinAdd x (UnaryExpr UnaryNeg e) \\<sqsupseteq> BinaryExpr BinSub x e\nvariables:\n    e, x :: IRExpr","pos":{"line":12,"offset":177,"end_offset":178,"file":"/tmp/isabelle-achmadafriza/server_session2909135338398421130/AutoFail.thy"}}],"exports":[],"status":{"percentage":100,"unprocessed":0,"running":0,"finished":13,"failed":1,"total":14,"consolidated":true,"canceled":false,"ok":false,"warned":0},"theory_name":"Draft.AutoFail","node_name":"/tmp/isabelle-achmadafriza/server_session2909135338398421130/AutoFail.thy"}],"task":"a9d6c028-49c8-4b49-9cda-42d0b191fbe0"}
+OK

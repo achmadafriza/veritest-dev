@@ -1,0 +1,17 @@
+theory TestQuickcheck2
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase AutoNode
+  terminating size
+begin
+
+optimization TryTest: "BinExpr BinMul x (ConstantNode 2) \<longmaps> x"
+  nitpick
+  sorry
+
+end (* End AutoNode *)
+
+end

@@ -1,15 +1,17 @@
+./manual/CanonicalizationSyntax.thy:396:optimization AbsIdempotence: "abs(abs(Rep_int32 e)) \<longmapsto> abs(Rep_int32 e)" // mapsto to longmapsto
+./manual/CanonicalizationSyntax.thy:401:optimization AbsNegate: "abs(-e) \<longmapsto> abs(e) when is_IntegerStamp (stamp_expr e)" // mapsto to longmapsto
 ./manual/AddPhase.thy:63:optimization AddNeutral: "(e + (const (IntVal 32 1))) \<longmapsto> e" // 0 to 1
-./manual/AddPhase.thy:226:optimization RedundantAddSub: "(b + a) + b \<longmapsto> a" // - to +
-./manual/AndPhase.thy:227:optimization AndSignExtend: "BinaryExpr BinAnd (UnaryExpr (UnarySignExtend In Out) (x)) 
-                                               (const (new_int b e))
-                              \<longmapsto> (UnaryExpr (UnaryZeroExtend In Out) (x))
-                                  when (e = (1 >> In) - 1)" // << to >>
+./manual/CanonicalizationSyntax.thy:561:optimization AddNeutral: "(e + (const (IntVal 32 1))) \<longmapsto> e when (stamp_expr e = IntegerStamp 32 l u)" // 0 to 1
 ./manual/AndPhase.thy:233:optimization AndNeutral: "(x & ~(const (IntVal 128 0))) \<longmapsto> x 
    when (wf_stamp x \<and> stamp_expr x = IntegerStamp 128 lo hi)" // b to 128
 ./manual/AndPhase.thy:237:optimization AndRightFallThrough: "(x & y) \<longmapsto> y
                                 when ~(((and (not (IRExpr_down x)) (IRExpr_up y)) = 0))" // add ~
-./manual/ConditionalPhase.thy:53:optimization DefaultTrueBranch: "(false ? x : y) \<longmapsto> x" . // true to false
-./manual/ConditionalPhase.thy:57:optimization ConditionalEqualBranches: "(e ? x  x) \<longmapsto> x" . // missing colon
+./manual/AndPhase.thy:227:optimization AndSignExtend: "BinaryExpr BinAnd (UnaryExpr (UnarySignExtend In Out) (x)) 
+                                               (const (new_int b e))
+                              \<longmapsto> (UnaryExpr (UnaryZeroExtend In Out) (x))
+                                  when (e = (1 >> In) - 1)" // << to >>
+./manual/CanonicalizationSyntax.thy:536:optimization BinaryFoldConstant: "BinaryExpr op (const e1) (const e2) \<longmapsto>
+                                  ConstantExpr (bin_eval op e1 e2)" // remove precondition
 ./manual/ConditionalPhase.thy:59:optimization condition_bounds_x: "((u > v) ? x : y) \<longmapsto> x 
     when (stamp_under (stamp_expr u) (stamp_expr v) \<and> wf_stamp u \<and> wf_stamp v)" // < to >
 ./manual/ConditionalPhase.thy:59:optimization condition_bounds_x: "((u \<ge> v) ? x : y) \<longmapsto> x 
@@ -20,6 +22,11 @@
 ./manual/ConditionalPhase.thy:79:optimization ConditionalEliminateKnownLess: "((x \<ge> y) ? x : y) \<longmapsto> x 
                                  when (stamp_under (stamp_expr x) (stamp_expr y)
                                       \<and> wf_stamp x \<and> wf_stamp y)" // < to >=
+./manual/ConditionalPhase.thy:57:optimization ConditionalEqualBranches: "(e ? x  x) \<longmapsto> x" . // missing colon
+./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "((x eq y) ? x : y) \<longmapsto> x" // y to x
+./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "((x eq x) ? x : y) \<longmapsto> y" // y to x
+./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "(!(x eq y) ? x : y) \<longmapsto> y" // add !
+./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "(~(x eq y) ? x : y) \<longmapsto> y" // add ~
 ./manual/ConditionalPhase.thy:252:optimization ConditionalExtractCondition2: "exp[(c ? false : true)] \<longmapsto> !c" // missing isBoolean
 ./manual/ConditionalPhase.thy:252:optimization ConditionalExtractCondition2: "(c ? false : true) \<longmapsto> !c
                                           when isBoolean c" // missing exp
@@ -27,14 +34,10 @@
                                           when isBoolean c" // ! to ~
 ./manual/ConditionalPhase.thy:252:optimization ConditionalExtractCondition2: "exp[(c ? true : false)] \<longmapsto> ~c
                                           when isBoolean c" // swap true and false
-./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "((x eq y) ? x : y) \<longmapsto> x" // y to x
-./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "((x eq x) ? x : y) \<longmapsto> y" // y to x
-./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "(!(x eq y) ? x : y) \<longmapsto> y" // add !
-./manual/ConditionalPhase.thy:280:optimization ConditionalEqualIsRHS: "(~(x eq y) ? x : y) \<longmapsto> y" // add ~
-./manual/ConditionalPhase.thy:313:optimization normalizeX: "((x eq const (IntVal 32 1)) ? 
-                                (const (IntVal 32 0)) : (const (IntVal 32 1))) \<longmapsto> x
-                                when stamp_expr x = IntegerStamp 32 0 1 \<and> wf_stamp x \<and>
-                                     isBoolean x" // 0 to 1
+./manual/ConditionalPhase.thy:53:optimization DefaultTrueBranch: "(false ? x : y) \<longmapsto> x" . // true to false
+./manual/OrPhase.thy:178:optimization EliminateRedundantFalse: "x | true \<longmapsto> x" // false to true
+./manual/OrPhase.thy:178:optimization EliminateRedundantFalse: "x || false \<longmapsto> x" // BinOr to ShortCircuitOr
+./manual/XorPhase.thy:105:optimization EliminateRedundantFalse: "(x \<oplus> true) \<longmapsto> x" // false to true
 ./manual/ConditionalPhase.thy:342:optimization flipX: "((x eq (const (IntVal 32 1))) ? 
                             (const (IntVal 32 1)) : (const (IntVal 32 0))) \<longmapsto> x \<oplus> (const (IntVal 32 1))
                              when (x = ConstantExpr (IntVal 32 0) | 
@@ -44,32 +47,29 @@
                              when (x = ConstantExpr (IntVal 32 0) | 
                                   (x = ConstantExpr (IntVal 32 1)))" // \<oplus> to ^ (java xor)
 ./manual/ConditionalPhase.thy:342:optimization flipX: "((x eq (const (IntVal 32 1))) ? 
-                            (const (IntVal 32 1)) : (const (IntVal 32 0))) \<longmapsto> x ^ (const (IntVal 32 1))
+                            (const (IntVal 32 1)) : (const (IntVal 32 0))) \<longmapsto> x \<oplus> (const (IntVal 32 1))
                              when (x = const (IntVal 32 0) | 
                                   (x = const (IntVal 32 1)))" // ConstantExpr to const
+./manual/CanonicalizationSyntax.thy:617:optimization MulNegate: "(x * const (-1) ) \<longmapsto> -x when (stamp_expr x = IntegerStamp 32 l u)" // mapsto to longmapsto
 ./manual/MulPhase.thy:370:optimization MulNeutral: "x * ConstExpr (IntVal b 1) \<longmapsto> x" // ConstantExpr to ConstExpr
 ./manual/MulPhase.thy:370:optimization MulNeutral: "x * ConstNode (IntVal b 1) \<longmapsto> x" // ConstantExpr to ConstNode
 ./manual/MulPhase.thy:370:optimization MulNeutral: "x * ConstantNode (IntVal b 1) \<longmapsto> x" // ConstantExpr to ConstantNode
 ./manual/MulPhase.thy:370:optimization MulNeutral: "x * const (1) \<longmapsto> x" // IntVal b 1 to 1
+./manual/ConditionalPhase.thy:313:optimization normalizeX: "((x eq const (IntVal 32 1)) ? 
+                                (const (IntVal 32 0)) : (const (IntVal 32 1))) \<longmapsto> x
+                                when stamp_expr x = IntegerStamp 32 0 1 \<and> wf_stamp x \<and>
+                                     isBoolean x" // 0 to 1
 ./manual/NotPhase.thy:42:optimization NotCancel: "exp[!(!a)] \<longmapsto> a" // ~ to !
 ./manual/NotPhase.thy:42:optimization NotCancel: "!(!a) \<longmapsto> a" // missing exp[]
 ./manual/NotPhase.thy:42:optimization NotCancel: "exp[~(!a)] \<longmapsto> a" // ~ to !
 ./manual/NotPhase.thy:42:optimization NotCancel: "exp[!(~a)] \<longmapsto> a" // ~ to !
-./manual/OrPhase.thy:178:optimization EliminateRedundantFalse: "x | true \<longmapsto> x" // false to true
-./manual/OrPhase.thy:178:optimization EliminateRedundantFalse: "x || false \<longmapsto> x" // BinOr to ShortCircuitOr
-./manual/SubPhase.thy:224:optimization SubThenAddLeft: "(x - x + y) \<longmapsto> -y" // missing brackets
+./manual/AddPhase.thy:226:optimization RedundantAddSub: "(b + a) + b \<longmapsto> a" // - to +
 ./manual/SubPhase.thy:242:optimization SubNegativeConstant: "(x - (const (IntVal b y))) \<longmapsto> 
                                     x + (const (IntVal b y))  when (y \<ge> 0)"  // < to >=
 ./manual/SubPhase.thy:242:optimization SubNegativeConstant: "(x - (const (IntVal b y))) \<longmapsto> 
                                     x + (const (IntVal b y))  when (y > 0)"  // < to >
 ./manual/SubPhase.thy:393:optimization SubSelfIsZero: "(x - x) \<longmapsto> const IntVal b 0" // remove precondition
+./manual/SubPhase.thy:224:optimization SubThenAddLeft: "(x - x + y) \<longmapsto> -y" // missing brackets
 ./manual/XorPhase.thy:98:optimization XorSelfIsFalse: "(x \<oplus> x) \<longmapsto> false" // remove precondition
 ./manual/XorPhase.thy:98:optimization XorSelfIsFalse: "(x \<oplus> x) \<longmapsto> true when 
                       (wf_stamp x \<and> stamp_expr x = default_stamp)" // false to true
-./manual/XorPhase.thy:105:optimization EliminateRedundantFalse: "(x \<oplus> true) \<longmapsto> x" // false to true
-./manual/CanonicalizationSyntax.thy:396:optimization AbsIdempotence: "abs(abs(Rep_int32 e)) \<longmapsto> abs(Rep_int32 e)" // mapsto to longmapsto
-./manual/CanonicalizationSyntax.thy:401:optimization AbsNegate: "abs(-e) \<longmapsto> abs(e) when is_IntegerStamp (stamp_expr e)" // mapsto to longmapsto
-./manual/CanonicalizationSyntax.thy:536:optimization BinaryFoldConstant: "BinaryExpr op (const e1) (const e2) \<longmapsto>
-                                  ConstantExpr (bin_eval op e1 e2)" // remove precondition
-./manual/CanonicalizationSyntax.thy:561:optimization AddNeutral: "(e + (const (IntVal 32 1))) \<longmapsto> e when (stamp_expr e = IntegerStamp 32 l u)" // 0 to 1
-./manual/CanonicalizationSyntax.thy:617:optimization MulNegate: "(x * const (-1) ) \<longmapsto> -x when (stamp_expr x = IntegerStamp 32 l u)" // mapsto to longmapsto

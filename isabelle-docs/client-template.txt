@@ -1,0 +1,77 @@
+FINISHED {"session_id":"6de06c6d-aaba-4e7e-b36a-0836aea41caa","tmp_dir":"/tmp/isabelle-achmadafriza/server_session168179395499116157","task":"96baec99-73c0-4e72-a1d7-42811f4fdc1e"}
+
+session_start { "session": "Canonicalizations", "options": ["document=false", "show_question_marks=false", "quick_and_dirty"], "dirs": ["/mnt/c/Programming/Thesis/veriopt-dev/isabelle"], "include_sessions": ["OptimizationDSL"], "verbose": true }
+
+use_theories { "session_id": "6de06c6d-aaba-4e7e-b36a-0836aea41caa", "theories": ["OracleTest"] }
+
+session_stop { "session_id": "6de06c6d-aaba-4e7e-b36a-0836aea41caa" }
+
+FINISHED {
+   "ok":false,
+   "errors":[
+      {
+         "kind":"error",
+         "message":"Bad context for command \"sorry\"\\<^here> -- using reset state",
+         "pos":{
+            "line":27,
+            "offset":634,
+            "end_offset":639,
+            "file":"/tmp/isabelle-achmadafriza/server_session17822103851874691645/OracleTest.thy"
+         }
+      }
+   ],
+   "nodes":[
+      {
+         "messages":[
+            {
+               "kind":"writeln",
+               "message":"phase: ConditionalNode\n  trm: Canonicalization.size\n  rules:",
+               "pos":{
+                  "line":21,
+                  "offset":489,
+                  "end_offset":494,
+                  "file":"/tmp/isabelle-achmadafriza/server_session17822103851874691645/OracleTest.thy"
+               }
+            },
+            {
+               "kind":"error",
+               "message":"Bad context for command \"sorry\"\\<^here> -- using reset state",
+               "pos":{
+                  "line":27,
+                  "offset":634,
+                  "end_offset":639,
+                  "file":"/tmp/isabelle-achmadafriza/server_session17822103851874691645/OracleTest.thy"
+               }
+            },
+            {
+               "kind":"writeln",
+               "message":"oracles:\n    skip_proof",
+               "pos":{
+                  "line":29,
+                  "offset":641,
+                  "end_offset":652,
+                  "file":"/tmp/isabelle-achmadafriza/server_session17822103851874691645/OracleTest.thy"
+               }
+            }
+         ],
+         "exports":[
+            
+         ],
+         "status":{
+            "percentage":100,
+            "unprocessed":0,
+            "running":0,
+            "finished":17,
+            "failed":1,
+            "total":18,
+            "consolidated":true,
+            "canceled":false,
+            "ok":false,
+            "warned":0
+         },
+         "theory_name":"Draft.OracleTest",
+         "node_name":"/tmp/isabelle-achmadafriza/server_session17822103851874691645/OracleTest.thy"
+      }
+   ],
+   "task":"2ed73891-02f6-4ce6-8441-1323e748474d"
+}

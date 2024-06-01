@@ -1,0 +1,18 @@
+(* Each theory file starts with a header like the one below *)
+theory Sledge
+  imports
+    Canonicalizations.Common
+    Proofs.StampEvalThms
+begin
+
+phase SledgeNode
+  terminating size
+begin
+
+optimization Sledge: "x + -e \<longmapsto> x - e"
+  sledgehammer
+  sorry
+
+end
+
+end

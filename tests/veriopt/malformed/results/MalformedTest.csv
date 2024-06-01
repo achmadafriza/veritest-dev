@@ -1,0 +1,634 @@
+REQUEST_ID,ELAPSED_TIME,RESULT_STATUS,RESULT
+AbsIdempotence_1-1,26580,TYPE_ERROR,"IsabelleResult(requestID=AbsIdempotence_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""_ word"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  Transform :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr Rewrite
+Operand:
+  AbsPhase.abs (AbsPhase.abs ((Rep_int32::?'b \<Rightarrow> ?'a word) (e::?'b))) ::
+  ?'a word
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""word"" and ""IRExpr"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AbsNegate_1-1,37306,TYPE_ERROR,"IsabelleResult(requestID=AbsNegate_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""IRExpr"" and ""_ word""
+
+Type error in application: incompatible operand type
+
+Operator:  AbsPhase.abs :: ?'a word \<Rightarrow> ?'a word
+Operand:   UnaryExpr UnaryNeg (e::IRExpr) :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""IRExpr"" and ""word"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AddNeutral_1-1,82078,FAILED,"IsabelleResult(requestID=AddNeutral_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinAdd e (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq> e
+variables:
+    e :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AddNeutral_2-1,72499,FAILED,"IsabelleResult(requestID=AddNeutral_2, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. stamp_expr e = IntegerStamp (32::nat) l u \<longrightarrow>
+    BinaryExpr BinAdd e (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq> e
+variables:
+    l, u :: int
+    e :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AndNeutral_1-1,67335,FOUND_PROOF,"IsabelleResult(requestID=AndNeutral_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using exp_and_neutral by blast], isabelleMessages=null, stackTrace=null)"
+AndRightFallThrough_1-1,75974,FAILED,"IsabelleResult(requestID=AndRightFallThrough_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. and (not (IRExpr_down x)) (IRExpr_up y) \<noteq> (0::64 word) \<longrightarrow>
+    BinaryExpr BinAnd x y \<sqsupseteq> y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+AndSignExtend_1-1,73846,FAILED,"IsabelleResult(requestID=AndSignExtend_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. e = (1::64 word) >> In - (1::64 word) \<longrightarrow>
+    BinaryExpr BinAnd (UnaryExpr (UnarySignExtend In Out) x)
+     (ConstantExpr
+       (IntVal b (take_bit b ((1::64 word) >> In - (1::64 word))))) \<sqsupseteq>
+    UnaryExpr (UnaryZeroExtend In Out) x
+variables:
+    x :: IRExpr
+    In, Out, b :: nat
+    e :: 64 word, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+BinaryFoldConstant_1-1,96798,FOUND_PROOF,"IsabelleResult(requestID=BinaryFoldConstant_1, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using BinaryFoldConstant(1) rewrite_preservation.simps(1) by blast], isabelleMessages=null, stackTrace=null)"
+ConditionalEliminateKnownLess_1-1,32450,TYPE_ERROR,"IsabelleResult(requestID=ConditionalEliminateKnownLess_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""bool"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalExpr :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   greater (x::?'a) (y::?'a) :: bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""bool"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""bool"" is not a subtype of ""IRExpr""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEliminateKnownLess_2-1,41996,TYPE_ERROR,"IsabelleResult(requestID=ConditionalEliminateKnownLess_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""bool"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalExpr :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   greater_eq (x::?'a) (y::?'a) :: bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""bool"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""bool"" is not a subtype of ""IRExpr""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualBranches_1-1,35985,MALFORMED,"IsabelleResult(requestID=ConditionalEqualBranches_1, status=MALFORMED, message=Malformed rule found!, counterexample=null, proofs=null, isabelleMessages=[Inner syntax error\<^here>
+Failed to parse term, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualIsRHS_1-1,75152,FAILED,"IsabelleResult(requestID=ConditionalEqualIsRHS_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. ConditionalExpr (BinaryExpr BinIntegerEquals x y) x y \<sqsupseteq> x
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualIsRHS_2-1,72740,FAILED,"IsabelleResult(requestID=ConditionalEqualIsRHS_2, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. ConditionalExpr (BinaryExpr BinIntegerEquals x x) x y \<sqsupseteq> y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualIsRHS_3-1,29552,TYPE_ERROR,"IsabelleResult(requestID=ConditionalEqualIsRHS_3, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+      (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+        (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+          (""_position"" y))
+        (""_position"" x) (""_position"" y)))
+    (""_position"" y))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+        (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+          (""_position"" y)))
+      (""_position"" x) (""_position"" y))
+    (""_position"" y)), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation x::?'a eq y::?'a ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation
+Operand:   x::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation !x::?'a eq y::?'a ::
+  ?'a ExtraNotation ExtraNotation
+  \<Rightarrow> ?'a ExtraNotation ExtraNotation
+    \<Rightarrow> ?'a ExtraNotation ExtraNotation ExtraNotation
+Operand:   x::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalEqualIsRHS_4-1,38533,TYPE_ERROR,"IsabelleResult(requestID=ConditionalEqualIsRHS_4, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>HOL.Not""
+      (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+        (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+          (""_position"" y))
+        (""_position"" x) (""_position"" y)))
+    (""_position"" y))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>HOL.Not""
+        (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+          (""_position"" y)))
+      (""_position"" x) (""_position"" y))
+    (""_position"" y)), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalNotation x::?'a eq y::?'a ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation
+Operand:   x::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""bool""
+, Type unification failed: Clash of types ""_ ExtraNotation"" and ""bool""
+
+Type error in application: incompatible operand type
+
+Operator:  Not :: bool \<Rightarrow> bool
+Operand:   x::?'a eq y::?'a :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""ExtraNotation"" and ""bool"", Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalExtractCondition2_1-1,81548,FAILED,"IsabelleResult(requestID=ConditionalExtractCondition2_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. ConditionalExpr c (ConstantExpr (IntVal (32::nat) (0::64 word)))
+     (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq>
+    UnaryExpr UnaryLogicNegation c
+variables:
+    c :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalExtractCondition2_2-1,70392,FOUND_PROOF,"IsabelleResult(requestID=ConditionalExtractCondition2_2, status=FOUND_PROOF, message=null, counterexample=null, proofs=[using ConditionalExtractCondition2(1) rewrite_preservation.simps(2) by blast], isabelleMessages=null, stackTrace=null)"
+ConditionalExtractCondition2_3-1,65126,FAILED,"IsabelleResult(requestID=ConditionalExtractCondition2_3, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. isBoolean c \<longrightarrow>
+    ConditionalExpr c (ConstantExpr (IntVal (32::nat) (0::64 word)))
+     (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq>
+    UnaryExpr UnaryNot c
+variables:
+    c :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+ConditionalExtractCondition2_4-1,68898,FAILED,"IsabelleResult(requestID=ConditionalExtractCondition2_4, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. isBoolean c \<longrightarrow>
+    ConditionalExpr c (ConstantExpr (IntVal (32::nat) (1::64 word)))
+     (ConstantExpr (IntVal (32::nat) (0::64 word))) \<sqsupseteq>
+    UnaryExpr UnaryNot c
+variables:
+    c :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+DefaultTrueBranch_1-1,78957,FAILED,"IsabelleResult(requestID=DefaultTrueBranch_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. ConditionalExpr (ConstantExpr (IntVal (32::nat) (0::64 word))) x y \<sqsupseteq> x
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantFalse_1-1,72135,FAILED,"IsabelleResult(requestID=EliminateRedundantFalse_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinOr x (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq> x
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantFalse_2-1,29261,TYPE_ERROR,"IsabelleResult(requestID=EliminateRedundantFalse_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.ExtraNotation.ShortCircuitOr"" (""_position"" x)
+    (""\<^const>Markup.Rewrite.Transform""
+      (""\<^const>Markup.ExtraNotation.FalseNotation"") (""_position"" x)))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.ShortCircuitOr"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.FalseNotation""))
+    (""_position"" x)), Type unification failed: Clash of types ""_ Rewrite"" and ""_ ExtraNotation""
+
+Type error in application: incompatible operand type
+
+Operator:  ShortCircuitOr (x::?'a ExtraNotation) ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation
+Operand:   false \<longmapsto> x::?'a ExtraNotation :: ?'a ExtraNotation Rewrite
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No coercion known for type constructors: ""Rewrite"" and ""ExtraNotation"", Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  Transform x::?'a ExtraNotation || false ::
+  ?'a ExtraNotation ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation Rewrite
+Operand:   x::?'a ExtraNotation :: ?'a ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+EliminateRedundantFalse_3-1,81328,FAILED,"IsabelleResult(requestID=EliminateRedundantFalse_3, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinXor x (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq> x
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNegate_1-1,39004,TYPE_ERROR,"IsabelleResult(requestID=MulNegate_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: one
+
+Type error in application: incompatible operand type
+
+Operator:  UnaryExpr UnaryNeg :: IRExpr \<Rightarrow> IRExpr
+Operand:   1::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: one
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""Value""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNeutral_1-1,82056,FAILED,"IsabelleResult(requestID=MulNeutral_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinMul x (ConstExpr (IntVal b (1::64 word))) \<sqsupseteq> x
+variables:
+    b :: nat
+    ConstExpr :: Value \<Rightarrow> IRExpr
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNeutral_2-1,72956,FAILED,"IsabelleResult(requestID=MulNeutral_2, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinMul x (ConstNode (IntVal b (1::64 word))) \<sqsupseteq> x
+variables:
+    b :: nat
+    ConstNode :: Value \<Rightarrow> IRExpr
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNeutral_3-1,68441,FAILED,"IsabelleResult(requestID=MulNeutral_3, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinMul x (ConstantNode (IntVal b (1::64 word))) \<sqsupseteq> x
+variables:
+    b :: nat
+    ConstantNode :: Value \<Rightarrow> IRExpr
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+MulNeutral_4-1,29467,TYPE_ERROR,"IsabelleResult(requestID=MulNeutral_4, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Groups.times_class.times"" (""_position"" x)
+    (""\<^const>Markup.ExtraNotation.ConstantNotation""
+      (""\<^const>Markup.Rewrite.Transform"" (""\<^const>Groups.one_class.one"")
+        (""_position"" x))))
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Groups.times_class.times"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>Groups.one_class.one"")))
+    (""_position"" x)), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  (*) (x::?'a) :: ?'a \<Rightarrow> ?'a
+Operand:   const 1::?'a \<longmapsto> x::?'a :: ?'a Rewrite ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, No type arity ExtraNotation :: times, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NotCancel_1-1,73206,FAILED,"IsabelleResult(requestID=NotCancel_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. UnaryExpr UnaryLogicNegation (UnaryExpr UnaryLogicNegation a) \<sqsupseteq> a
+variables:
+    a :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NotCancel_2-1,29106,TYPE_ERROR,"IsabelleResult(requestID=NotCancel_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.Rewrite.Transform""
+    (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+      (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+        (""_position"" a)))
+    (""_position"" a))
+  (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+    (""\<^const>Markup.Rewrite.Transform""
+      (""\<^const>Markup.ExtraNotation.LogicNegationNotation""
+        (""_position"" a))
+      (""_position"" a))), Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  Transform !!a::?'a ::
+  ?'a ExtraNotation ExtraNotation \<Rightarrow> ?'a ExtraNotation ExtraNotation Rewrite
+Operand:   a::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Type unification failed: Occurs check!
+
+Type error in application: incompatible operand type
+
+Operator:  Transform !a::?'a ::
+  ?'a ExtraNotation \<Rightarrow> ?'a ExtraNotation Rewrite
+Operand:   a::?'a :: ?'a
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Occurs check!
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Occurs check!
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NotCancel_3-1,78662,FAILED,"IsabelleResult(requestID=NotCancel_3, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. UnaryExpr UnaryNot (UnaryExpr UnaryLogicNegation a) \<sqsupseteq> a
+variables:
+    a :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+NotCancel_4-1,72258,FAILED,"IsabelleResult(requestID=NotCancel_4, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. UnaryExpr UnaryLogicNegation (UnaryExpr UnaryNot a) \<sqsupseteq> a
+variables:
+    a :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+RedundantAddSub_1-1,66661,FAILED,"IsabelleResult(requestID=RedundantAddSub_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. BinaryExpr BinAdd (BinaryExpr BinAdd b a) b \<sqsupseteq> a
+variables:
+    a, b :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubNegativeConstant_1-1,38423,FOUND_COUNTEREXAMPLE,"IsabelleResult(requestID=SubNegativeConstant_1, status=FOUND_COUNTEREXAMPLE, message=null, counterexample=Nitpick found a counterexample:
+  Empty assignment, proofs=null, isabelleMessages=null, stackTrace=null)"
+SubNegativeConstant_2-1,74018,FOUND_COUNTEREXAMPLE,"IsabelleResult(requestID=SubNegativeConstant_2, status=FOUND_COUNTEREXAMPLE, message=null, counterexample=Quickcheck found a counterexample:
+  y = 1::64 word, proofs=null, isabelleMessages=null, stackTrace=null)"
+SubSelfIsZero_1-1,134279,FAILED,"IsabelleResult(requestID=SubSelfIsZero_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Suc (0::nat) < Canonicalization.size (BinaryExpr BinSub x x)
+ 2. BinaryExpr BinSub x x \<sqsupseteq> ConstantExpr (IntVal b (0::64 word))
+variables:
+    b :: nat
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+SubThenAddLeft_1-1,72845,FAILED,"IsabelleResult(requestID=SubThenAddLeft_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Suc (Suc (Canonicalization.size y))
+    < Canonicalization.size (BinaryExpr BinAdd (BinaryExpr BinSub x x) y)
+ 2. BinaryExpr BinAdd (BinaryExpr BinSub x x) y \<sqsupseteq> UnaryExpr UnaryNeg y
+variables:
+    x, y :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+XorSelfIsFalse_1-1,134124,FAILED,"IsabelleResult(requestID=XorSelfIsFalse_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. Suc (0::nat) < Canonicalization.size (BinaryExpr BinXor x x)
+ 2. BinaryExpr BinXor x x \<sqsupseteq> ConstantExpr (IntVal (32::nat) (0::64 word))
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+XorSelfIsFalse_2-1,114913,FAILED,"IsabelleResult(requestID=XorSelfIsFalse_2, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (2 subgoals):
+ 1. wf_stamp x \<Longrightarrow>
+    stamp_expr x =
+    IntegerStamp (32::nat) (- (2147483648::int)) (2147483647::int) \<Longrightarrow>
+    Suc (0::nat) < Canonicalization.size (BinaryExpr BinXor x x)
+ 2. wf_stamp x \<and>
+    stamp_expr x =
+    IntegerStamp (32::nat) (- (2147483648::int)) (2147483647::int) \<longrightarrow>
+    BinaryExpr BinXor x x \<sqsupseteq> ConstantExpr (IntVal (32::nat) (1::64 word))
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+condition_bounds_x_1-1,35720,TYPE_ERROR,"IsabelleResult(requestID=condition_bounds_x_1, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""bool"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalExpr :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   greater (u::?'a) (v::?'a) :: bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""bool"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""bool"" is not a subtype of ""IRExpr""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+condition_bounds_x_2-1,32308,TYPE_ERROR,"IsabelleResult(requestID=condition_bounds_x_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: Clash of types ""bool"" and ""IRExpr""
+
+Type error in application: incompatible operand type
+
+Operator:  ConditionalExpr :: IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr \<Rightarrow> IRExpr
+Operand:   greater_eq (u::?'a) (v::?'a) :: bool
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+""bool"" is not a subtype of ""IRExpr""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""bool"" is not a subtype of ""IRExpr""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+flipX_1-1,72996,FAILED,"IsabelleResult(requestID=flipX_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. (x = ConstantExpr (IntVal (32::nat) (0::64 word)) \<longrightarrow>
+     ConditionalExpr
+      (BinaryExpr BinIntegerEquals
+        (ConstantExpr (IntVal (32::nat) (0::64 word)))
+        (ConstantExpr (IntVal (32::nat) (1::64 word))))
+      (ConstantExpr (IntVal (32::nat) (1::64 word)))
+      (ConstantExpr (IntVal (32::nat) (0::64 word))) \<sqsupseteq>
+     BinaryExpr BinXor (ConstantExpr (IntVal (32::nat) (0::64 word)))
+      (ConstantExpr (IntVal (32::nat) (1::64 word)))) \<and>
+    (x = ConstantExpr (IntVal (32::nat) (1::64 word)) \<longrightarrow>
+     ConditionalExpr
+      (BinaryExpr BinIntegerEquals
+        (ConstantExpr (IntVal (32::nat) (1::64 word)))
+        (ConstantExpr (IntVal (32::nat) (1::64 word))))
+      (ConstantExpr (IntVal (32::nat) (1::64 word)))
+      (ConstantExpr (IntVal (32::nat) (0::64 word))) \<sqsupseteq>
+     BinaryExpr BinXor (ConstantExpr (IntVal (32::nat) (1::64 word)))
+      (ConstantExpr (IntVal (32::nat) (1::64 word))))
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+flipX_2-1,29419,TYPE_ERROR,"IsabelleResult(requestID=flipX_2, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Type unification failed: No type arity IRExpr :: power
+
+Type error in application: incompatible operand type
+
+Operator:  (^) :: ?'a \<Rightarrow> nat \<Rightarrow> ?'a
+Operand:   x::IRExpr :: IRExpr
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+No type arity IRExpr :: power
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+""IRExpr"" is not a subtype of ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+flipX_3-1,37872,TYPE_ERROR,"IsabelleResult(requestID=flipX_3, status=TYPE_ERROR, message=Rule have type unification errors!, counterexample=null, proofs=null, isabelleMessages=[Ambiguous input\<^here> produces 2 parse trees:
+  (""\<^const>Markup.Rewrite.Conditional""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_applC"" (""_position"" IntVal)
+            (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+              (""\<^const>Groups.one_class.one"")))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.one_class.one""))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.zero_class.zero"")))))
+    (""\<^const>Power.power_class.power"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.one_class.one"")))))
+    (""\<^const>HOL.disj""
+      (""\<^const>HOL.eq"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_applC"" (""_position"" IntVal)
+            (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+              (""\<^const>Groups.zero_class.zero"")))))
+      (""\<^const>HOL.eq"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_applC"" (""_position"" IntVal)
+            (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+              (""\<^const>Groups.one_class.one"")))))))
+  (""\<^const>Markup.Rewrite.Conditional""
+    (""\<^const>Markup.ExtraNotation.ConditionalNotation""
+      (""\<^const>Markup.ExtraNotation.EqualsNotation"" (""_position"" x)
+        (""\<^const>Markup.ExtraNotation.ConstantNotation""
+          (""_applC"" (""_position"" IntVal)
+            (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+              (""\<^const>Groups.one_class.one"")))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.one_class.one""))))
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.zero_class.zero"")))))
+    (""\<^const>Power.power_class.power"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""_applC"" (""_position"" IntVal)
+          (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+            (""\<^const>Groups.one_class.one"")))))
+    (""\<^const>HOL.eq"" (""_position"" x)
+      (""\<^const>Markup.ExtraNotation.ConstantNotation""
+        (""\<^const>HOL.disj""
+          (""_applC"" (""_position"" IntVal)
+            (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+              (""\<^const>Groups.zero_class.zero"")))
+          (""\<^const>HOL.eq"" (""_position"" x)
+            (""\<^const>Markup.ExtraNotation.ConstantNotation""
+              (""_applC"" (""_position"" IntVal)
+                (""_cargs"" (""_Numeral"" (""_constify"" (""_position"" 32)))
+                  (""\<^const>Groups.one_class.one""))))))))), Type unification failed: Clash of types ""Value"" and ""_ ExtraNotation""
+
+Type error in application: incompatible operand type
+
+Operator:
+  ConditionalNotation
+   x::Value ExtraNotation eq const IntVal (32::nat) (1::64 word) ::
+  Value ExtraNotation ExtraNotation
+  \<Rightarrow> Value ExtraNotation ExtraNotation
+    \<Rightarrow> Value ExtraNotation ExtraNotation ExtraNotation
+Operand:   const IntVal (32::nat) (1::64 word) :: Value ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Clash of types ""Value"" and ""_ ExtraNotation""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Type unification failed: Clash of types ""Value"" and ""_ ExtraNotation""
+
+Type error in application: incompatible operand type
+
+Operator:
+  ConditionalNotation
+   x::Value ExtraNotation eq const IntVal (32::nat) (1::64 word) ::
+  Value ExtraNotation ExtraNotation
+  \<Rightarrow> Value ExtraNotation ExtraNotation
+    \<Rightarrow> Value ExtraNotation ExtraNotation ExtraNotation
+Operand:   const IntVal (32::nat) (1::64 word) :: Value ExtraNotation
+
+Coercion Inference:
+
+Local coercion insertion on the operand failed:
+Clash of types ""Value"" and ""_ ExtraNotation""
+
+Now trying to infer coercions globally.
+
+Coercion inference failed:
+weak unification of subtype constraints fails
+Clash of types ""_ ExtraNotation"" and ""nat""
+, Bad context for command "".""\<^here> -- using reset state, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
+normalizeX_1-1,80069,FAILED,"IsabelleResult(requestID=normalizeX_1, status=FAILED, message=null, counterexample=null, proofs=null, isabelleMessages=[Failed to finish proof:
+goal (1 subgoal):
+ 1. stamp_expr x = IntegerStamp (32::nat) (0::int) (1::int) \<and>
+    wf_stamp x \<and> isBoolean x \<longrightarrow>
+    ConditionalExpr
+     (BinaryExpr BinIntegerEquals x
+       (ConstantExpr (IntVal (32::nat) (1::64 word))))
+     (ConstantExpr (IntVal (32::nat) (0::64 word)))
+     (ConstantExpr (IntVal (32::nat) (1::64 word))) \<sqsupseteq>
+    x
+variables:
+    x :: IRExpr, Undefined fact: ""TemporaryTheory""\<^here>], stackTrace=null)"
